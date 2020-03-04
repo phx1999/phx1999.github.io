@@ -1,64 +1,856 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-  
-    
-    <entry>
-      <title>Sort_Analysis</title>
-      <link href="/2020/03/02/Sort_Analysis/"/>
-      <url>/2020/03/02/Sort_Analysis/</url>
-      
-        <content type="html"><![CDATA[<p>date: 2020-02-20 13:37:44</p><h2 id="Analysis-of-Sorting-Methods"><a href="#Analysis-of-Sorting-Methods" class="headerlink" title="Analysis of Sorting Methods"></a>Analysis of Sorting Methods</h2><h3 id="Insertion-Sort"><a href="#Insertion-Sort" class="headerlink" title="Insertion Sort"></a>Insertion Sort</h3><p>​    <strong>It is very fast in ascending sequence, the time complexity is O(n). But in Descending sequence, the time complexity is O($n^2$).</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// TODO :add your code here</span></span><br><span class="line">       <span class="comment">// reference: http://math.hws.edu/eck/cs124/javanotes8/c7/s4.html 7.4.3</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">           <span class="keyword">int</span> temp = list[i];</span><br><span class="line">           <span class="keyword">int</span> j = i;</span><br><span class="line">           <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; list[j - <span class="number">1</span>] &gt; temp) &#123;</span><br><span class="line">               list[j] = list[--j];</span><br><span class="line">           &#125;</span><br><span class="line">           list[j] = temp;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><h3 id="Bubble-Sort"><a href="#Bubble-Sort" class="headerlink" title="Bubble Sort"></a>Bubble Sort</h3><p>​    <strong>If we tick that the last sorting not change any two data, then the list is sorted. In this case, the time complexity of ascending sequence is O(n).</strong></p><p>​    <strong>else, the time complexity is O($n^2$).</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (list[j] &gt; list[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                   <span class="comment">// swap</span></span><br><span class="line">                   <span class="keyword">int</span> tmp = list[j + <span class="number">1</span>];</span><br><span class="line">                   list[j + <span class="number">1</span>] = list[j];</span><br><span class="line">                   list[j] = tmp;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><h3 id="Selection-Sort"><a href="#Selection-Sort" class="headerlink" title="Selection Sort"></a>Selection Sort</h3><p>​    <strong>The time complexity is O($n^2$).</strong> </p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// TODO :add your code here</span></span><br><span class="line">       <span class="comment">// reference: http://math.hws.edu/eck/cs124/javanotes8/c7/s4.html 7.4.4</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">           <span class="keyword">int</span> min = list[i];</span><br><span class="line">           <span class="keyword">int</span> minpoint = i;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (min &gt; list[j]) &#123;</span><br><span class="line">                   min = list[j];</span><br><span class="line">                   minpoint = j;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           list[minpoint] = list[i];</span><br><span class="line">           list[i] = min;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure><h3 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h3><p>​    <strong>The best and average time complexity is O($nlogn$).</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO :add your code here</span></span><br><span class="line">        <span class="comment">// Adam's ppt</span></span><br><span class="line">        <span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> temp = list[mid];</span><br><span class="line">            list[mid] = list[l];</span><br><span class="line">            <span class="keyword">int</span> i = l;</span><br><span class="line">            <span class="keyword">int</span> j = r;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">                <span class="keyword">while</span> (i &lt; j &amp;&amp; list[j] &gt;= temp) &#123;</span><br><span class="line">                    j--;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">                    list[i++] = list[j];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">while</span> (i &lt; j &amp;&amp; list[i] &lt; temp)</span><br><span class="line">                    i++;</span><br><span class="line">                <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">                    list[j--] = list[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            list[i] = temp;</span><br><span class="line">            quickSort(l, i - <span class="number">1</span>, list);</span><br><span class="line">            quickSort(i + <span class="number">1</span>, r, list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h3 id="Merge-Sort"><a href="#Merge-Sort" class="headerlink" title="Merge Sort"></a>Merge Sort</h3><p>​    <strong>The time complexity is O($nlogn$)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO :add your code here</span></span><br><span class="line">        <span class="comment">// https://introcs.cs.princeton.edu/java/42sort/ Mergesort</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        div(<span class="number">0</span>, n - <span class="number">1</span>, result, list);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span>[] res, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            div(l, mid, res, list);</span><br><span class="line">            div(mid + <span class="number">1</span>, r, res, list);</span><br><span class="line">            merge(l, mid, r, res, list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r, <span class="keyword">int</span>[] res, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = l;</span><br><span class="line">        <span class="keyword">int</span> j = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> k = l;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= r) &#123;</span><br><span class="line">            <span class="keyword">if</span> (list[i] &lt; list[j])</span><br><span class="line">                res[k++] = list[i++];</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                res[k++] = list[j++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid)</span><br><span class="line">            res[k++] = list[i++];</span><br><span class="line">        <span class="keyword">while</span> (j &lt;= r)</span><br><span class="line">            res[k++] = list[j++];</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">            list[l] = res[l];</span><br><span class="line">            l++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><h3 id="Heap-Sort"><a href="#Heap-Sort" class="headerlink" title="Heap Sort"></a>Heap Sort</h3><p>​    <strong>The time complexity is O($nlogn$)</strong></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO :add your code here</span></span><br><span class="line">        <span class="comment">// optional</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = (n - <span class="number">1</span>) / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            make_min_heap(i, n, list);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            swap(<span class="number">0</span>, i, list);</span><br><span class="line">            make_min_heap(<span class="number">0</span>, i, list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">make_min_heap</span><span class="params">(<span class="keyword">int</span> root, <span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">2</span> * root + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; n) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j + <span class="number">1</span> &lt; n &amp;&amp; list[j + <span class="number">1</span>] &lt; list[j]) &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (list[root] &lt; list[j]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(root, j, list);</span><br><span class="line">            root = j;</span><br><span class="line">            j = <span class="number">2</span> * j + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = list[i];</span><br><span class="line">        list[i] = list[j];</span><br><span class="line">        list[j] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Java 学习记录 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>博客搭建记录</title>
-      <link href="/2020/02/21/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-      <url>/2020/02/21/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
-      
-        <content type="html"><![CDATA[<center><h2>博客搭建记录</h2></center>[参考视频](https://www.bilibili.com/video/av44544186)<ul><li><p><a href="nodejs.org">安装Nodejs</a></p></li><li><p>利用淘宝镜像安装cnpm</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure></li><li><p>利用cnpm安装hexo</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure></li><li><p>创建博客文件夹</p></li><li><p>在博客文件夹根目录初始化hexo</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure></li><li><p>开启博客</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></li><li><p>更改主题</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone github.com&#x2F;.......git themes&#x2F;name</span><br></pre></td></tr></table></figure></li><li><p>修改配置文件  </p><ul><li>language: ch-Hans</li><li>更改 themes: next</li><li>添加tag        hexo n page tags</li></ul></li><li><p>将博客部署到github</p><ul><li><p>创建库 库名必须为 name.github.io</p></li><li><p>在hexo根目录下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure></li><li><p>进入配置文件更改</p><ul><li>deployer: git</li><li>repo: gitclone地址</li><li>branch: mster</li></ul></li><li><p>部署到网页</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></li></ul></li></ul>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> 博客搭建 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>IO 流和 Charset</title>
-      <link href="/2020/02/21/IO%20%E6%B5%81%E5%92%8C%20Charset/"/>
-      <url>/2020/02/21/IO%20%E6%B5%81%E5%92%8C%20Charset/</url>
-      
-        <content type="html"><![CDATA[<p>date: 2020-02-20 13:37:44</p><center><h1>IO 流和 Charset</h1></center>## IO Steam<p><img src="/images/Java%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20200220211204031.png" alt="image-20200220211204031"></p><center><h4>Sample.txt</h4></center>刹车时代<center><h4>String,StringBuffer,StringBuilder</h4></center><p><a href="https://blog.csdn.net/qq_37856300/article/details/84340288" target="_blank" rel="noopener">参考博客</a>    </p><p>String += 新创建一个对象储存结果并删除原本对象</p><p>​    StringBuffer和StringBuilder .append（） 直接改变本身的值速度快，</p><p>​    若是String str=a+b 则非常快速 这是因为String和我们其它类型的变量不同，其它的非基本类型对象的值、数据都存储在java的堆中，而String类型的变量的值是存储jvm在方法区中的字符串常量池中的。当我们执行：String str = “a”+“b”;这句话的时候，String会自动把这个对象的值看成”ab”，然后在方法区中如果找到了值同样为”ab”的，就会直接让str句柄指向它，也就是说，我们的这句代码现在相当于：</p><center><h4>FileInputStream 以 Byte 形式读取文件</h4></center><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ByteReader</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> (FileInputStream fis = <span class="keyword">new</span> FileInputStream(</span><br><span class="line">                <span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\sample.txt"</span>)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">65535</span>];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> byteNum = fis.read(buffer);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; byteNum; i++) &#123;</span><br><span class="line">                System.out.printf(<span class="string">"%02x "</span>, buffer[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">////////////////////</span></span><br><span class="line">c9 b2 b3 b5 ca b1 b4 fa</span><br></pre></td></tr></table></figure><center><h4>InputStreamReader 将读取的 Byte 转化为Character</h4></center><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StreamReader</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> (InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(</span><br><span class="line">                <span class="keyword">new</span> FileInputStream(<span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\sample.txt"</span>),</span><br><span class="line">                <span class="string">"gb18030"</span>)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">char</span>[] cbuf = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">65535</span>];</span><br><span class="line">            <span class="keyword">int</span> file_len = isr.read(cbuf);</span><br><span class="line"></span><br><span class="line">            System.out.println(file_len);</span><br><span class="line">            System.out.println(cbuf);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">刹车时代</span><br></pre></td></tr></table></figure><center><h4>BufferedReader 提供通用的缓存方式文本读取</h4></center><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BufferReader</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="keyword">try</span> (FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> File(</span><br><span class="line"><span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\sample.txt"</span>));</span><br><span class="line"> InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(fis, <span class="string">"gb18030"</span>);</span><br><span class="line"> BufferedReader bReader = <span class="keyword">new</span> BufferedReader(isr);)&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>[] cbuf = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">65535</span>];</span><br><span class="line"><span class="keyword">int</span> file_len = bReader.read(cbuf);</span><br><span class="line"></span><br><span class="line">System.out.println(file_len);</span><br><span class="line">System.out.println(cbuf);</span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">刹车时代</span><br></pre></td></tr></table></figure><center><h4>FileOutStream</h4></center><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ByteWriter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="keyword">try</span> (FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(</span><br><span class="line"><span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\output.txt"</span>))&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">65535</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; buffer.length; i++)&#123;</span><br><span class="line">buffer[i] = (<span class="keyword">byte</span>) i;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">fos.write(buffer);</span><br><span class="line">fos.flush();<span class="comment">//fos.close();</span></span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////</span></span><br><span class="line">以<span class="keyword">byte</span>形式输出文件</span><br></pre></td></tr></table></figure><center><h4>OutputStreamWriter</h4></center><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StreamWriter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">//try (OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream("output1_gb18030.txt"), "gb18030")) &#123;</span></span><br><span class="line"><span class="keyword">try</span> (OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(<span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\output1_utf8.txt"</span>), <span class="string">"utf8"</span>)) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">osw.write(<span class="string">"你好！"</span>);</span><br><span class="line">osw.flush();<span class="comment">//osw.close();</span></span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">///////////////</span></span><br><span class="line">你好！</span><br></pre></td></tr></table></figure><center><h4>BufferedWriter</h4></center><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BufferWriter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="keyword">try</span> (FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="keyword">new</span> File(<span class="string">"Lab1_SampleCode/output2_gb18030.txt"</span>));</span><br><span class="line">OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(fos, <span class="string">"gb18030"</span>);</span><br><span class="line">BufferedWriter bWriter = <span class="keyword">new</span> BufferedWriter(osw);)&#123;</span><br><span class="line">bWriter.write(<span class="string">"你好！\n"</span>);</span><br><span class="line"><span class="comment">//bWriter.write(100);</span></span><br><span class="line">bWriter.write(<span class="string">"100"</span>);</span><br><span class="line">bWriter.write(<span class="string">" 分 \n"</span>);</span><br><span class="line">bWriter.write(<span class="string">"送给你！\n"</span>);</span><br><span class="line">bWriter.flush();<span class="comment">//bWriter.close();</span></span><br><span class="line"></span><br><span class="line">&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><center><h4>Char vs. binary value</h4></center><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharSample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">// UTF-16:赵-8d75 耀-8000, GB:赵-D5D4 耀-D2AB</span></span><br><span class="line"><span class="keyword">char</span> c = <span class="string">'赵'</span>;</span><br><span class="line"><span class="keyword">int</span> value = c;</span><br><span class="line">System.out.printf(<span class="string">"%s\n"</span>, c);</span><br><span class="line">System.out.printf(<span class="string">"%X\n"</span>, value);</span><br><span class="line"></span><br><span class="line">String str = <span class="string">"赵耀"</span>; <span class="comment">// UTF-16</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line"><span class="keyword">byte</span>[] bytes1 = str.getBytes(<span class="string">"GBK"</span>); <span class="comment">// or GBK</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes1) &#123;</span><br><span class="line">System.out.printf(<span class="string">"%2X "</span>, b);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println();</span><br><span class="line"><span class="keyword">byte</span>[] bytes2 = str.getBytes(<span class="string">"UTF-16"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes2) &#123;</span><br><span class="line">System.out.printf(<span class="string">"%02X "</span>, b);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println();</span><br><span class="line"></span><br><span class="line"><span class="keyword">byte</span>[] bytes3 = str.getBytes(<span class="string">"UTF-16BE"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes3) &#123;</span><br><span class="line">System.out.printf(<span class="string">"%02X "</span>, b);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println();</span><br><span class="line"></span><br><span class="line"><span class="keyword">byte</span>[] bytes4 = str.getBytes(<span class="string">"UTF-16LE"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes4) &#123;</span><br><span class="line">System.out.printf(<span class="string">"%02X "</span>, b);</span><br><span class="line">&#125;</span><br><span class="line">System.out.println();</span><br><span class="line">&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">e.printStackTrace();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//////////////////////</span></span><br><span class="line">赵</span><br><span class="line"><span class="number">8</span>D75</span><br><span class="line">D5 D4 D2 AB </span><br><span class="line">FE FF <span class="number">8</span>D <span class="number">75</span> <span class="number">80</span> <span class="number">00</span> </span><br><span class="line"><span class="number">8</span>D <span class="number">75</span> <span class="number">80</span> <span class="number">00</span> </span><br><span class="line"><span class="number">75</span> <span class="number">8</span>D <span class="number">00</span> <span class="number">80</span></span><br></pre></td></tr></table></figure><center><h2>Charset</h2></center>[参考链接](https://blog.csdn.net/tanmx219/article/details/86356270)<ul><li>首先将0x20一下的字节状态成为“控制码”</li><li>然后将字母、数字、符号、空格加入，编到127</li><li>在ASCII码127后增加其他国家字符 128-255 为扩展字符集</li><li>中国将两个大于127的字符连在一起表示中文</li><li>高字节（0xA1-0xF7） 低字节（0xA1-0xFE）</li><li>并且将数字、标点、字母全部重新编码 —-全角符号</li><li>这种汉字方案叫做“GB2312”</li><li>更改低字节 演变为GDK</li><li>GDK再演变为GB18030</li><li>统称DBCS(Double Byte Character set)</li><li>一个汉字等于两个英文字符</li><li>ISO 创建 UCS “UNICODE”</li><li>使得一个汉字一个字符</li><li>字符：符号 字节：8位</li><li>不同PC机不同架构</li><li>高位在位：”FEFF” 低位在位：”FFFE”</li></ul><h4 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8 "></a><span id="jump">UTF-8 </span></h4><p>​    编码规则：</p><p>​                1）对于单字节的符号，字节的第一位设为0，后面7位为这个符号的unicode码。因此对于英语字母，UTF-8编码和ASCII码是相同的。</p><p>​                2）对于n字节的符号（n&gt;1），第一个字节的前n位都设为1，第n+1位设为0，后面字节的前两位一律设为10。剩下的没有提及的二进制位，全部为这个符号的unicode码。</p><center><h4>surrogate paris 增补字符</h4></center>[参考链接](https://blog.csdn.net/tanmx219/article/details/86356270)<p>Surrogate Pairs 主要是针对增补字符，此时一个16位的编码（2个Byte的UTF-16）已经无法表示，所以就扩展成需要两个16位的编码单元。也就是说，在范围U+10000到U+10FFFF间的编码则使用一对16位编码单元表示，称作代理对(surrogate pair)。</p><p>在BMP内的字符，仍然按照UTF-16的编码规则，使用两个字符来表示。 （注：BMP内的字符编码，不包含从U+D800到U+DFFF的预留码位。这些预留码位就恰好用于扩展字符编码）</p><p>增补字符的编码值已经超过了BMP的编码范围，需要使用一对UTF-16字符来表示一个字符。把Unicode编码记作U。编码规则如下：</p><ul><li><p>如果U&lt;0x10000，U的UTF-16编码就是U对应的16位无符号整数。</p></li><li><p>如果U≥0x10000，</p><p>先计算U’=U-0x10000，</p><p>然后将U’写成二进制形式：yyyy yyyy yyxx xxxx xxxx，（注意这里共计20位）</p><p>U的UTF-16编码（二进制）就是：110110yyyyyyyyyy 110111xxxxxxxxxx。</p></li></ul><p>这两个字符就称为surrogate pair（代理对）。第一个代理字符为16位编码，范围为U+D800到U+DBFF，第二个代理字符也是一个16位编码，范围为U+DC00 to U+DFFF。</p><p><img src="/images/Java%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20200220222344910.png" alt="image-20200220222344910"></p><p>​        <a href="#jump">理由为UTF-8编码规则</a></p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SurrogatePairsTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">String s=String.valueOf(Character.toChars(<span class="number">0x10437</span>));  </span><br><span class="line">System.out.println(s); </span><br><span class="line">System.out.println(s.charAt(<span class="number">0</span>)); </span><br><span class="line"></span><br><span class="line"><span class="keyword">char</span>[]chars=s.toCharArray(); </span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">char</span> c:chars)&#123;  </span><br><span class="line">    System.out.format(<span class="string">"%x"</span>,(<span class="keyword">short</span>)c);  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">////////////</span></span><br><span class="line">𐐷</span><br><span class="line">?</span><br><span class="line">d801dc37</span><br></pre></td></tr></table></figure>]]></content>
-      
-      
-      
-        <tags>
-            
-            <tag> Java 学习记录 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    
-  
-  
+<search>
+  <entry>
+    <title>JAVA/Static</title>
+    <url>/2020/03/04/JAVA/Static/</url>
+    <content><![CDATA[<p>date: 2020-03-03 23:37:44</p>
+<h1 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h1><h3 id="Convenient-for-calling-method-variable-without-creating-an-object"><a href="#Convenient-for-calling-method-variable-without-creating-an-object" class="headerlink" title="Convenient for calling (method/variable) without creating an object."></a>Convenient for calling (method/variable) without creating an object.</h3><p><a href="https://baijiahao.baidu.com/s?id=1636927461989417537&wfr=spider&for=pc" target="_blank" rel="noopener">参考</a></p>
+<p><img src="/../source/images/Static/024f78f0f736afc33409f1471839eec1b74512b4.jpeg" alt="img"></p>
+<p>堆区:</p>
+<p>1、存储的全部是对象，每个对象都包含一个与之对应的class的信息。(class的目的是得到操作指令)</p>
+<p>2、jvm只有一个堆区(heap)被所有线程共享，堆中不存放基本类型和对象引用，只存放对象本身</p>
+<p>栈区:</p>
+<p>1.每个线程包含一个栈区，栈中只保存基础数据类型的对象和自定义对象的引用(不是对象)，对象都存放在堆区中</p>
+<p>2、每个栈中的数据(原始类型和对象引用)都是私有的，其他栈不能访问。</p>
+<p>3、栈分为3个部分：基本类型变量区、执行环境上下文、操作指令区(存放操作指令)。、</p>
+<p>方法区:</p>
+<p>1、又叫静态区，跟堆一样，被所有的线程共享。方法区包含所有的class和static变量。</p>
+<p>2、方法区中包含的都是在整个程序中永远唯一的元素，如class，static变量。</p>
+<p><img src="/../source/images/Static/359b033b5bb5c9ea023ba6fe7e19b3053bf3b38c.jpeg" alt="img"></p>
+<p><img src="/../source/images/Static/f3d3572c11dfa9ec028d9199c8f0f206908fc147.jpeg" alt="img"></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    Person person = <span class="keyword">new</span> Person(<span class="string">"Test"</span>);</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"test static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"test constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> MyClass();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"person static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"person "</span>+str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    Person person = <span class="keyword">new</span> Person(<span class="string">"MyClass"</span>);</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"myclass static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"myclass constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">================================================================</span><br><span class="line">test <span class="keyword">static</span></span><br><span class="line">myclass <span class="keyword">static</span></span><br><span class="line">person <span class="keyword">static</span></span><br><span class="line">person Test</span><br><span class="line">test constructor</span><br><span class="line">person MyClass</span><br><span class="line">myclass constructor</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Java 学习记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA/AutoBoxing and UnBoxing</title>
+    <url>/2020/03/04/JAVA/AutoBoxing%20and%20UnBoxing/</url>
+    <content><![CDATA[<p>date: 2020-03-03 22:37:44</p>
+<h1 id="AutoBoxing-and-UnBoxing"><a href="#AutoBoxing-and-UnBoxing" class="headerlink" title="AutoBoxing and UnBoxing"></a>AutoBoxing and UnBoxing</h1><p><img src="/../source/images/%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/20190211153531674.png" alt="img"></p>
+<p>True False True True True False  True</p>
+]]></content>
+      <tags>
+        <tag>Java 学习记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA/Thread_Safe</title>
+    <url>/2020/03/04/JAVA/Thread_Safe/</url>
+    <content><![CDATA[<p>date: 2020-03-04 21:37:44</p>
+<h1 id="Tread-Safe"><a href="#Tread-Safe" class="headerlink" title="Tread -Safe"></a>Tread -Safe</h1><h3 id="CSDN"><a href="#CSDN" class="headerlink" title="CSDN"></a><a href="https://blog.csdn.net/csdnnews/article/details/82321777" target="_blank" rel="noopener">CSDN</a></h3><h3 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a><a href="https://zhuanlan.zhihu.com/p/73899015" target="_blank" rel="noopener">知乎</a></h3><h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><h4 id="Every-application-has-at-least-one-process-and-every-processes-are-independent"><a href="#Every-application-has-at-least-one-process-and-every-processes-are-independent" class="headerlink" title="Every application has at least one process, and every processes are independent."></a>Every application has at least one process, and every processes are independent.</h4><h2 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h2><h4 id="Thread-is-the-smallest-execution-unit"><a href="#Thread-is-the-smallest-execution-unit" class="headerlink" title="Thread is the smallest execution unit."></a>Thread is the smallest execution unit.</h4><ul>
+<li><h4 id="Single-Thread"><a href="#Single-Thread" class="headerlink" title="Single Thread"></a>Single Thread</h4><ul>
+<li>serial</li>
+</ul>
+</li>
+<li><h4 id="Multiple-Threads"><a href="#Multiple-Threads" class="headerlink" title="Multiple Threads"></a>Multiple Threads</h4><ul>
+<li>parallel</li>
+</ul>
+</li>
+</ul>
+<h2 id="JMM-Java-Memory-Model"><a href="#JMM-Java-Memory-Model" class="headerlink" title="JMM (Java Memory Model)"></a>JMM (Java Memory Model)</h2><h4 id="The-Java-memory-model-describes-how-threads-in-the-Java-programming-language-interact-through-memory-Together-with-the-description-of-single-threaded-execution-of-code-the-memory-model-provides-the-semantics-of-the-Java-programming-language"><a href="#The-Java-memory-model-describes-how-threads-in-the-Java-programming-language-interact-through-memory-Together-with-the-description-of-single-threaded-execution-of-code-the-memory-model-provides-the-semantics-of-the-Java-programming-language" class="headerlink" title="The Java memory model describes how threads in the Java programming language interact through memory. Together with the description of single-threaded execution of code, the memory model provides the semantics of the Java programming language."></a>The <strong>Java memory model</strong> describes how threads in the Java programming language interact through memory. Together with the description of single-threaded execution of code, the memory model provides the semantics of the Java programming language.</h4><p><img src="/../source/images/Thread_Safe/v2-6460c7dad17437558b5463989403c90f_720w.jpg" alt="img"></p>
+<p><img src="/../source/images/Thread_Safe/v2-861b062ad6783ae8a81410b04cf3a309_720w.jpg" alt="img"></p>
+<h2 id="Thread-Safe"><a href="#Thread-Safe" class="headerlink" title="Thread-Safe"></a>Thread-Safe</h2><h4 id="Thread-safe-code-only-manipulates-shared-data-structures-in-a-manner-that-ensures-that-all-threads-behave-properly-and-fulfill-their-design-specifications-without-unintended-interaction"><a href="#Thread-safe-code-only-manipulates-shared-data-structures-in-a-manner-that-ensures-that-all-threads-behave-properly-and-fulfill-their-design-specifications-without-unintended-interaction" class="headerlink" title="Thread-safe code only manipulates shared data structures in a manner that ensures that all threads behave properly and fulfill their design specifications without unintended interaction."></a>Thread-safe code only manipulates shared data structures in a manner that ensures that all threads behave properly and fulfill their design specifications without unintended interaction.</h4><ul>
+<li><h3 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h3><ul>
+<li><h4 id="Java-Object-Head"><a href="#Java-Object-Head" class="headerlink" title="Java Object Head"></a>Java Object Head</h4><ul>
+<li>Normal </li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">|--------------------------------------------------------------|</span><br><span class="line">|                     <span class="function">Object <span class="title">Header</span> <span class="params">(<span class="number">64</span> bits)</span>                  |</span></span><br><span class="line"><span class="function">|------------------------------------|-------------------------|</span></span><br><span class="line"><span class="function">|        Mark <span class="title">Word</span> <span class="params">(<span class="number">32</span> bits)</span>         |    Klass <span class="title">Word</span> <span class="params">(<span class="number">32</span> bits)</span> |</span></span><br><span class="line"><span class="function">|------------------------------------|-------------------------|</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Array</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">|---------------------------------------------------------------------------------|</span><br><span class="line">|                                 <span class="function">Object <span class="title">Header</span> <span class="params">(<span class="number">96</span> bits)</span>                         |</span></span><br><span class="line"><span class="function">|--------------------------------|-----------------------|------------------------|</span></span><br><span class="line"><span class="function">|        Mark <span class="title">Word</span><span class="params">(<span class="number">32</span>bits)</span>       |    Klass <span class="title">Word</span><span class="params">(<span class="number">32</span>bits)</span> |  array <span class="title">length</span><span class="params">(<span class="number">32</span>bits)</span>  |</span></span><br><span class="line"><span class="function">|--------------------------------|-----------------------|------------------------|</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="Mark-Word"><a href="#Mark-Word" class="headerlink" title="Mark Word"></a>Mark Word</h4><h4 id="Class-Metadata-Address"><a href="#Class-Metadata-Address" class="headerlink" title="Class Metadata Address"></a>Class Metadata Address</h4><h4 id="Array-Length"><a href="#Array-Length" class="headerlink" title="Array Length"></a>Array Length</h4></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h3 id="Monitor"><a href="#Monitor" class="headerlink" title="Monitor"></a>Monitor</h3><p>In Object, like a passport. </p>
+<p><img src="/../source/images/Thread_Safe/20180831214510573-1583332475306.png" alt="img"></p>
+</li>
+</ul>
+<ul>
+<li><h3 id="Volatile"><a href="#Volatile" class="headerlink" title="Volatile"></a>Volatile</h3><h4 id="In-Volatile-variable-writing-before-follower-to-read"><a href="#In-Volatile-variable-writing-before-follower-to-read" class="headerlink" title="In Volatile variable, writing before follower to read"></a>In Volatile variable, writing before follower to read</h4><h4 id="Writing-JMM-will-move-the-local-variable-to-main-memory"><a href="#Writing-JMM-will-move-the-local-variable-to-main-memory" class="headerlink" title="Writing,  JMM will move the local variable to main memory."></a>Writing,  JMM will move the local variable to main memory.</h4><h4 id="Reading-JMM-will-disable-the-local-variable-and-read-from-main-memory-to-local"><a href="#Reading-JMM-will-disable-the-local-variable-and-read-from-main-memory-to-local" class="headerlink" title="Reading,  JMM will disable the local variable and read from main memory to local."></a>Reading,  JMM will disable the local variable and read from main memory to local.</h4></li>
+<li><h3 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h3></li>
+<li><h3 id="Lock"><a href="#Lock" class="headerlink" title="Lock"></a>Lock</h3><h4 id="Java-1-6"><a href="#Java-1-6" class="headerlink" title="Java 1.6."></a>Java 1.6.</h4><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">private</span> Lock lock = <span class="keyword">new</span> ReentrantLock(); <span class="comment">// ReentrantLock是Lock的子类</span></span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Thread thread)</span></span>&#123;</span><br><span class="line">       lock.lock(); <span class="comment">// 获取锁对象</span></span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           System.out.println(<span class="string">"线程名："</span>+thread.getName() + <span class="string">"获得了锁"</span>);</span><br><span class="line">           <span class="comment">// Thread.sleep(2000);</span></span><br><span class="line">       &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">           System.out.println(<span class="string">"线程名："</span>+thread.getName() + <span class="string">"释放了锁"</span>);</span><br><span class="line">           lock.unlock(); <span class="comment">// 释放锁对象</span></span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<h4 id="TryLock"><a href="#TryLock" class="headerlink" title="TryLock()"></a>TryLock()</h4>  <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Thread thread)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">       <span class="comment">// lock.lock(); // 获取锁对象</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">// 如果5秒内获取不到锁对象，那就不再等待</span></span><br><span class="line">       <span class="keyword">if</span> (lock.tryLock(<span class="number">5</span>,TimeUnit.SECONDS)) &#123;</span><br><span class="line">           <span class="keyword">try</span> &#123;</span><br><span class="line">               System.out.println(<span class="string">"线程名："</span>+thread.getName() + <span class="string">"获得了锁"</span>);</span><br><span class="line">           &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">               e.printStackTrace();</span><br><span class="line">           &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">               System.out.println(<span class="string">"线程名："</span>+thread.getName() + <span class="string">"释放了锁"</span>);</span><br><span class="line">               lock.unlock(); <span class="comment">// 释放锁对象</span></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+]]></content>
+      <tags>
+        <tag>Java 学习记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA/Collection and Map</title>
+    <url>/2020/03/03/JAVA/Collection%20and%20Map/</url>
+    <content><![CDATA[<p>date: 2020-03-03 22:37:44</p>
+<h1 id="Collection-and-Map"><a href="#Collection-and-Map" class="headerlink" title="Collection and Map"></a>Collection and Map</h1><p><img src="/../source/images/Collection%20and%20Map/image-20200303233805151.png" alt="image-20200303233805151"></p>
+<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><p><img src="/../source/images/Collection%20and%20Map/image-20200304192419564.png" alt="image-20200304192419564"></p>
+<table>
+<thead>
+<tr>
+<th align="left">Interface</th>
+<th align="left">Describe</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Collection</td>
+<td align="left">Collection 是最基本的集合接口，一个 Collection 代表一组 Object，即 Collection 的元素, Java不提供直接继承自Collection的类，只提供继承于的子接口(如List和set)。Collection 接口存储一组不唯一，无序的对象。</td>
+</tr>
+<tr>
+<td align="left">List</td>
+<td align="left">List接口是一个有序的 Collection，使用此接口能够精确的控制每个元素插入的位置，能够通过索引(元素在List中位置，类似于数组的下标)来访问List中的元素，第一个元素的索引为 0，而且允许有相同的元素。List 接口存储一组不唯一，有序（插入顺序）的对象。</td>
+</tr>
+<tr>
+<td align="left">Set</td>
+<td align="left">Set 具有与 Collection 完全一样的接口，只是行为上不同，Set 不保存重复的元素。Set 接口存储一组唯一，无序的对象。</td>
+</tr>
+<tr>
+<td align="left">SortedSet</td>
+<td align="left">继承于Set保存有序的集合。</td>
+</tr>
+<tr>
+<td align="left">Map</td>
+<td align="left">Map 接口存储一组键值对象，提供key（键）到value（值）的映射。</td>
+</tr>
+<tr>
+<td align="left">Map.Entry</td>
+<td align="left">描述在一个Map中的一个元素（键/值对）。是一个Map的内部类。</td>
+</tr>
+<tr>
+<td align="left">SortedMap</td>
+<td align="left">继承于 Map，使 Key 保持在升序排列。</td>
+</tr>
+<tr>
+<td align="left">Enumeration</td>
+<td align="left">这是一个传统的接口和定义的方法，通过它可以枚举（一次获得一个）对象集合中的元素。这个传统接口已被Iterator取代。</td>
+</tr>
+</tbody></table>
+<h3 id="Set和List的区别"><a href="#Set和List的区别" class="headerlink" title="Set和List的区别"></a>Set和List的区别</h3><ul>
+<li>Set 接口实例存储的是无序的，不重复的数据。List 接口实例存储的是有序的，可以重复的元素。</li>
+<li>Set检索效率低下，删除和插入效率高，插入和删除不会引起元素位置改变 <strong>&lt;实现类有HashSet,TreeSet&gt;</strong>。</li>
+<li>List和数组类似，可以动态增长，根据实际存储的数据的长度自动增长List的长度。查找元素效率高，插入删除效率低，因为会引起其他元素位置改变 <strong>&lt;实现类有ArrayList,LinkedList,Vector&gt;</strong> 。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Java 学习记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA/Generic</title>
+    <url>/2020/03/03/JAVA/Generic/</url>
+    <content><![CDATA[<p>date: 2020-03-03 22:37:44</p>
+<h1 id="Generics"><a href="#Generics" class="headerlink" title="Generics"></a>Generics</h1><h4 id="菜鸟教程"><a href="#菜鸟教程" class="headerlink" title="菜鸟教程"></a><a href="https://www.runoob.com/java/java-generics.html" target="_blank" rel="noopener">菜鸟教程</a></h4><ul>
+<li>所有泛型方法声明都有一个类型参数声明部分（由尖括号分隔），该类型参数声明部分在方法返回类型之前（在下面例子中的<E>）。</li>
+<li>每一个类型参数声明部分包含一个或多个类型参数，参数间用逗号隔开。一个泛型参数，也被称为一个类型变量，是用于指定一个泛型类型名称的标识符。</li>
+<li>类型参数能被用来声明返回值类型，并且能作为泛型方法得到的实际参数类型的占位符。</li>
+<li>泛型方法体的声明和其他方法一样。注意类型参数只能代表引用型类型，不能是原始类型（像int,double,char的等）。</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericMethodTest</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">   <span class="comment">// 泛型方法 printArray                         </span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> &lt; E &gt; <span class="function"><span class="keyword">void</span> <span class="title">printArray</span><span class="params">( E[] inputArray )</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">      <span class="comment">// 输出数组元素            </span></span><br><span class="line">         <span class="keyword">for</span> ( E element : inputArray )&#123;        </span><br><span class="line">            System.out.printf( <span class="string">"%s "</span>, element );</span><br><span class="line">         &#125;</span><br><span class="line">         System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String args[] )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 创建不同类型数组： Integer, Double 和 Character</span></span><br><span class="line">        Integer[] intArray = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">        Double[] doubleArray = &#123; <span class="number">1.1</span>, <span class="number">2.2</span>, <span class="number">3.3</span>, <span class="number">4.4</span> &#125;;</span><br><span class="line">        Character[] charArray = &#123; <span class="string">'H'</span>, <span class="string">'E'</span>, <span class="string">'L'</span>, <span class="string">'L'</span>, <span class="string">'O'</span> &#125;;</span><br><span class="line"> </span><br><span class="line">        System.out.println( <span class="string">"整型数组元素为:"</span> );</span><br><span class="line">        printArray( intArray  ); <span class="comment">// 传递一个整型数组</span></span><br><span class="line"> </span><br><span class="line">        System.out.println( <span class="string">"\n双精度型数组元素为:"</span> );</span><br><span class="line">        printArray( doubleArray ); <span class="comment">// 传递一个双精度型数组</span></span><br><span class="line"> </span><br><span class="line">        System.out.println( <span class="string">"\n字符型数组元素为:"</span> );</span><br><span class="line">        printArray( charArray ); <span class="comment">// 传递一个字符型数组</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="类型通配符一般是使用-代替具体的类型参数。例如-List-在逻辑上是List-List-等所有List-lt-具体类型实参-gt-的父类。"><a href="#类型通配符一般是使用-代替具体的类型参数。例如-List-在逻辑上是List-List-等所有List-lt-具体类型实参-gt-的父类。" class="headerlink" title="类型通配符一般是使用?代替具体的类型参数。例如 List 在逻辑上是List,List 等所有List&lt;具体类型实参&gt;的父类。"></a>类型通配符一般是使用?代替具体的类型参数。例如 <strong>List</strong> 在逻辑上是<strong>List,List</strong> 等所有List&lt;具体类型实参&gt;的父类。</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericTest</span> </span>&#123;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; name = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        List&lt;Integer&gt; age = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        List&lt;Number&gt; number = <span class="keyword">new</span> ArrayList&lt;Number&gt;();</span><br><span class="line">        </span><br><span class="line">        name.add(<span class="string">"icon"</span>);</span><br><span class="line">        age.add(<span class="number">18</span>);</span><br><span class="line">        number.add(<span class="number">314</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//getUperNumber(name);//1 会报错 因为String不是Number的子类</span></span><br><span class="line">        getUperNumber(age);<span class="comment">//2</span></span><br><span class="line">        getUperNumber(number);<span class="comment">//3</span></span><br><span class="line">       </span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getData</span><span class="params">(List&lt;?&gt; data)</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"data :"</span> + data.get(<span class="number">0</span>));</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getUperNumber</span><span class="params">(List&lt;? extends Number&gt; data)</span> </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"data :"</span> + data.get(<span class="number">0</span>));</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Overring-and-Overloading"><a href="#Overring-and-Overloading" class="headerlink" title="Overring and Overloading"></a>Overring and Overloading</h2><p><img src="/../source/images/Exception/image-20200303232640881.png" alt="image-20200303232640881"></p>
+<table>
+<thead>
+<tr>
+<th align="left">区别点</th>
+<th align="left">重载方法</th>
+<th align="left">重写方法</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">参数列表</td>
+<td align="left">必须修改</td>
+<td align="left">一定不能修改</td>
+</tr>
+<tr>
+<td align="left">返回类型</td>
+<td align="left">可以修改</td>
+<td align="left">一定不能修改</td>
+</tr>
+<tr>
+<td align="left">异常</td>
+<td align="left">可以修改</td>
+<td align="left">可以减少或删除，一定不能抛出新的或者更广的异常</td>
+</tr>
+<tr>
+<td align="left">访问</td>
+<td align="left">可以修改</td>
+<td align="left">一定不能做更严格的限制（可以降低限制）</td>
+</tr>
+</tbody></table>
+<h3 id="方法的重写规则"><a href="#方法的重写规则" class="headerlink" title="方法的重写规则"></a>方法的重写规则</h3><ul>
+<li>参数列表必须完全与被重写方法的相同。</li>
+<li>返回类型与被重写方法的返回类型可以不相同，但是必须是父类返回值的派生类（java5 及更早版本返回类型要一样，java7 及更高版本可以不同）。</li>
+<li>访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为 public，那么在子类中重写该方法就不能声明为 protected。</li>
+<li>父类的成员方法只能被它的子类重写。</li>
+<li>声明为 final 的方法不能被重写。</li>
+<li>声明为 static 的方法不能被重写，但是能够被再次声明。</li>
+<li>子类和父类在同一个包中，那么子类可以重写父类所有方法，除了声明为 private 和 final 的方法。</li>
+<li>子类和父类不在同一个包中，那么子类只能够重写父类的声明为 public 和 protected 的非 final 方法。</li>
+<li>重写的方法能够抛出任何非强制异常，无论被重写的方法是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者比被重写方法声明的更广泛的强制性异常，反之则可以。</li>
+<li>构造方法不能被重写。</li>
+<li>如果不能继承一个方法，则不能重写这个方法。</li>
+</ul>
+<h3 id="重载规则"><a href="#重载规则" class="headerlink" title="重载规则:"></a>重载规则:</h3><ul>
+<li>被重载的方法必须改变参数列表(参数个数或类型不一样)；</li>
+<li>被重载的方法可以改变返回类型；</li>
+<li>被重载的方法可以改变访问修饰符；</li>
+<li>被重载的方法可以声明新的或更广的检查异常；</li>
+<li>方法能够在同一个类中或者在一个子类中被重载。</li>
+<li>无法以返回值类型作为重载函数的区分标准。</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>Java 学习记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NLP/Pattern_Classification</title>
+    <url>/2020/03/02/NLP/Pattern_Classification/</url>
+    <content><![CDATA[<p>date: 2020-03-02 22:46:44</p>
+<h1 id="Pattern-Classification"><a href="#Pattern-Classification" class="headerlink" title="Pattern Classification"></a>Pattern Classification</h1>]]></content>
+      <tags>
+        <tag>NLP 学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>NLP/LEC_1</title>
+    <url>/2020/03/02/NLP/LEC_1/</url>
+    <content><![CDATA[<p>date: 2020-03-02 22:46:44</p>
+<h1 id="Natural-Language-Processing"><a href="#Natural-Language-Processing" class="headerlink" title="Natural Language Processing"></a>Natural Language Processing</h1><h2 id="Speech-and-Language"><a href="#Speech-and-Language" class="headerlink" title="Speech and Language"></a>Speech and Language</h2><ul>
+<li><h3 id="Speech-is-human-vocal-communication-using-language"><a href="#Speech-is-human-vocal-communication-using-language" class="headerlink" title="Speech is human vocal communication using language."></a>Speech is human vocal communication using language.</h3></li>
+<li><h3 id="A-language-is-a-structured-system-of-communication"><a href="#A-language-is-a-structured-system-of-communication" class="headerlink" title="A language is a structured system of communication"></a>A language is a structured system of communication</h3></li>
+</ul>
+<h2 id="Major-speech-related-tasks"><a href="#Major-speech-related-tasks" class="headerlink" title="Major speech-related tasks"></a>Major speech-related tasks</h2><ul>
+<li><h3 id="Speech-Recognition"><a href="#Speech-Recognition" class="headerlink" title="Speech Recognition"></a>Speech Recognition</h3></li>
+<li><h3 id="Speaker-Verification"><a href="#Speaker-Verification" class="headerlink" title="Speaker Verification"></a>Speaker Verification</h3></li>
+<li><h3 id="Language-Identification"><a href="#Language-Identification" class="headerlink" title="Language Identification"></a>Language Identification</h3></li>
+<li><h3 id="Emotion-Recognition"><a href="#Emotion-Recognition" class="headerlink" title="Emotion Recognition"></a>Emotion Recognition</h3></li>
+</ul>
+<h2 id="Automatic-Speech-Recognition-ASR"><a href="#Automatic-Speech-Recognition-ASR" class="headerlink" title="Automatic Speech Recognition (ASR)"></a>Automatic Speech Recognition (ASR)</h2><h3 id="Why-is-it-difficult"><a href="#Why-is-it-difficult" class="headerlink" title="Why is it difficult"></a>Why is it difficult</h3><ul>
+<li><h4 id="Infinite-number-of-classes"><a href="#Infinite-number-of-classes" class="headerlink" title="Infinite number of classes"></a>Infinite number of classes</h4></li>
+<li><h4 id="Variable-input-and-output-length"><a href="#Variable-input-and-output-length" class="headerlink" title="Variable input and output length"></a>Variable input and output length</h4></li>
+<li><h4 id="Out-of-vocabulary-OOV"><a href="#Out-of-vocabulary-OOV" class="headerlink" title="Out of vocabulary (OOV)"></a>Out of vocabulary (OOV)</h4></li>
+<li><h4 id="Sequence-to-sequence-recognition"><a href="#Sequence-to-sequence-recognition" class="headerlink" title="Sequence-to-sequence recognition"></a>Sequence-to-sequence recognition</h4></li>
+</ul>
+<h2 id="Relationship-between-ASR-and-NLP"><a href="#Relationship-between-ASR-and-NLP" class="headerlink" title="Relationship between ASR and NLP"></a>Relationship between ASR and NLP</h2><p><img src="/images/NLP/image-20200302221951830-1583160557051-1583160561337.png" alt="image-20200302221951830"></p>
+<h2 id="NLP-tasks"><a href="#NLP-tasks" class="headerlink" title="NLP tasks"></a>NLP tasks</h2><h3 id="text-related-no-audio"><a href="#text-related-no-audio" class="headerlink" title="text-related (no audio)"></a>text-related (no audio)</h3><h3 id="Why-is-it-difficult-1"><a href="#Why-is-it-difficult-1" class="headerlink" title="Why is it difficult ?"></a>Why is it difficult ?</h3><ul>
+<li><h4 id="Confusion"><a href="#Confusion" class="headerlink" title="Confusion"></a>Confusion</h4></li>
+<li><h4 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h4></li>
+<li><h4 id="Machine-translation-MT-is-regarded-as-one-of-the-most-representative-task"><a href="#Machine-translation-MT-is-regarded-as-one-of-the-most-representative-task" class="headerlink" title="Machine translation (MT) is regarded as one of the most representative task"></a>Machine translation (MT) is regarded as one of the most representative task</h4></li>
+</ul>
+<h2 id="Common-in-classification-tasks"><a href="#Common-in-classification-tasks" class="headerlink" title="Common in classification tasks"></a>Common in classification tasks</h2><ul>
+<li><h4 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h4></li>
+<li><h4 id="Feature-extraction-digitalize-the-input"><a href="#Feature-extraction-digitalize-the-input" class="headerlink" title="Feature extraction (digitalize the input)"></a>Feature extraction (digitalize the input)</h4></li>
+<li><h4 id="Variation-and-noise"><a href="#Variation-and-noise" class="headerlink" title="Variation and noise"></a>Variation and noise</h4></li>
+<li><h4 id="Model-selection"><a href="#Model-selection" class="headerlink" title="Model selection"></a>Model selection</h4></li>
+</ul>
+<h2 id="Supervised-learning"><a href="#Supervised-learning" class="headerlink" title="Supervised learning"></a>Supervised learning</h2><h4 id="The-training-data-are-labeled-with-their-class"><a href="#The-training-data-are-labeled-with-their-class" class="headerlink" title="The training data are labeled with their class."></a>The training data are labeled with their class.</h4><h2 id="Unsupervised-learning"><a href="#Unsupervised-learning" class="headerlink" title="Unsupervised learning"></a>Unsupervised learning</h2><h4 id="The-training-data-are-unlabeled"><a href="#The-training-data-are-unlabeled" class="headerlink" title="The training data are unlabeled."></a>The training data are unlabeled.</h4><h2 id="Overview-of-an-ASR-System"><a href="#Overview-of-an-ASR-System" class="headerlink" title="Overview of an ASR System"></a>Overview of an ASR System</h2><p><img src="/images/NLP/image-20200302222936191-1583160576958.png" alt="image-20200302222936191"></p>
+<h2 id="Components-in-an-ASR-System"><a href="#Components-in-an-ASR-System" class="headerlink" title="Components in an ASR System"></a>Components in an ASR System</h2><ul>
+<li><h4 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h4></li>
+<li><h4 id="Acoustic-model"><a href="#Acoustic-model" class="headerlink" title="Acoustic model"></a>Acoustic model</h4></li>
+<li><h4 id="Language-model"><a href="#Language-model" class="headerlink" title="Language model"></a>Language model</h4></li>
+</ul>
+<h2 id="Hidden-Markov-Model-HMM"><a href="#Hidden-Markov-Model-HMM" class="headerlink" title="Hidden Markov Model (HMM)"></a>Hidden Markov Model (HMM)</h2><p><img src="/images/NLP/image-20200302223214123-1583160934937.png" alt="image-20200302223214123"></p>
+<h2 id="Common-Choices-of-Acoustic-Model"><a href="#Common-Choices-of-Acoustic-Model" class="headerlink" title="Common Choices of Acoustic Model"></a>Common Choices of Acoustic Model</h2><ul>
+<li><h3 id="Recurrent-neural-network"><a href="#Recurrent-neural-network" class="headerlink" title="Recurrent neural network"></a>Recurrent neural network</h3><ul>
+<li><h4 id="Long-short-term-memory-LSTM"><a href="#Long-short-term-memory-LSTM" class="headerlink" title="Long short term memory (LSTM)"></a>Long short term memory (LSTM)</h4></li>
+</ul>
+</li>
+<li><h3 id="Non-recurrent-neural-network"><a href="#Non-recurrent-neural-network" class="headerlink" title="Non-recurrent neural network"></a>Non-recurrent neural network</h3><ul>
+<li><h4 id="Convolutional-neural-network-CNN"><a href="#Convolutional-neural-network-CNN" class="headerlink" title="Convolutional neural network (CNN)"></a>Convolutional neural network (CNN)</h4></li>
+<li><h4 id="Time-neural-network-TDNN"><a href="#Time-neural-network-TDNN" class="headerlink" title="Time neural network (TDNN)"></a>Time neural network (TDNN)</h4></li>
+</ul>
+</li>
+</ul>
+<h2 id="Machine-Translation"><a href="#Machine-Translation" class="headerlink" title="Machine Translation"></a>Machine Translation</h2><h3 id="Why-is-it-difficult-2"><a href="#Why-is-it-difficult-2" class="headerlink" title="Why is it difficult"></a>Why is it difficult</h3><ul>
+<li><h4 id="Typology"><a href="#Typology" class="headerlink" title="Typology"></a>Typology</h4><ul>
+<li><h4 id="It-means-systematic-cross-linguistic-similarities-and-differences"><a href="#It-means-systematic-cross-linguistic-similarities-and-differences" class="headerlink" title="It means systematic cross-linguistic similarities and differences"></a>It means systematic cross-linguistic similarities and differences</h4></li>
+<li><h4 id="Morphological-difference"><a href="#Morphological-difference" class="headerlink" title="Morphological difference"></a>Morphological difference</h4><ul>
+<li>Number of morphemes per word</li>
+<li>Whether the morphemes have clean boundaries</li>
+</ul>
+</li>
+<li><h4 id="Structural-difference"><a href="#Structural-difference" class="headerlink" title="Structural difference"></a>Structural difference</h4><ul>
+<li>SVO (Subject-Verb-Object) languages</li>
+<li>SOV (Subject-Object-Verb) languages</li>
+<li>VSO (Verb-Subject-Object) languages</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="Lexical-divergences"><a href="#Lexical-divergences" class="headerlink" title="Lexical divergences"></a>Lexical divergences</h4><ul>
+<li><h4 id="lexical-gap"><a href="#lexical-gap" class="headerlink" title="lexical gap"></a>lexical gap</h4></li>
+</ul>
+</li>
+</ul>
+<h4 id="Rule-based-MT-approaches"><a href="#Rule-based-MT-approaches" class="headerlink" title="Rule-based MT approaches"></a>Rule-based MT approaches</h4><ul>
+<li><h5 id="Direct-approach"><a href="#Direct-approach" class="headerlink" title="Direct approach"></a>Direct approach</h5></li>
+</ul>
+<ul>
+<li><h5 id="Transfer-approach"><a href="#Transfer-approach" class="headerlink" title="Transfer approach"></a>Transfer approach</h5></li>
+</ul>
+<ul>
+<li><h5 id="Interlingua-approach"><a href="#Interlingua-approach" class="headerlink" title="Interlingua approach"></a>Interlingua approach</h5></li>
+</ul>
+]]></content>
+      <tags>
+        <tag>NLP 学习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA/Sort_Analysis</title>
+    <url>/2020/03/02/JAVA/Sort_Analysis/</url>
+    <content><![CDATA[<p>date: 2020-03-01 13:37:44</p>
+<h2 id="Analysis-of-Sorting-Methods"><a href="#Analysis-of-Sorting-Methods" class="headerlink" title="Analysis of Sorting Methods"></a>Analysis of Sorting Methods</h2><h3 id="Insertion-Sort"><a href="#Insertion-Sort" class="headerlink" title="Insertion Sort"></a>Insertion Sort</h3><p>​    <strong>It is very fast in ascending sequence, the time complexity is O(n). But in Descending sequence, the time complexity is O($n^2$).</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// TODO :add your code here</span></span><br><span class="line">       <span class="comment">// reference: http://math.hws.edu/eck/cs124/javanotes8/c7/s4.html 7.4.3</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">           <span class="keyword">int</span> temp = list[i];</span><br><span class="line">           <span class="keyword">int</span> j = i;</span><br><span class="line">           <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; list[j - <span class="number">1</span>] &gt; temp) &#123;</span><br><span class="line">               list[j] = list[--j];</span><br><span class="line">           &#125;</span><br><span class="line">           list[j] = temp;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Bubble-Sort"><a href="#Bubble-Sort" class="headerlink" title="Bubble Sort"></a>Bubble Sort</h3><p>​    <strong>If we tick that the last sorting not change any two data, then the list is sorted. In this case, the time complexity of ascending sequence is O(n).</strong></p>
+<p>​    <strong>else, the time complexity is O($n^2$).</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (list[j] &gt; list[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                   <span class="comment">// swap</span></span><br><span class="line">                   <span class="keyword">int</span> tmp = list[j + <span class="number">1</span>];</span><br><span class="line">                   list[j + <span class="number">1</span>] = list[j];</span><br><span class="line">                   list[j] = tmp;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Selection-Sort"><a href="#Selection-Sort" class="headerlink" title="Selection Sort"></a>Selection Sort</h3><p>​    <strong>The time complexity is O($n^2$).</strong> </p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// TODO :add your code here</span></span><br><span class="line">       <span class="comment">// reference: http://math.hws.edu/eck/cs124/javanotes8/c7/s4.html 7.4.4</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">           <span class="keyword">int</span> min = list[i];</span><br><span class="line">           <span class="keyword">int</span> minpoint = i;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (min &gt; list[j]) &#123;</span><br><span class="line">                   min = list[j];</span><br><span class="line">                   minpoint = j;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           list[minpoint] = list[i];</span><br><span class="line">           list[i] = min;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h3><p>​    <strong>The best and average time complexity is O($nlogn$).</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO :add your code here</span></span><br><span class="line">        <span class="comment">// Adam's ppt</span></span><br><span class="line">        <span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> temp = list[mid];</span><br><span class="line">            list[mid] = list[l];</span><br><span class="line">            <span class="keyword">int</span> i = l;</span><br><span class="line">            <span class="keyword">int</span> j = r;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">                <span class="keyword">while</span> (i &lt; j &amp;&amp; list[j] &gt;= temp) &#123;</span><br><span class="line">                    j--;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">                    list[i++] = list[j];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">while</span> (i &lt; j &amp;&amp; list[i] &lt; temp)</span><br><span class="line">                    i++;</span><br><span class="line">                <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">                    list[j--] = list[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            list[i] = temp;</span><br><span class="line">            quickSort(l, i - <span class="number">1</span>, list);</span><br><span class="line">            quickSort(i + <span class="number">1</span>, r, list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Merge-Sort"><a href="#Merge-Sort" class="headerlink" title="Merge Sort"></a>Merge Sort</h3><p>​    <strong>The time complexity is O($nlogn$)</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO :add your code here</span></span><br><span class="line">        <span class="comment">// https://introcs.cs.princeton.edu/java/42sort/ Mergesort</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        div(<span class="number">0</span>, n - <span class="number">1</span>, result, list);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span>[] res, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            div(l, mid, res, list);</span><br><span class="line">            div(mid + <span class="number">1</span>, r, res, list);</span><br><span class="line">            merge(l, mid, r, res, list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r, <span class="keyword">int</span>[] res, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = l;</span><br><span class="line">        <span class="keyword">int</span> j = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> k = l;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= r) &#123;</span><br><span class="line">            <span class="keyword">if</span> (list[i] &lt; list[j])</span><br><span class="line">                res[k++] = list[i++];</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                res[k++] = list[j++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid)</span><br><span class="line">            res[k++] = list[i++];</span><br><span class="line">        <span class="keyword">while</span> (j &lt;= r)</span><br><span class="line">            res[k++] = list[j++];</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">            list[l] = res[l];</span><br><span class="line">            l++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Heap-Sort"><a href="#Heap-Sort" class="headerlink" title="Heap Sort"></a>Heap Sort</h3><p>​    <strong>The time complexity is O($nlogn$)</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO :add your code here</span></span><br><span class="line">        <span class="comment">// optional</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = (n - <span class="number">1</span>) / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            make_min_heap(i, n, list);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            swap(<span class="number">0</span>, i, list);</span><br><span class="line">            make_min_heap(<span class="number">0</span>, i, list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">make_min_heap</span><span class="params">(<span class="keyword">int</span> root, <span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">2</span> * root + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; n) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j + <span class="number">1</span> &lt; n &amp;&amp; list[j + <span class="number">1</span>] &lt; list[j]) &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (list[root] &lt; list[j]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(root, j, list);</span><br><span class="line">            root = j;</span><br><span class="line">            j = <span class="number">2</span> * j + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = list[i];</span><br><span class="line">        list[i] = list[j];</span><br><span class="line">        list[j] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Running-time-of-each-sorting-method"><a href="#Running-time-of-each-sorting-method" class="headerlink" title="Running time of each sorting method"></a>Running time of each sorting method</h2><ul>
+<li><h3 id="Ascending-data"><a href="#Ascending-data" class="headerlink" title="Ascending data"></a>Ascending data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>8</td>
+<td>23</td>
+<td>2338</td>
+<td>172931</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>17</td>
+<td>1218</td>
+<td>130031</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>39</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>90</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="Descending-data"><a href="#Descending-data" class="headerlink" title="Descending data"></a>Descending data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>56</td>
+<td>2778</td>
+<td>317536</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>14</td>
+<td>1498</td>
+<td>157337</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+<td>1119</td>
+<td>124375</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>39</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>8</td>
+<td>84</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="Random-data"><a href="#Random-data" class="headerlink" title="Random data"></a>Random data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>1378</td>
+<td>143118</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>15</td>
+<td>1474</td>
+<td>155660</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>1117</td>
+<td>123129</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>37</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>14</td>
+<td>87</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="Out-of-order-data"><a href="#Out-of-order-data" class="headerlink" title="Out of order data"></a>Out of order data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>3</td>
+<td>294</td>
+<td>32708</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>14</td>
+<td>1470</td>
+<td>155921</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>1118</td>
+<td>123464</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>38</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>8</td>
+<td>84</td>
+</tr>
+</tbody></table>
+]]></content>
+      <tags>
+        <tag>Java 学习记录</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>博客搭建记录</title>
+    <url>/2020/02/21/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<center><h2>博客搭建记录</h2></center>
+[参考视频](https://www.bilibili.com/video/av44544186)
+
+<ul>
+<li><p><a href="nodejs.org">安装Nodejs</a></p>
+</li>
+<li><p>利用淘宝镜像安装cnpm</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用cnpm安装hexo</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建博客文件夹</p>
+</li>
+<li><p>在博客文件夹根目录初始化hexo</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启博客</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更改主题</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone github.com&#x2F;.......git themes&#x2F;name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件  </p>
+<ul>
+<li>language: ch-Hans</li>
+<li>更改 themes: next</li>
+<li>添加tag        hexo n page tags</li>
+</ul>
+</li>
+<li><p>将博客部署到github</p>
+<ul>
+<li><p>创建库 库名必须为 name.github.io</p>
+</li>
+<li><p>在hexo根目录下</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入配置文件更改</p>
+<ul>
+<li>deployer: git</li>
+<li>repo: gitclone地址</li>
+<li>branch: mster</li>
+</ul>
+</li>
+<li><p>部署到网页</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>博客搭建</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JAVA/IO 流和 Charset</title>
+    <url>/2020/02/21/JAVA/IO%20%E6%B5%81%E5%92%8C%20Charset/</url>
+    <content><![CDATA[<p>date: 2020-02-20 13:37:44</p>
+<center><h1>IO 流和 Charset</h1></center>
+## IO Steam
+
+<p><img src="/images/Java%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20200220211204031.png" alt="image-20200220211204031"></p>
+<center><h4>Sample.txt</h4></center>
+刹车时代
+
+
+
+
+
+<center><h4>String,StringBuffer,StringBuilder</h4></center>
+
+<p><a href="https://blog.csdn.net/qq_37856300/article/details/84340288" target="_blank" rel="noopener">参考博客</a>    </p>
+<p>String += 新创建一个对象储存结果并删除原本对象</p>
+<p>​    StringBuffer和StringBuilder .append（） 直接改变本身的值速度快，</p>
+<p>​    若是String str=a+b 则非常快速 这是因为String和我们其它类型的变量不同，其它的非基本类型对象的值、数据都存储在java的堆中，而String类型的变量的值是存储jvm在方法区中的字符串常量池中的。当我们执行：String str = “a”+“b”;这句话的时候，String会自动把这个对象的值看成”ab”，然后在方法区中如果找到了值同样为”ab”的，就会直接让str句柄指向它，也就是说，我们的这句代码现在相当于：</p>
+<center><h4>FileInputStream 以 Byte 形式读取文件</h4></center>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ByteReader</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> (FileInputStream fis = <span class="keyword">new</span> FileInputStream(</span><br><span class="line">                <span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\sample.txt"</span>)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">65535</span>];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> byteNum = fis.read(buffer);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; byteNum; i++) &#123;</span><br><span class="line">                System.out.printf(<span class="string">"%02x "</span>, buffer[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">////////////////////</span></span><br><span class="line">c9 b2 b3 b5 ca b1 b4 fa</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<center><h4>InputStreamReader 将读取的 Byte 转化为Character</h4></center>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StreamReader</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> (InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(</span><br><span class="line">                <span class="keyword">new</span> FileInputStream(<span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\sample.txt"</span>),</span><br><span class="line">                <span class="string">"gb18030"</span>)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">char</span>[] cbuf = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">65535</span>];</span><br><span class="line">            <span class="keyword">int</span> file_len = isr.read(cbuf);</span><br><span class="line"></span><br><span class="line">            System.out.println(file_len);</span><br><span class="line">            System.out.println(cbuf);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">刹车时代</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<center><h4>BufferedReader 提供通用的缓存方式文本读取</h4></center>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BufferReader</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> (FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> File(</span><br><span class="line">				<span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\sample.txt"</span>));</span><br><span class="line">			 InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(fis, <span class="string">"gb18030"</span>);</span><br><span class="line">			 BufferedReader bReader = <span class="keyword">new</span> BufferedReader(isr);)&#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">char</span>[] cbuf = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">65535</span>];</span><br><span class="line">			<span class="keyword">int</span> file_len = bReader.read(cbuf);</span><br><span class="line"></span><br><span class="line">			System.out.println(file_len);</span><br><span class="line">			System.out.println(cbuf);</span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">刹车时代</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<center><h4>FileOutStream</h4></center>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ByteWriter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> (FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(</span><br><span class="line">				<span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\output.txt"</span>))&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">65535</span>];</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; buffer.length; i++)&#123;</span><br><span class="line">				buffer[i] = (<span class="keyword">byte</span>) i;</span><br><span class="line">			&#125; </span><br><span class="line"></span><br><span class="line">			fos.write(buffer);										</span><br><span class="line">			fos.flush();<span class="comment">//fos.close();</span></span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////</span></span><br><span class="line">以<span class="keyword">byte</span>形式输出文件</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<center><h4>OutputStreamWriter</h4></center>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StreamWriter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">//		try (OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream("output1_gb18030.txt"), "gb18030")) &#123;</span></span><br><span class="line">			<span class="keyword">try</span> (OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(<span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\output1_utf8.txt"</span>), <span class="string">"utf8"</span>)) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			osw.write(<span class="string">"你好！"</span>);</span><br><span class="line">			osw.flush();<span class="comment">//osw.close();</span></span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">///////////////</span></span><br><span class="line">你好！</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<center><h4>BufferedWriter</h4></center>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BufferWriter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> (FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="keyword">new</span> File(<span class="string">"Lab1_SampleCode/output2_gb18030.txt"</span>));</span><br><span class="line">				OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(fos, <span class="string">"gb18030"</span>);</span><br><span class="line">				BufferedWriter bWriter = <span class="keyword">new</span> BufferedWriter(osw);)&#123;</span><br><span class="line">			bWriter.write(<span class="string">"你好！\n"</span>);</span><br><span class="line"><span class="comment">//			bWriter.write(100);</span></span><br><span class="line">			bWriter.write(<span class="string">"100"</span>);</span><br><span class="line">			bWriter.write(<span class="string">" 分 \n"</span>);</span><br><span class="line">			bWriter.write(<span class="string">"送给你！\n"</span>);</span><br><span class="line">			bWriter.flush();<span class="comment">//bWriter.close();</span></span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<center><h4>Char vs. binary value</h4></center>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharSample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// UTF-16:赵-8d75 耀-8000, GB:赵-D5D4 耀-D2AB</span></span><br><span class="line">		<span class="keyword">char</span> c = <span class="string">'赵'</span>;</span><br><span class="line">		<span class="keyword">int</span> value = c;</span><br><span class="line">		System.out.printf(<span class="string">"%s\n"</span>, c);</span><br><span class="line">		System.out.printf(<span class="string">"%X\n"</span>, value);</span><br><span class="line"></span><br><span class="line">		String str = <span class="string">"赵耀"</span>; <span class="comment">// UTF-16</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">byte</span>[] bytes1 = str.getBytes(<span class="string">"GBK"</span>); <span class="comment">// or GBK</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes1) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%2X "</span>, b);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">			<span class="keyword">byte</span>[] bytes2 = str.getBytes(<span class="string">"UTF-16"</span>);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes2) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%02X "</span>, b);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line"></span><br><span class="line">			<span class="keyword">byte</span>[] bytes3 = str.getBytes(<span class="string">"UTF-16BE"</span>);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes3) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%02X "</span>, b);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line"></span><br><span class="line">			<span class="keyword">byte</span>[] bytes4 = str.getBytes(<span class="string">"UTF-16LE"</span>);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes4) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%02X "</span>, b);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//////////////////////</span></span><br><span class="line">赵</span><br><span class="line"><span class="number">8</span>D75</span><br><span class="line">D5 D4 D2 AB </span><br><span class="line">FE FF <span class="number">8</span>D <span class="number">75</span> <span class="number">80</span> <span class="number">00</span> </span><br><span class="line"><span class="number">8</span>D <span class="number">75</span> <span class="number">80</span> <span class="number">00</span> </span><br><span class="line"><span class="number">75</span> <span class="number">8</span>D <span class="number">00</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<center><h2>Charset</h2></center>
+[参考链接](https://blog.csdn.net/tanmx219/article/details/86356270)
+
+<ul>
+<li>首先将0x20一下的字节状态成为“控制码”</li>
+<li>然后将字母、数字、符号、空格加入，编到127</li>
+<li>在ASCII码127后增加其他国家字符 128-255 为扩展字符集</li>
+<li>中国将两个大于127的字符连在一起表示中文</li>
+<li>高字节（0xA1-0xF7） 低字节（0xA1-0xFE）</li>
+<li>并且将数字、标点、字母全部重新编码 —-全角符号</li>
+<li>这种汉字方案叫做“GB2312”</li>
+<li>更改低字节 演变为GDK</li>
+<li>GDK再演变为GB18030</li>
+<li>统称DBCS(Double Byte Character set)</li>
+<li>一个汉字等于两个英文字符</li>
+<li>ISO 创建 UCS “UNICODE”</li>
+<li>使得一个汉字一个字符</li>
+<li>字符：符号 字节：8位</li>
+<li>不同PC机不同架构</li>
+<li>高位在位：”FEFF” 低位在位：”FFFE”</li>
+</ul>
+<h4 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8 "></a><span id="jump">UTF-8 </span></h4><p>​    编码规则：</p>
+<p>​                1）对于单字节的符号，字节的第一位设为0，后面7位为这个符号的unicode码。因此对于英语字母，UTF-8编码和ASCII码是相同的。</p>
+<p>​                2）对于n字节的符号（n&gt;1），第一个字节的前n位都设为1，第n+1位设为0，后面字节的前两位一律设为10。剩下的没有提及的二进制位，全部为这个符号的unicode码。</p>
+<center><h4>surrogate paris 增补字符</h4></center>
+[参考链接](https://blog.csdn.net/tanmx219/article/details/86356270)
+
+<p>Surrogate Pairs 主要是针对增补字符，此时一个16位的编码（2个Byte的UTF-16）已经无法表示，所以就扩展成需要两个16位的编码单元。也就是说，在范围U+10000到U+10FFFF间的编码则使用一对16位编码单元表示，称作代理对(surrogate pair)。</p>
+<p>在BMP内的字符，仍然按照UTF-16的编码规则，使用两个字符来表示。 （注：BMP内的字符编码，不包含从U+D800到U+DFFF的预留码位。这些预留码位就恰好用于扩展字符编码）</p>
+<p>增补字符的编码值已经超过了BMP的编码范围，需要使用一对UTF-16字符来表示一个字符。把Unicode编码记作U。编码规则如下：</p>
+<ul>
+<li><p>如果U&lt;0x10000，U的UTF-16编码就是U对应的16位无符号整数。</p>
+</li>
+<li><p>如果U≥0x10000，</p>
+<p>先计算U’=U-0x10000，</p>
+<p>然后将U’写成二进制形式：yyyy yyyy yyxx xxxx xxxx，（注意这里共计20位）</p>
+<p>U的UTF-16编码（二进制）就是：110110yyyyyyyyyy 110111xxxxxxxxxx。</p>
+</li>
+</ul>
+<p>这两个字符就称为surrogate pair（代理对）。第一个代理字符为16位编码，范围为U+D800到U+DBFF，第二个代理字符也是一个16位编码，范围为U+DC00 to U+DFFF。</p>
+<p><img src="/images/Java%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20200220222344910.png" alt="image-20200220222344910"></p>
+<p>​        <a href="#jump">理由为UTF-8编码规则</a></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SurrogatePairsTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String s=String.valueOf(Character.toChars(<span class="number">0x10437</span>));  		</span><br><span class="line">		System.out.println(s); </span><br><span class="line">		System.out.println(s.charAt(<span class="number">0</span>)); </span><br><span class="line">		</span><br><span class="line">		<span class="keyword">char</span>[]chars=s.toCharArray(); </span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">char</span> c:chars)&#123;  </span><br><span class="line">		    System.out.format(<span class="string">"%x"</span>,(<span class="keyword">short</span>)c);  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">////////////</span></span><br><span class="line">𐐷</span><br><span class="line">?</span><br><span class="line">d801dc37</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <tags>
+        <tag>Java 学习记录</tag>
+      </tags>
+  </entry>
 </search>

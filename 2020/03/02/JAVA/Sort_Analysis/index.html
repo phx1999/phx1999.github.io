@@ -20,20 +20,20 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="date: 2020-02-20 13:37:44 Analysis of Sorting MethodsInsertion Sort​    It is very fast in ascending sequence, the time complexity is O(n). But in Descending sequence, the time complexity is O($n^2$).">
+  <meta name="description" content="date: 2020-03-01 13:37:44 Analysis of Sorting MethodsInsertion Sort​    It is very fast in ascending sequence, the time complexity is O(n). But in Descending sequence, the time complexity is O($n^2$).">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Sort_Analysis">
-<meta property="og:url" content="http://yoursite.com/2020/03/02/Sort_Analysis/index.html">
+<meta property="og:title" content="JAVA&#x2F;Sort_Analysis">
+<meta property="og:url" content="http://yoursite.com/2020/03/02/JAVA/Sort_Analysis/index.html">
 <meta property="og:site_name" content="phx 的博客">
-<meta property="og:description" content="date: 2020-02-20 13:37:44 Analysis of Sorting MethodsInsertion Sort​    It is very fast in ascending sequence, the time complexity is O(n). But in Descending sequence, the time complexity is O($n^2$).">
+<meta property="og:description" content="date: 2020-03-01 13:37:44 Analysis of Sorting MethodsInsertion Sort​    It is very fast in ascending sequence, the time complexity is O(n). But in Descending sequence, the time complexity is O($n^2$).">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-02T05:35:29.649Z">
-<meta property="article:modified_time" content="2020-03-02T05:36:02.788Z">
+<meta property="article:modified_time" content="2020-03-02T14:54:21.328Z">
 <meta property="article:author" content="彭鸿鑫">
 <meta property="article:tag" content="Java 学习记录">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/2020/03/02/Sort_Analysis/">
+<link rel="canonical" href="http://yoursite.com/2020/03/02/JAVA/Sort_Analysis/">
 
 
 <script id="page-configurations">
@@ -45,7 +45,7 @@
   };
 </script>
 
-  <title>Sort_Analysis | phx 的博客</title>
+  <title>JAVA/Sort_Analysis | phx 的博客</title>
   
 
 
@@ -177,7 +177,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/Sort_Analysis/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/JAVA/Sort_Analysis/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -190,7 +190,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Sort_Analysis
+          JAVA/Sort_Analysis
         </h1>
 
         <div class="post-meta">
@@ -201,7 +201,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2020-03-02 13:35:29 / 修改时间：13:36:02" itemprop="dateCreated datePublished" datetime="2020-03-02T13:35:29+08:00">2020-03-02</time>
+              <time title="创建时间：2020-03-02 13:35:29 / 修改时间：22:54:21" itemprop="dateCreated datePublished" datetime="2020-03-02T13:35:29+08:00">2020-03-02</time>
             </span>
 
           
@@ -215,7 +215,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>date: 2020-02-20 13:37:44</p>
+        <p>date: 2020-03-01 13:37:44</p>
 <h2 id="Analysis-of-Sorting-Methods"><a href="#Analysis-of-Sorting-Methods" class="headerlink" title="Analysis of Sorting Methods"></a>Analysis of Sorting Methods</h2><h3 id="Insertion-Sort"><a href="#Insertion-Sort" class="headerlink" title="Insertion Sort"></a>Insertion Sort</h3><p>​    <strong>It is very fast in ascending sequence, the time complexity is O(n). But in Descending sequence, the time complexity is O($n^2$).</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// TODO :add your code here</span></span><br><span class="line">       <span class="comment">// reference: http://math.hws.edu/eck/cs124/javanotes8/c7/s4.html 7.4.3</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">           <span class="keyword">int</span> temp = list[i];</span><br><span class="line">           <span class="keyword">int</span> j = i;</span><br><span class="line">           <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; list[j - <span class="number">1</span>] &gt; temp) &#123;</span><br><span class="line">               list[j] = list[--j];</span><br><span class="line">           &#125;</span><br><span class="line">           list[j] = temp;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
@@ -246,6 +246,316 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO :add your code here</span></span><br><span class="line">        <span class="comment">// optional</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = (n - <span class="number">1</span>) / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            make_min_heap(i, n, list);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            swap(<span class="number">0</span>, i, list);</span><br><span class="line">            make_min_heap(<span class="number">0</span>, i, list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">make_min_heap</span><span class="params">(<span class="keyword">int</span> root, <span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">2</span> * root + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; n) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j + <span class="number">1</span> &lt; n &amp;&amp; list[j + <span class="number">1</span>] &lt; list[j]) &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (list[root] &lt; list[j]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(root, j, list);</span><br><span class="line">            root = j;</span><br><span class="line">            j = <span class="number">2</span> * j + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = list[i];</span><br><span class="line">        list[i] = list[j];</span><br><span class="line">        list[j] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
+
+<h2 id="Running-time-of-each-sorting-method"><a href="#Running-time-of-each-sorting-method" class="headerlink" title="Running time of each sorting method"></a>Running time of each sorting method</h2><ul>
+<li><h3 id="Ascending-data"><a href="#Ascending-data" class="headerlink" title="Ascending data"></a>Ascending data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>8</td>
+<td>23</td>
+<td>2338</td>
+<td>172931</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>17</td>
+<td>1218</td>
+<td>130031</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>39</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>90</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="Descending-data"><a href="#Descending-data" class="headerlink" title="Descending data"></a>Descending data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>56</td>
+<td>2778</td>
+<td>317536</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>14</td>
+<td>1498</td>
+<td>157337</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+<td>1119</td>
+<td>124375</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>39</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>8</td>
+<td>84</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="Random-data"><a href="#Random-data" class="headerlink" title="Random data"></a>Random data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>1378</td>
+<td>143118</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>15</td>
+<td>1474</td>
+<td>155660</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>1117</td>
+<td>123129</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>37</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>14</td>
+<td>87</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="Out-of-order-data"><a href="#Out-of-order-data" class="headerlink" title="Out of order data"></a>Out of order data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>3</td>
+<td>294</td>
+<td>32708</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>14</td>
+<td>1470</td>
+<td>155921</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>1118</td>
+<td>123464</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>38</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>8</td>
+<td>84</td>
+</tr>
+</tbody></table>
+
     </div>
 
     
@@ -266,7 +576,10 @@
     <a href="/2020/02/21/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" rel="prev" title="博客搭建记录">
       <i class="fa fa-chevron-left"></i> 博客搭建记录
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/02/NLP/LEC_1/" rel="next" title="NLP/LEC_1">
+      NLP/LEC_1 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -326,7 +639,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis-of-Sorting-Methods"><span class="nav-number">1.</span> <span class="nav-text">Analysis of Sorting Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insertion-Sort"><span class="nav-number">1.1.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bubble-Sort"><span class="nav-number">1.2.</span> <span class="nav-text">Bubble Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selection-Sort"><span class="nav-number">1.3.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Sort"><span class="nav-number">1.4.</span> <span class="nav-text">Quick Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-Sort"><span class="nav-number">1.5.</span> <span class="nav-text">Merge Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Heap-Sort"><span class="nav-number">1.6.</span> <span class="nav-text">Heap Sort</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Analysis-of-Sorting-Methods"><span class="nav-number">1.</span> <span class="nav-text">Analysis of Sorting Methods</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Insertion-Sort"><span class="nav-number">1.1.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bubble-Sort"><span class="nav-number">1.2.</span> <span class="nav-text">Bubble Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Selection-Sort"><span class="nav-number">1.3.</span> <span class="nav-text">Selection Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Quick-Sort"><span class="nav-number">1.4.</span> <span class="nav-text">Quick Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Merge-Sort"><span class="nav-number">1.5.</span> <span class="nav-text">Merge Sort</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Heap-Sort"><span class="nav-number">1.6.</span> <span class="nav-text">Heap Sort</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Running-time-of-each-sorting-method"><span class="nav-number">2.</span> <span class="nav-text">Running time of each sorting method</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ascending-data"><span class="nav-number">2.1.</span> <span class="nav-text">Ascending data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Descending-data"><span class="nav-number">2.2.</span> <span class="nav-text">Descending data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Random-data"><span class="nav-number">2.3.</span> <span class="nav-text">Random data</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Out-of-order-data"><span class="nav-number">2.4.</span> <span class="nav-text">Out of order data</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -339,14 +652,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
