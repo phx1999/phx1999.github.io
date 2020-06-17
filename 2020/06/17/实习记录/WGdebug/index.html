@@ -20,29 +20,32 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="记录学习编程的经历，欢迎大家指点">
-<meta property="og:type" content="website">
-<meta property="og:title" content="phx 的博客">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="date: 2020-06-17 23:35 WGdebug需求1234567891011121314151617181920背景：目前WeGame的浏览器qblink调试需要配置3个文件（wgdebug.txt、qbsetting.ini、devtools_resources.pak），页面同事跟踪外网问题不方便，期望能制作一个工具支持自动识别WeGame安装路径，并支持一键生成与清理调试配置文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实习记录&#x2F;WGdebug">
+<meta property="og:url" content="http://yoursite.com/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/WGdebug/index.html">
 <meta property="og:site_name" content="phx 的博客">
-<meta property="og:description" content="记录学习编程的经历，欢迎大家指点">
+<meta property="og:description" content="date: 2020-06-17 23:35 WGdebug需求1234567891011121314151617181920背景：目前WeGame的浏览器qblink调试需要配置3个文件（wgdebug.txt、qbsetting.ini、devtools_resources.pak），页面同事跟踪外网问题不方便，期望能制作一个工具支持自动识别WeGame安装路径，并支持一键生成与清理调试配置文">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-06-17T15:33:46.234Z">
+<meta property="article:modified_time" content="2020-06-17T15:41:58.423Z">
 <meta property="article:author" content="彭鸿鑫">
+<meta property="article:tag" content="腾讯实习">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://yoursite.com/">
+<link rel="canonical" href="http://yoursite.com/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/WGdebug/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome: false,
+    isPost: true
   };
 </script>
 
-  <title>phx 的博客</title>
+  <title>实习记录/WGdebug | phx 的博客</title>
   
 
 
@@ -170,218 +173,10 @@
             
 
   <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/FileorDirExists/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/FileorDirExists/" class="post-title-link" itemprop="url">实习记录/FileorDirExists</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-17 23:42:22 / 修改时间：23:43:43" itemprop="dateCreated datePublished" datetime="2020-06-17T23:42:22+08:00">2020-06-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
-          <p>date: 2020-06-17 23:35</p>
-<h2 id="MFC-检查文件或者目录是否存在"><a href="#MFC-检查文件或者目录是否存在" class="headerlink" title="MFC 检查文件或者目录是否存在"></a>MFC 检查文件或者目录是否存在</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">FindFirstFileExists</span><span class="params">(LPCTSTR lpPath, DWORD dwFilter)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	WIN32_FIND_DATA fd;</span><br><span class="line">	HANDLE hFind = FindFirstFile(lpPath, &amp;fd);</span><br><span class="line">	BOOL bFilter = (FALSE == dwFilter) ? TRUE : fd.dwFileAttributes &amp; dwFilter;</span><br><span class="line">	BOOL RetValue = ((hFind != INVALID_HANDLE_VALUE) &amp;&amp; bFilter) ? TRUE : FALSE;</span><br><span class="line">	FindClose(hFind);</span><br><span class="line">	<span class="keyword">return</span> RetValue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查一个bai路径是否存在（绝对路径、相对路径，文件或du文件夹均可）zhi</span></span><br><span class="line"><span class="function">BOOL <span class="title">FilePathExists</span><span class="params">(LPCTSTR lpPath)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> FindFirstFileExists(lpPath, FALSE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查一个文件夹是dao否存在（绝对路径、相对路径均可）</span></span><br><span class="line"><span class="function">BOOL <span class="title">FolderExists</span><span class="params">(LPCTSTR lpPath)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> FindFirstFileExists(lpPath, FILE_ATTRIBUTE_DIRECTORY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
   
   
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/MoveFileExtend/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/MoveFileExtend/" class="post-title-link" itemprop="url">实习记录/MoveFileExtend</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-17 23:34:19 / 修改时间：23:54:16" itemprop="dateCreated datePublished" datetime="2020-06-17T23:34:19+08:00">2020-06-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-06-17 23:51</p>
-<h2 id="MoveFileExtend"><a href="#MoveFileExtend" class="headerlink" title="MoveFileExtend"></a>MoveFileExtend</h2><h3 id="需求：测试改正代码"><a href="#需求：测试改正代码" class="headerlink" title="需求：测试改正代码"></a>需求：测试改正代码</h3><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">DWORD <span class="title">MoveFileExtend</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">wstring</span>&amp; src, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">wstring</span>&amp; dest, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">wstring</span>&amp; exclude_file, <span class="keyword">int</span> trys,</span></span></span><br><span class="line"><span class="function"><span class="params">	DWORD retry_sleep, <span class="keyword">int</span> fail_copy)</span> </span>&#123;</span><br><span class="line">	WCHAR source_path[MAX_PATH * <span class="number">2</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	WCHAR dest_path[MAX_PATH * <span class="number">2</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	wcscpy_s(source_path, src.c_str());</span><br><span class="line">	wcscpy_s(dest_path, dest.c_str());</span><br><span class="line">	source_path[src.length()] = <span class="string">'\0'</span>;</span><br><span class="line">	source_path[src.length() + <span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">	dest_path[dest.length()] = <span class="string">'\0'</span>;</span><br><span class="line">	dest_path[dest.length() + <span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> try_count = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//尝试移动</span></span><br><span class="line">	<span class="keyword">while</span> (++try_count &lt;= trys) &#123;</span><br><span class="line">		SHFILEOPSTRUCTW stFileOperatorStruct = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">		stFileOperatorStruct.wFunc = FO_MOVE;</span><br><span class="line">		stFileOperatorStruct.fFlags = FOF_SILENT | FOF_NOERRORUI | FOF_NOCONFIRMATION | FOF_NOCONFIRMMKDIR;</span><br><span class="line">		<span class="comment">//stFileOperatorStruct.fFlags = FOF_RENAMEONCOLLISION;</span></span><br><span class="line">		stFileOperatorStruct.pFrom = source_path;</span><br><span class="line">		stFileOperatorStruct.pTo = dest_path;</span><br><span class="line">		result = SHFileOperationW(&amp;stFileOperatorStruct);</span><br><span class="line">		<span class="keyword">if</span> (ERROR_SUCCESS == result) &#123;</span><br><span class="line">			<span class="comment">//移动成功</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (try_count &lt; trys &amp;&amp; retry_sleep &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			Sleep(retry_sleep);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//如果移动失败  并且失败时复制为true 进入分支</span></span><br><span class="line">	<span class="keyword">if</span> (ERROR_SUCCESS != result &amp;&amp; fail_copy) &#123;</span><br><span class="line">		<span class="comment">// 遍历整个目录, 失败则复制</span></span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">wstring</span> srcRootPath;</span><br><span class="line">		<span class="keyword">if</span> (src.substr(src.length() - <span class="number">2</span>) == <span class="string">L"\\*"</span>) &#123;</span><br><span class="line">			<span class="comment">// 去掉源目录尾部的*通配符</span></span><br><span class="line">			srcRootPath = fs::path(src).parent_path().<span class="built_in">wstring</span>() + <span class="string">L"\\"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (src.substr(src.length() - <span class="number">1</span>) != <span class="string">L"\\"</span>) &#123;</span><br><span class="line">			srcRootPath = src + <span class="string">L"\\"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			srcRootPath = src;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//std::wstring exclude_file;</span></span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">wstring</span> srcRoot = srcRootPath + <span class="string">L"*.*"</span>;</span><br><span class="line">		WIN32_FIND_DATAW fd;</span><br><span class="line">		HANDLE hFind = FindFirstFileW(srcRoot.c_str(), &amp;fd);</span><br><span class="line">		<span class="keyword">if</span> (INVALID_HANDLE_VALUE != hFind) &#123;</span><br><span class="line">			result = ERROR_SUCCESS;</span><br><span class="line">			<span class="keyword">while</span> (FindNextFileW(hFind, &amp;fd)) &#123;</span><br><span class="line">				<span class="comment">//跳过本层和返回上层目录</span></span><br><span class="line">				<span class="keyword">if</span> (wcscmp(fd.cFileName, <span class="string">L"."</span>) == <span class="number">0</span> || wcscmp(fd.cFileName, <span class="string">L".."</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (!exclude_file.empty() &amp;&amp; _wcsicmp(fd.cFileName, exclude_file.c_str()) == <span class="number">0</span>) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">std</span>::<span class="built_in">wstring</span> srcPath = srcRootPath + fd.cFileName;</span><br><span class="line">				<span class="comment">//std::wstring srcPath = srcRootPath + L'\0';</span></span><br><span class="line">				<span class="built_in">std</span>::<span class="built_in">wstring</span> dstPath = (fs::path(dest) / fd.cFileName).<span class="built_in">wstring</span>();</span><br><span class="line">				<span class="comment">//std::wstring dstPath = (fs::path(dest)).wstring() + L'\0';</span></span><br><span class="line">				<span class="keyword">if</span> (fd.dwFileAttributes &amp; FILE_ATTRIBUTE_DIRECTORY) &#123;</span><br><span class="line">					<span class="comment">// 如果是目录则递归调用</span></span><br><span class="line">					<span class="keyword">int</span> rec_result = MoveFileExtend(srcPath, dstPath,exclude_file, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">					<span class="keyword">if</span> (ERROR_SUCCESS != rec_result) &#123;</span><br><span class="line">						result = rec_result;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">int</span> rec_result = MoveFileExtend(srcPath, dstPath,exclude_file ,<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">					<span class="keyword">if</span> (ERROR_SUCCESS != rec_result) &#123;</span><br><span class="line">						<span class="comment">// 移动失败则拷贝</span></span><br><span class="line">						SHFILEOPSTRUCTW stFileOperatorStruct = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">						stFileOperatorStruct.wFunc = FO_COPY;</span><br><span class="line">						stFileOperatorStruct.fFlags = FOF_SILENT | FOF_NOERRORUI | FOF_NOCONFIRMATION | FOF_NOCONFIRMMKDIR;</span><br><span class="line">						WCHAR source_path[MAX_PATH] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">						WCHAR dest_path[MAX_PATH] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">						wcscpy_s(source_path, srcPath.c_str());</span><br><span class="line">						wcscpy_s(dest_path, dstPath.c_str());</span><br><span class="line"></span><br><span class="line">						source_path[srcPath.length()] = <span class="string">'\0'</span>;</span><br><span class="line">						source_path[srcPath.length() + <span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">						dest_path[dstPath.length()] = <span class="string">'\0'</span>;</span><br><span class="line">						dest_path[dstPath.length() + <span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">						stFileOperatorStruct.pFrom = source_path;</span><br><span class="line">						stFileOperatorStruct.pTo = dest_path;</span><br><span class="line">						rec_result = SHFileOperationW(&amp;stFileOperatorStruct);</span><br><span class="line">						<span class="keyword">if</span> (ERROR_SUCCESS != rec_result) &#123;</span><br><span class="line">							<span class="comment">//TinyUtils::KillAllProcess(dest_path);</span></span><br><span class="line">							<span class="comment">//TinyUtils::SetFileAuthority(dest_path);</span></span><br><span class="line">							Sleep(<span class="number">10</span>);</span><br><span class="line">							rec_result = SHFileOperationW(&amp;stFileOperatorStruct);</span><br><span class="line">							<span class="keyword">if</span> (ERROR_SUCCESS != rec_result) &#123;</span><br><span class="line">								result = rec_result;</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			FindClose(hFind);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul>
-<li>利用SHFileOperationW() 操作文件和文件夹  可以复制 移动 删除</li>
-<li>注意使用SHFileOperationW()的路径必须以两个’\0’结尾否则返回124</li>
-<li>可能移动的文件被占用 利用递归复制可实现移动</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/FileCleaner/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/FileCleaner/" class="post-title-link" itemprop="url">实习记录/FileCleaner</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-17 23:34:18 / 修改时间：23:50:59" itemprop="dateCreated datePublished" datetime="2020-06-17T23:34:18+08:00">2020-06-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-06-17 23:44</p>
-<h2 id="FileCleaner"><a href="#FileCleaner" class="headerlink" title="FileCleaner"></a>FileCleaner</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定一个文件夹目录根目录root0，你扫描这个目录下面所有的子文件夹root1，将root1下面的所有子文件夹root2的按照修改时间进行排序，假如文件夹的修改时间与系统时间相差大于M天&amp;&amp;修改时间排序不再前N（最小取值为30）位的文件夹全部删除。</span><br><span class="line">1，加个参数，一个正则表达式，root2 符合此表达式时，才删除。因为我们的目标目录比较重要，要预防误删除，只有符合要求的才删除。</span><br><span class="line">2，加个参数，need_space, 单位G, 当剩余空间大于这个值时，就停止清理。</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> platform</span><br><span class="line"><span class="keyword">import</span> ctypes</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取参数</span></span><br><span class="line">rootDir = sys.argv[<span class="number">1</span>][<span class="number">6</span>:]</span><br><span class="line">M = int(sys.argv[<span class="number">2</span>][<span class="number">2</span>:])</span><br><span class="line">N = int(sys.argv[<span class="number">3</span>][<span class="number">2</span>:])</span><br><span class="line">dir_format = sys.argv[<span class="number">4</span>][<span class="number">8</span>:]</span><br><span class="line">need_space = sys.argv[<span class="number">5</span>][<span class="number">11</span>:]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_free_space_mb</span><span class="params">(folder)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    获取磁盘剩余空间</span></span><br><span class="line"><span class="string">    :param folder: 磁盘路径 例如 D:\\</span></span><br><span class="line"><span class="string">    :return: 剩余空间 单位 G</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> platform.system() == <span class="string">'Windows'</span>:</span><br><span class="line">        free_bytes = ctypes.c_ulonglong(<span class="number">0</span>)</span><br><span class="line">        ctypes.windll.kernel32.GetDiskFreeSpaceExW(ctypes.c_wchar_p(folder), <span class="literal">None</span>, <span class="literal">None</span>, ctypes.pointer(free_bytes))</span><br><span class="line">        <span class="keyword">return</span> free_bytes.value / <span class="number">1024</span> / <span class="number">1024</span> // <span class="number">1024</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        st = os.statvfs(folder)</span><br><span class="line">        <span class="keyword">return</span> st.f_bavail * st.f_frsize / <span class="number">1024</span> // <span class="number">1024</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_dir_list</span><span class="params">(root1)</span>:</span></span><br><span class="line">    dir_or_files = os.listdir(root1)</span><br><span class="line">    dir_list = []</span><br><span class="line">    <span class="keyword">for</span> dir_file <span class="keyword">in</span> dir_or_files:</span><br><span class="line">        <span class="comment"># 检测是否符合正则表达式</span></span><br><span class="line">        <span class="keyword">if</span> re.match(dir_format, dir_file):</span><br><span class="line">            root2_path = os.path.join(root1, dir_file)</span><br><span class="line">            <span class="keyword">if</span> os.path.isdir(root2_path):</span><br><span class="line">                ctime = os.path.getmtime(root2_path)</span><br><span class="line">                heapq.heappush(dir_list, (ctime, root2_path))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dir_list</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_time</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 获取当前时间戳</span></span><br><span class="line">    now = datetime.datetime.now()</span><br><span class="line">    d2 = datetime.datetime.strptime(now.strftime(<span class="string">'%Y-%m-%d %H:%M:%S'</span>), <span class="string">'%Y-%m-%d %H:%M:%S'</span>)</span><br><span class="line">    <span class="comment"># 获取M天前时间戳</span></span><br><span class="line">    delta = datetime.timedelta(days=M)</span><br><span class="line">    d1 = d2 - delta</span><br><span class="line">    d1_unix = float(time.mktime(d1.timetuple()))</span><br><span class="line">    <span class="keyword">return</span> d1_unix</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> os.path.exists(rootDir):</span><br><span class="line">        dir_or_files = os.listdir(rootDir)</span><br><span class="line">        <span class="keyword">for</span> dir_file <span class="keyword">in</span> dir_or_files:</span><br><span class="line">            <span class="comment"># 获取目录或者文件的路径</span></span><br><span class="line">            root1_path = os.path.join(rootDir, dir_file)</span><br><span class="line">            <span class="comment"># 判断该路径为文件还是路径</span></span><br><span class="line">            <span class="keyword">if</span> os.path.isdir(root1_path):</span><br><span class="line">                <span class="comment"># 获取文件夹列表</span></span><br><span class="line">                dir_list = get_dir_list(root1_path)</span><br><span class="line">                <span class="comment"># 获取修改时间分界点</span></span><br><span class="line">                time_to_delete = get_time()</span><br><span class="line">                <span class="comment"># 遍历最早的前N个目录</span></span><br><span class="line">                <span class="comment"># for i in range(min(N, size)):</span></span><br><span class="line">                <span class="keyword">while</span> len(dir_list) &gt; N:</span><br><span class="line">                    dir = heapq.heappop(dir_list)</span><br><span class="line">                    free_space = get_free_space_mb(<span class="string">"D:\\"</span>)</span><br><span class="line">                    <span class="comment"># 检查空间是否充足</span></span><br><span class="line">                    <span class="keyword">if</span> free_space &gt; float(need_space):</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="comment"># 如果目录的修改时间在M天之前</span></span><br><span class="line">                    <span class="keyword">if</span> dir[<span class="number">0</span>] &lt; time_to_delete:</span><br><span class="line">                        <span class="comment"># 删除目录和目录下文件</span></span><br><span class="line">                        <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(dir[<span class="number">1</span>], topdown=<span class="literal">False</span>):</span><br><span class="line">                            <span class="keyword">for</span> name <span class="keyword">in</span> files:</span><br><span class="line">                                os.remove(os.path.join(root, name))</span><br><span class="line">                            <span class="keyword">for</span> name <span class="keyword">in</span> dirs:</span><br><span class="line">                                os.rmdir(os.path.join(root, name))</span><br><span class="line">                        os.rmdir(dir[<span class="number">1</span>])</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">        print(<span class="string">"删除完成"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"文件目录不存在！"</span>)</span><br><span class="line">        exit(<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul>
-<li>获取磁盘的剩余空间</li>
-<li>遍历文件夹  os.listdir</li>
-<li>简单的使用正则表达式</li>
-<li>自动递归遍历获取文件夹下信息  os.walk()</li>
-<li>删除文件夹和文件    os.rmdir   和  os.remove  </li>
-<li>获取几天前的时间戳</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/WGdebug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -395,8 +190,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/WGdebug/" class="post-title-link" itemprop="url">实习记录/WGdebug</a>
+          实习记录/WGdebug
         </h1>
 
         <div class="post-meta">
@@ -421,7 +215,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>date: 2020-06-17 23:35</p>
+        <p>date: 2020-06-17 23:35</p>
 <h2 id="WGdebug"><a href="#WGdebug" class="headerlink" title="WGdebug"></a>WGdebug</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">背景：</span><br><span class="line">目前WeGame的浏览器qblink调试需要配置3个文件（wgdebug.txt、qbsetting.ini、devtools_resources.pak），页面同事跟踪外网问题不方便，期望能制作一个工具支持自动识别WeGame安装路径，并支持一键生成与清理调试配置文件。</span><br><span class="line"></span><br><span class="line">PS：</span><br><span class="line">手动生成调试文件步骤如下：</span><br><span class="line">1. 在 C 盘中新建一个名为 wgdebug.txt 的空文件，</span><br><span class="line">2. 下载附件中的 devtools_resources.pak ，放到当前使用的 wegame 安装目录下的 QBBlinkTrial 文件夹中。</span><br><span class="line">3. 将wegame 安装目录下的 QBBlinkTrial 文件夹中原有的 qb_setting.ini备份命名为 qb_setting_back.ini，然后将附件中的  qb_setting.ini 放置进去。</span><br><span class="line"></span><br><span class="line">手动清理步骤如下：</span><br><span class="line">1、删除C盘wgdebug.txt </span><br><span class="line">2、还原QBBlinkTrial 下的qb_setting.ini</span><br><span class="line">3、删除 devtools_resources.pak</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">需求：</span><br><span class="line">1、编写一个MFC界面程序，点击【生成调试文件】，则执行上述手动操作步骤。点击【清理调试文件】，则执行上述清理步骤。WeGame安装目录可认为是当前exe所在目录。</span><br><span class="line">2、编写一个文件打包程序，能够将以上三个文件以及文件的描述（用一个数据结果描述三个文件的名称、大小、md5信息）自动添加到MFC界面程序的末尾，点击【生成调试文件】时MFC程序自动从文件末尾解析出这三个文件的内容。</span><br><span class="line">3、根据注册表自动识别WeGame安装路径，支持用户手动选择WeGame安装路径。</span><br></pre></td></tr></table></figure>
 
 
@@ -443,565 +237,39 @@
 <li>适应各种DPI 利用像素点数量的比例设置窗口的尺寸</li>
 </ul>
 
-      
     </div>
 
     
     
     
+
       <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
+          <div class="post-tags">
+              <a href="/tags/%E8%85%BE%E8%AE%AF%E5%AE%9E%E4%B9%A0/" rel="tag"># 腾讯实习</a>
+          </div>
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/JAVA/Static/">
 
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/04/JAVA/Static/" class="post-title-link" itemprop="url">JAVA/Static</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-04 23:27:52 / 修改时间：23:42:12" itemprop="dateCreated datePublished" datetime="2020-03-04T23:27:52+08:00">2020-03-04</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-03-03 23:37:44</p>
-<h1 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h1><h3 id="Convenient-for-calling-method-variable-without-creating-an-object"><a href="#Convenient-for-calling-method-variable-without-creating-an-object" class="headerlink" title="Convenient for calling (method/variable) without creating an object."></a>Convenient for calling (method/variable) without creating an object.</h3><p><a href="https://baijiahao.baidu.com/s?id=1636927461989417537&wfr=spider&for=pc" target="_blank" rel="noopener">参考</a></p>
-<p><img src="/../source/images/Static/024f78f0f736afc33409f1471839eec1b74512b4.jpeg" alt="img"></p>
-<p>堆区:</p>
-<p>1、存储的全部是对象，每个对象都包含一个与之对应的class的信息。(class的目的是得到操作指令)</p>
-<p>2、jvm只有一个堆区(heap)被所有线程共享，堆中不存放基本类型和对象引用，只存放对象本身</p>
-<p>栈区:</p>
-<p>1.每个线程包含一个栈区，栈中只保存基础数据类型的对象和自定义对象的引用(不是对象)，对象都存放在堆区中</p>
-<p>2、每个栈中的数据(原始类型和对象引用)都是私有的，其他栈不能访问。</p>
-<p>3、栈分为3个部分：基本类型变量区、执行环境上下文、操作指令区(存放操作指令)。、</p>
-<p>方法区:</p>
-<p>1、又叫静态区，跟堆一样，被所有的线程共享。方法区包含所有的class和static变量。</p>
-<p>2、方法区中包含的都是在整个程序中永远唯一的元素，如class，static变量。</p>
-<p><img src="/../source/images/Static/359b033b5bb5c9ea023ba6fe7e19b3053bf3b38c.jpeg" alt="img"></p>
-<p><img src="/../source/images/Static/f3d3572c11dfa9ec028d9199c8f0f206908fc147.jpeg" alt="img"></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    Person person = <span class="keyword">new</span> Person(<span class="string">"Test"</span>);</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"test static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Test</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"test constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">new</span> MyClass();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"person static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Person</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"person "</span>+str);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> <span class="keyword">extends</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    Person person = <span class="keyword">new</span> Person(<span class="string">"MyClass"</span>);</span><br><span class="line">    <span class="keyword">static</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"myclass static"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyClass</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"myclass constructor"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">================================================================</span><br><span class="line">test <span class="keyword">static</span></span><br><span class="line">myclass <span class="keyword">static</span></span><br><span class="line">person <span class="keyword">static</span></span><br><span class="line">person Test</span><br><span class="line">test constructor</span><br><span class="line">person MyClass</span><br><span class="line">myclass constructor</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
 
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/JAVA/AutoBoxing%20and%20UnBoxing/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/04/JAVA/AutoBoxing%20and%20UnBoxing/" class="post-title-link" itemprop="url">JAVA/AutoBoxing and UnBoxing</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-04 23:13:32 / 修改时间：23:13:36" itemprop="dateCreated datePublished" datetime="2020-03-04T23:13:32+08:00">2020-03-04</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-03-03 22:37:44</p>
-<h1 id="AutoBoxing-and-UnBoxing"><a href="#AutoBoxing-and-UnBoxing" class="headerlink" title="AutoBoxing and UnBoxing"></a>AutoBoxing and UnBoxing</h1><p><img src="/../source/images/%E8%87%AA%E5%8A%A8%E8%A3%85%E7%AE%B1%E5%92%8C%E6%8B%86%E7%AE%B1/20190211153531674.png" alt="img"></p>
-<p>True False True True True False  True</p>
-
-      
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/04/JAVA/Static/" rel="prev" title="JAVA/Static">
+      <i class="fa fa-chevron-left"></i> JAVA/Static
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/FileCleaner/" rel="next" title="实习记录/FileCleaner">
+      实习记录/FileCleaner <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
       </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/JAVA/Thread_Safe/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/04/JAVA/Thread_Safe/" class="post-title-link" itemprop="url">JAVA/Thread_Safe</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-04 21:45:57 / 修改时间：22:56:00" itemprop="dateCreated datePublished" datetime="2020-03-04T21:45:57+08:00">2020-03-04</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
     
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-03-04 21:37:44</p>
-<h1 id="Tread-Safe"><a href="#Tread-Safe" class="headerlink" title="Tread -Safe"></a>Tread -Safe</h1><h3 id="CSDN"><a href="#CSDN" class="headerlink" title="CSDN"></a><a href="https://blog.csdn.net/csdnnews/article/details/82321777" target="_blank" rel="noopener">CSDN</a></h3><h3 id="知乎"><a href="#知乎" class="headerlink" title="知乎"></a><a href="https://zhuanlan.zhihu.com/p/73899015" target="_blank" rel="noopener">知乎</a></h3><h2 id="Process"><a href="#Process" class="headerlink" title="Process"></a>Process</h2><h4 id="Every-application-has-at-least-one-process-and-every-processes-are-independent"><a href="#Every-application-has-at-least-one-process-and-every-processes-are-independent" class="headerlink" title="Every application has at least one process, and every processes are independent."></a>Every application has at least one process, and every processes are independent.</h4><h2 id="Thread"><a href="#Thread" class="headerlink" title="Thread"></a>Thread</h2><h4 id="Thread-is-the-smallest-execution-unit"><a href="#Thread-is-the-smallest-execution-unit" class="headerlink" title="Thread is the smallest execution unit."></a>Thread is the smallest execution unit.</h4><ul>
-<li><h4 id="Single-Thread"><a href="#Single-Thread" class="headerlink" title="Single Thread"></a>Single Thread</h4><ul>
-<li>serial</li>
-</ul>
-</li>
-<li><h4 id="Multiple-Threads"><a href="#Multiple-Threads" class="headerlink" title="Multiple Threads"></a>Multiple Threads</h4><ul>
-<li>parallel</li>
-</ul>
-</li>
-</ul>
-<h2 id="JMM-Java-Memory-Model"><a href="#JMM-Java-Memory-Model" class="headerlink" title="JMM (Java Memory Model)"></a>JMM (Java Memory Model)</h2><h4 id="The-Java-memory-model-describes-how-threads-in-the-Java-programming-language-interact-through-memory-Together-with-the-description-of-single-threaded-execution-of-code-the-memory-model-provides-the-semantics-of-the-Java-programming-language"><a href="#The-Java-memory-model-describes-how-threads-in-the-Java-programming-language-interact-through-memory-Together-with-the-description-of-single-threaded-execution-of-code-the-memory-model-provides-the-semantics-of-the-Java-programming-language" class="headerlink" title="The Java memory model describes how threads in the Java programming language interact through memory. Together with the description of single-threaded execution of code, the memory model provides the semantics of the Java programming language."></a>The <strong>Java memory model</strong> describes how threads in the Java programming language interact through memory. Together with the description of single-threaded execution of code, the memory model provides the semantics of the Java programming language.</h4><p><img src="/../source/images/Thread_Safe/v2-6460c7dad17437558b5463989403c90f_720w.jpg" alt="img"></p>
-<p><img src="/../source/images/Thread_Safe/v2-861b062ad6783ae8a81410b04cf3a309_720w.jpg" alt="img"></p>
-<h2 id="Thread-Safe"><a href="#Thread-Safe" class="headerlink" title="Thread-Safe"></a>Thread-Safe</h2><h4 id="Thread-safe-code-only-manipulates-shared-data-structures-in-a-manner-that-ensures-that-all-threads-behave-properly-and-fulfill-their-design-specifications-without-unintended-interaction"><a href="#Thread-safe-code-only-manipulates-shared-data-structures-in-a-manner-that-ensures-that-all-threads-behave-properly-and-fulfill-their-design-specifications-without-unintended-interaction" class="headerlink" title="Thread-safe code only manipulates shared data structures in a manner that ensures that all threads behave properly and fulfill their design specifications without unintended interaction."></a>Thread-safe code only manipulates shared data structures in a manner that ensures that all threads behave properly and fulfill their design specifications without unintended interaction.</h4><ul>
-<li><h3 id="synchronized"><a href="#synchronized" class="headerlink" title="synchronized"></a>synchronized</h3><ul>
-<li><h4 id="Java-Object-Head"><a href="#Java-Object-Head" class="headerlink" title="Java Object Head"></a>Java Object Head</h4><ul>
-<li>Normal </li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|--------------------------------------------------------------|</span><br><span class="line">|                     <span class="function">Object <span class="title">Header</span> <span class="params">(<span class="number">64</span> bits)</span>                  |</span></span><br><span class="line"><span class="function">|------------------------------------|-------------------------|</span></span><br><span class="line"><span class="function">|        Mark <span class="title">Word</span> <span class="params">(<span class="number">32</span> bits)</span>         |    Klass <span class="title">Word</span> <span class="params">(<span class="number">32</span> bits)</span> |</span></span><br><span class="line"><span class="function">|------------------------------------|-------------------------|</span></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>Array</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|---------------------------------------------------------------------------------|</span><br><span class="line">|                                 <span class="function">Object <span class="title">Header</span> <span class="params">(<span class="number">96</span> bits)</span>                         |</span></span><br><span class="line"><span class="function">|--------------------------------|-----------------------|------------------------|</span></span><br><span class="line"><span class="function">|        Mark <span class="title">Word</span><span class="params">(<span class="number">32</span>bits)</span>       |    Klass <span class="title">Word</span><span class="params">(<span class="number">32</span>bits)</span> |  array <span class="title">length</span><span class="params">(<span class="number">32</span>bits)</span>  |</span></span><br><span class="line"><span class="function">|--------------------------------|-----------------------|------------------------|</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="Mark-Word"><a href="#Mark-Word" class="headerlink" title="Mark Word"></a>Mark Word</h4><h4 id="Class-Metadata-Address"><a href="#Class-Metadata-Address" class="headerlink" title="Class Metadata Address"></a>Class Metadata Address</h4><h4 id="Array-Length"><a href="#Array-Length" class="headerlink" title="Array Length"></a>Array Length</h4></li>
-</ul>
-</li>
-</ul>
-<ul>
-<li><h3 id="Monitor"><a href="#Monitor" class="headerlink" title="Monitor"></a>Monitor</h3><p>In Object, like a passport. </p>
-<p><img src="/../source/images/Thread_Safe/20180831214510573-1583332475306.png" alt="img"></p>
-</li>
-</ul>
-<ul>
-<li><h3 id="Volatile"><a href="#Volatile" class="headerlink" title="Volatile"></a>Volatile</h3><h4 id="In-Volatile-variable-writing-before-follower-to-read"><a href="#In-Volatile-variable-writing-before-follower-to-read" class="headerlink" title="In Volatile variable, writing before follower to read"></a>In Volatile variable, writing before follower to read</h4><h4 id="Writing-JMM-will-move-the-local-variable-to-main-memory"><a href="#Writing-JMM-will-move-the-local-variable-to-main-memory" class="headerlink" title="Writing,  JMM will move the local variable to main memory."></a>Writing,  JMM will move the local variable to main memory.</h4><h4 id="Reading-JMM-will-disable-the-local-variable-and-read-from-main-memory-to-local"><a href="#Reading-JMM-will-disable-the-local-variable-and-read-from-main-memory-to-local" class="headerlink" title="Reading,  JMM will disable the local variable and read from main memory to local."></a>Reading,  JMM will disable the local variable and read from main memory to local.</h4></li>
-<li><h3 id="CAS"><a href="#CAS" class="headerlink" title="CAS"></a>CAS</h3></li>
-<li><h3 id="Lock"><a href="#Lock" class="headerlink" title="Lock"></a>Lock</h3><h4 id="Java-1-6"><a href="#Java-1-6" class="headerlink" title="Java 1.6."></a>Java 1.6.</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> Lock lock = <span class="keyword">new</span> ReentrantLock(); <span class="comment">// ReentrantLock是Lock的子类</span></span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Thread thread)</span></span>&#123;</span><br><span class="line">       lock.lock(); <span class="comment">// 获取锁对象</span></span><br><span class="line">       <span class="keyword">try</span> &#123;</span><br><span class="line">           System.out.println(<span class="string">"线程名："</span>+thread.getName() + <span class="string">"获得了锁"</span>);</span><br><span class="line">           <span class="comment">// Thread.sleep(2000);</span></span><br><span class="line">       &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">           e.printStackTrace();</span><br><span class="line">       &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">           System.out.println(<span class="string">"线程名："</span>+thread.getName() + <span class="string">"释放了锁"</span>);</span><br><span class="line">           lock.unlock(); <span class="comment">// 释放锁对象</span></span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-</li>
-</ul>
-<h4 id="TryLock"><a href="#TryLock" class="headerlink" title="TryLock()"></a>TryLock()</h4>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">method</span><span class="params">(Thread thread)</span> <span class="keyword">throws</span> InterruptedException </span>&#123;</span><br><span class="line">       <span class="comment">// lock.lock(); // 获取锁对象</span></span><br><span class="line"></span><br><span class="line">       <span class="comment">// 如果5秒内获取不到锁对象，那就不再等待</span></span><br><span class="line">       <span class="keyword">if</span> (lock.tryLock(<span class="number">5</span>,TimeUnit.SECONDS)) &#123;</span><br><span class="line">           <span class="keyword">try</span> &#123;</span><br><span class="line">               System.out.println(<span class="string">"线程名："</span>+thread.getName() + <span class="string">"获得了锁"</span>);</span><br><span class="line">           &#125;<span class="keyword">catch</span>(Exception e)&#123;</span><br><span class="line">               e.printStackTrace();</span><br><span class="line">           &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">               System.out.println(<span class="string">"线程名："</span>+thread.getName() + <span class="string">"释放了锁"</span>);</span><br><span class="line">               lock.unlock(); <span class="comment">// 释放锁对象</span></span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/JAVA/Collection%20and%20Map/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/03/JAVA/Collection%20and%20Map/" class="post-title-link" itemprop="url">JAVA/Collection and Map</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-03-03 23:35:54" itemprop="dateCreated datePublished" datetime="2020-03-03T23:35:54+08:00">2020-03-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-03-04 19:43:58" itemprop="dateModified" datetime="2020-03-04T19:43:58+08:00">2020-03-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-03-03 22:37:44</p>
-<h1 id="Collection-and-Map"><a href="#Collection-and-Map" class="headerlink" title="Collection and Map"></a>Collection and Map</h1><p><img src="/../source/images/Collection%20and%20Map/image-20200303233805151.png" alt="image-20200303233805151"></p>
-<h2 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h2><p><img src="/../source/images/Collection%20and%20Map/image-20200304192419564.png" alt="image-20200304192419564"></p>
-<table>
-<thead>
-<tr>
-<th align="left">Interface</th>
-<th align="left">Describe</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">Collection</td>
-<td align="left">Collection 是最基本的集合接口，一个 Collection 代表一组 Object，即 Collection 的元素, Java不提供直接继承自Collection的类，只提供继承于的子接口(如List和set)。Collection 接口存储一组不唯一，无序的对象。</td>
-</tr>
-<tr>
-<td align="left">List</td>
-<td align="left">List接口是一个有序的 Collection，使用此接口能够精确的控制每个元素插入的位置，能够通过索引(元素在List中位置，类似于数组的下标)来访问List中的元素，第一个元素的索引为 0，而且允许有相同的元素。List 接口存储一组不唯一，有序（插入顺序）的对象。</td>
-</tr>
-<tr>
-<td align="left">Set</td>
-<td align="left">Set 具有与 Collection 完全一样的接口，只是行为上不同，Set 不保存重复的元素。Set 接口存储一组唯一，无序的对象。</td>
-</tr>
-<tr>
-<td align="left">SortedSet</td>
-<td align="left">继承于Set保存有序的集合。</td>
-</tr>
-<tr>
-<td align="left">Map</td>
-<td align="left">Map 接口存储一组键值对象，提供key（键）到value（值）的映射。</td>
-</tr>
-<tr>
-<td align="left">Map.Entry</td>
-<td align="left">描述在一个Map中的一个元素（键/值对）。是一个Map的内部类。</td>
-</tr>
-<tr>
-<td align="left">SortedMap</td>
-<td align="left">继承于 Map，使 Key 保持在升序排列。</td>
-</tr>
-<tr>
-<td align="left">Enumeration</td>
-<td align="left">这是一个传统的接口和定义的方法，通过它可以枚举（一次获得一个）对象集合中的元素。这个传统接口已被Iterator取代。</td>
-</tr>
-</tbody></table>
-<h3 id="Set和List的区别"><a href="#Set和List的区别" class="headerlink" title="Set和List的区别"></a>Set和List的区别</h3><ul>
-<li>Set 接口实例存储的是无序的，不重复的数据。List 接口实例存储的是有序的，可以重复的元素。</li>
-<li>Set检索效率低下，删除和插入效率高，插入和删除不会引起元素位置改变 <strong>&lt;实现类有HashSet,TreeSet&gt;</strong>。</li>
-<li>List和数组类似，可以动态增长，根据实际存储的数据的长度自动增长List的长度。查找元素效率高，插入删除效率低，因为会引起其他元素位置改变 <strong>&lt;实现类有ArrayList,LinkedList,Vector&gt;</strong> 。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/03/JAVA/Generic/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/03/JAVA/Generic/" class="post-title-link" itemprop="url">JAVA/Generic</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-03 22:34:31 / 修改时间：23:35:37" itemprop="dateCreated datePublished" datetime="2020-03-03T22:34:31+08:00">2020-03-03</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-03-03 22:37:44</p>
-<h1 id="Generics"><a href="#Generics" class="headerlink" title="Generics"></a>Generics</h1><h4 id="菜鸟教程"><a href="#菜鸟教程" class="headerlink" title="菜鸟教程"></a><a href="https://www.runoob.com/java/java-generics.html" target="_blank" rel="noopener">菜鸟教程</a></h4><ul>
-<li>所有泛型方法声明都有一个类型参数声明部分（由尖括号分隔），该类型参数声明部分在方法返回类型之前（在下面例子中的<E>）。</li>
-<li>每一个类型参数声明部分包含一个或多个类型参数，参数间用逗号隔开。一个泛型参数，也被称为一个类型变量，是用于指定一个泛型类型名称的标识符。</li>
-<li>类型参数能被用来声明返回值类型，并且能作为泛型方法得到的实际参数类型的占位符。</li>
-<li>泛型方法体的声明和其他方法一样。注意类型参数只能代表引用型类型，不能是原始类型（像int,double,char的等）。</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericMethodTest</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">   <span class="comment">// 泛型方法 printArray                         </span></span><br><span class="line">   <span class="keyword">public</span> <span class="keyword">static</span> &lt; E &gt; <span class="function"><span class="keyword">void</span> <span class="title">printArray</span><span class="params">( E[] inputArray )</span></span></span><br><span class="line"><span class="function">   </span>&#123;</span><br><span class="line">      <span class="comment">// 输出数组元素            </span></span><br><span class="line">         <span class="keyword">for</span> ( E element : inputArray )&#123;        </span><br><span class="line">            System.out.printf( <span class="string">"%s "</span>, element );</span><br><span class="line">         &#125;</span><br><span class="line">         System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">( String args[] )</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// 创建不同类型数组： Integer, Double 和 Character</span></span><br><span class="line">        Integer[] intArray = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span> &#125;;</span><br><span class="line">        Double[] doubleArray = &#123; <span class="number">1.1</span>, <span class="number">2.2</span>, <span class="number">3.3</span>, <span class="number">4.4</span> &#125;;</span><br><span class="line">        Character[] charArray = &#123; <span class="string">'H'</span>, <span class="string">'E'</span>, <span class="string">'L'</span>, <span class="string">'L'</span>, <span class="string">'O'</span> &#125;;</span><br><span class="line"> </span><br><span class="line">        System.out.println( <span class="string">"整型数组元素为:"</span> );</span><br><span class="line">        printArray( intArray  ); <span class="comment">// 传递一个整型数组</span></span><br><span class="line"> </span><br><span class="line">        System.out.println( <span class="string">"\n双精度型数组元素为:"</span> );</span><br><span class="line">        printArray( doubleArray ); <span class="comment">// 传递一个双精度型数组</span></span><br><span class="line"> </span><br><span class="line">        System.out.println( <span class="string">"\n字符型数组元素为:"</span> );</span><br><span class="line">        printArray( charArray ); <span class="comment">// 传递一个字符型数组</span></span><br><span class="line">    &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="类型通配符一般是使用-代替具体的类型参数。例如-List-在逻辑上是List-List-等所有List-lt-具体类型实参-gt-的父类。"><a href="#类型通配符一般是使用-代替具体的类型参数。例如-List-在逻辑上是List-List-等所有List-lt-具体类型实参-gt-的父类。" class="headerlink" title="类型通配符一般是使用?代替具体的类型参数。例如 List 在逻辑上是List,List 等所有List&lt;具体类型实参&gt;的父类。"></a>类型通配符一般是使用?代替具体的类型参数。例如 <strong>List</strong> 在逻辑上是<strong>List,List</strong> 等所有List&lt;具体类型实参&gt;的父类。</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GenericTest</span> </span>&#123;</span><br><span class="line">     </span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        List&lt;String&gt; name = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">        List&lt;Integer&gt; age = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">        List&lt;Number&gt; number = <span class="keyword">new</span> ArrayList&lt;Number&gt;();</span><br><span class="line">        </span><br><span class="line">        name.add(<span class="string">"icon"</span>);</span><br><span class="line">        age.add(<span class="number">18</span>);</span><br><span class="line">        number.add(<span class="number">314</span>);</span><br><span class="line"> </span><br><span class="line">        <span class="comment">//getUperNumber(name);//1 会报错 因为String不是Number的子类</span></span><br><span class="line">        getUperNumber(age);<span class="comment">//2</span></span><br><span class="line">        getUperNumber(number);<span class="comment">//3</span></span><br><span class="line">       </span><br><span class="line">   &#125;</span><br><span class="line"> </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getData</span><span class="params">(List&lt;?&gt; data)</span> </span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"data :"</span> + data.get(<span class="number">0</span>));</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">getUperNumber</span><span class="params">(List&lt;? extends Number&gt; data)</span> </span>&#123;</span><br><span class="line">          System.out.println(<span class="string">"data :"</span> + data.get(<span class="number">0</span>));</span><br><span class="line">       &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="Overring-and-Overloading"><a href="#Overring-and-Overloading" class="headerlink" title="Overring and Overloading"></a>Overring and Overloading</h2><p><img src="/../source/images/Exception/image-20200303232640881.png" alt="image-20200303232640881"></p>
-<table>
-<thead>
-<tr>
-<th align="left">区别点</th>
-<th align="left">重载方法</th>
-<th align="left">重写方法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">参数列表</td>
-<td align="left">必须修改</td>
-<td align="left">一定不能修改</td>
-</tr>
-<tr>
-<td align="left">返回类型</td>
-<td align="left">可以修改</td>
-<td align="left">一定不能修改</td>
-</tr>
-<tr>
-<td align="left">异常</td>
-<td align="left">可以修改</td>
-<td align="left">可以减少或删除，一定不能抛出新的或者更广的异常</td>
-</tr>
-<tr>
-<td align="left">访问</td>
-<td align="left">可以修改</td>
-<td align="left">一定不能做更严格的限制（可以降低限制）</td>
-</tr>
-</tbody></table>
-<h3 id="方法的重写规则"><a href="#方法的重写规则" class="headerlink" title="方法的重写规则"></a>方法的重写规则</h3><ul>
-<li>参数列表必须完全与被重写方法的相同。</li>
-<li>返回类型与被重写方法的返回类型可以不相同，但是必须是父类返回值的派生类（java5 及更早版本返回类型要一样，java7 及更高版本可以不同）。</li>
-<li>访问权限不能比父类中被重写的方法的访问权限更低。例如：如果父类的一个方法被声明为 public，那么在子类中重写该方法就不能声明为 protected。</li>
-<li>父类的成员方法只能被它的子类重写。</li>
-<li>声明为 final 的方法不能被重写。</li>
-<li>声明为 static 的方法不能被重写，但是能够被再次声明。</li>
-<li>子类和父类在同一个包中，那么子类可以重写父类所有方法，除了声明为 private 和 final 的方法。</li>
-<li>子类和父类不在同一个包中，那么子类只能够重写父类的声明为 public 和 protected 的非 final 方法。</li>
-<li>重写的方法能够抛出任何非强制异常，无论被重写的方法是否抛出异常。但是，重写的方法不能抛出新的强制性异常，或者比被重写方法声明的更广泛的强制性异常，反之则可以。</li>
-<li>构造方法不能被重写。</li>
-<li>如果不能继承一个方法，则不能重写这个方法。</li>
-</ul>
-<h3 id="重载规则"><a href="#重载规则" class="headerlink" title="重载规则:"></a>重载规则:</h3><ul>
-<li>被重载的方法必须改变参数列表(参数个数或类型不一样)；</li>
-<li>被重载的方法可以改变返回类型；</li>
-<li>被重载的方法可以改变访问修饰符；</li>
-<li>被重载的方法可以声明新的或更广的检查异常；</li>
-<li>方法能够在同一个类中或者在一个子类中被重载。</li>
-<li>无法以返回值类型作为重载函数的区分标准。</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/NLP/Pattern_Classification/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/03/02/NLP/Pattern_Classification/" class="post-title-link" itemprop="url">NLP/Pattern_Classification</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-03-02 22:57:29 / 修改时间：22:59:23" itemprop="dateCreated datePublished" datetime="2020-03-02T22:57:29+08:00">2020-03-02</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-03-02 22:46:44</p>
-<h1 id="Pattern-Classification"><a href="#Pattern-Classification" class="headerlink" title="Pattern Classification"></a>Pattern Classification</h1>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
   </article>
   
   
   
 
   </div>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
-
 
 
           </div>
@@ -1052,6 +320,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#WGdebug"><span class="nav-number">1.</span> <span class="nav-text">WGdebug</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求"><span class="nav-number">1.1.</span> <span class="nav-text">需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现"><span class="nav-number">1.2.</span> <span class="nav-text">实现</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收获"><span class="nav-number">1.3.</span> <span class="nav-text">收获</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
