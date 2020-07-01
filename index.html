@@ -174,293 +174,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/FileorDirExists/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/FileorDirExists/" class="post-title-link" itemprop="url">实习记录/FileorDirExists</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-17 23:42:22 / 修改时间：23:43:43" itemprop="dateCreated datePublished" datetime="2020-06-17T23:42:22+08:00">2020-06-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-06-17 23:35</p>
-<h2 id="MFC-检查文件或者目录是否存在"><a href="#MFC-检查文件或者目录是否存在" class="headerlink" title="MFC 检查文件或者目录是否存在"></a>MFC 检查文件或者目录是否存在</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">BOOL <span class="title">FindFirstFileExists</span><span class="params">(LPCTSTR lpPath, DWORD dwFilter)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	WIN32_FIND_DATA fd;</span><br><span class="line">	HANDLE hFind = FindFirstFile(lpPath, &amp;fd);</span><br><span class="line">	BOOL bFilter = (FALSE == dwFilter) ? TRUE : fd.dwFileAttributes &amp; dwFilter;</span><br><span class="line">	BOOL RetValue = ((hFind != INVALID_HANDLE_VALUE) &amp;&amp; bFilter) ? TRUE : FALSE;</span><br><span class="line">	FindClose(hFind);</span><br><span class="line">	<span class="keyword">return</span> RetValue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查一个bai路径是否存在（绝对路径、相对路径，文件或du文件夹均可）zhi</span></span><br><span class="line"><span class="function">BOOL <span class="title">FilePathExists</span><span class="params">(LPCTSTR lpPath)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> FindFirstFileExists(lpPath, FALSE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查一个文件夹是dao否存在（绝对路径、相对路径均可）</span></span><br><span class="line"><span class="function">BOOL <span class="title">FolderExists</span><span class="params">(LPCTSTR lpPath)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> FindFirstFileExists(lpPath, FILE_ATTRIBUTE_DIRECTORY);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/MoveFileExtend/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/MoveFileExtend/" class="post-title-link" itemprop="url">实习记录/MoveFileExtend</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-17 23:34:19 / 修改时间：23:54:16" itemprop="dateCreated datePublished" datetime="2020-06-17T23:34:19+08:00">2020-06-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-06-17 23:51</p>
-<h2 id="MoveFileExtend"><a href="#MoveFileExtend" class="headerlink" title="MoveFileExtend"></a>MoveFileExtend</h2><h3 id="需求：测试改正代码"><a href="#需求：测试改正代码" class="headerlink" title="需求：测试改正代码"></a>需求：测试改正代码</h3><h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">DWORD <span class="title">MoveFileExtend</span><span class="params">(<span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">wstring</span>&amp; src, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">wstring</span>&amp; dest, <span class="keyword">const</span> <span class="built_in">std</span>::<span class="built_in">wstring</span>&amp; exclude_file, <span class="keyword">int</span> trys,</span></span></span><br><span class="line"><span class="function"><span class="params">	DWORD retry_sleep, <span class="keyword">int</span> fail_copy)</span> </span>&#123;</span><br><span class="line">	WCHAR source_path[MAX_PATH * <span class="number">2</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	WCHAR dest_path[MAX_PATH * <span class="number">2</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	wcscpy_s(source_path, src.c_str());</span><br><span class="line">	wcscpy_s(dest_path, dest.c_str());</span><br><span class="line">	source_path[src.length()] = <span class="string">'\0'</span>;</span><br><span class="line">	source_path[src.length() + <span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">	dest_path[dest.length()] = <span class="string">'\0'</span>;</span><br><span class="line">	dest_path[dest.length() + <span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> try_count = <span class="number">0</span>;</span><br><span class="line">	<span class="comment">//尝试移动</span></span><br><span class="line">	<span class="keyword">while</span> (++try_count &lt;= trys) &#123;</span><br><span class="line">		SHFILEOPSTRUCTW stFileOperatorStruct = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">		stFileOperatorStruct.wFunc = FO_MOVE;</span><br><span class="line">		stFileOperatorStruct.fFlags = FOF_SILENT | FOF_NOERRORUI | FOF_NOCONFIRMATION | FOF_NOCONFIRMMKDIR;</span><br><span class="line">		<span class="comment">//stFileOperatorStruct.fFlags = FOF_RENAMEONCOLLISION;</span></span><br><span class="line">		stFileOperatorStruct.pFrom = source_path;</span><br><span class="line">		stFileOperatorStruct.pTo = dest_path;</span><br><span class="line">		result = SHFileOperationW(&amp;stFileOperatorStruct);</span><br><span class="line">		<span class="keyword">if</span> (ERROR_SUCCESS == result) &#123;</span><br><span class="line">			<span class="comment">//移动成功</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (try_count &lt; trys &amp;&amp; retry_sleep &gt; <span class="number">0</span>) &#123;</span><br><span class="line">			Sleep(retry_sleep);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//如果移动失败  并且失败时复制为true 进入分支</span></span><br><span class="line">	<span class="keyword">if</span> (ERROR_SUCCESS != result &amp;&amp; fail_copy) &#123;</span><br><span class="line">		<span class="comment">// 遍历整个目录, 失败则复制</span></span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">wstring</span> srcRootPath;</span><br><span class="line">		<span class="keyword">if</span> (src.substr(src.length() - <span class="number">2</span>) == <span class="string">L"\\*"</span>) &#123;</span><br><span class="line">			<span class="comment">// 去掉源目录尾部的*通配符</span></span><br><span class="line">			srcRootPath = fs::path(src).parent_path().<span class="built_in">wstring</span>() + <span class="string">L"\\"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (src.substr(src.length() - <span class="number">1</span>) != <span class="string">L"\\"</span>) &#123;</span><br><span class="line">			srcRootPath = src + <span class="string">L"\\"</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			srcRootPath = src;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">//std::wstring exclude_file;</span></span><br><span class="line">		<span class="built_in">std</span>::<span class="built_in">wstring</span> srcRoot = srcRootPath + <span class="string">L"*.*"</span>;</span><br><span class="line">		WIN32_FIND_DATAW fd;</span><br><span class="line">		HANDLE hFind = FindFirstFileW(srcRoot.c_str(), &amp;fd);</span><br><span class="line">		<span class="keyword">if</span> (INVALID_HANDLE_VALUE != hFind) &#123;</span><br><span class="line">			result = ERROR_SUCCESS;</span><br><span class="line">			<span class="keyword">while</span> (FindNextFileW(hFind, &amp;fd)) &#123;</span><br><span class="line">				<span class="comment">//跳过本层和返回上层目录</span></span><br><span class="line">				<span class="keyword">if</span> (wcscmp(fd.cFileName, <span class="string">L"."</span>) == <span class="number">0</span> || wcscmp(fd.cFileName, <span class="string">L".."</span>) == <span class="number">0</span>) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (!exclude_file.empty() &amp;&amp; _wcsicmp(fd.cFileName, exclude_file.c_str()) == <span class="number">0</span>) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="built_in">std</span>::<span class="built_in">wstring</span> srcPath = srcRootPath + fd.cFileName;</span><br><span class="line">				<span class="comment">//std::wstring srcPath = srcRootPath + L'\0';</span></span><br><span class="line">				<span class="built_in">std</span>::<span class="built_in">wstring</span> dstPath = (fs::path(dest) / fd.cFileName).<span class="built_in">wstring</span>();</span><br><span class="line">				<span class="comment">//std::wstring dstPath = (fs::path(dest)).wstring() + L'\0';</span></span><br><span class="line">				<span class="keyword">if</span> (fd.dwFileAttributes &amp; FILE_ATTRIBUTE_DIRECTORY) &#123;</span><br><span class="line">					<span class="comment">// 如果是目录则递归调用</span></span><br><span class="line">					<span class="keyword">int</span> rec_result = MoveFileExtend(srcPath, dstPath,exclude_file, <span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">					<span class="keyword">if</span> (ERROR_SUCCESS != rec_result) &#123;</span><br><span class="line">						result = rec_result;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> &#123;</span><br><span class="line">					<span class="keyword">int</span> rec_result = MoveFileExtend(srcPath, dstPath,exclude_file ,<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span>);</span><br><span class="line">					<span class="keyword">if</span> (ERROR_SUCCESS != rec_result) &#123;</span><br><span class="line">						<span class="comment">// 移动失败则拷贝</span></span><br><span class="line">						SHFILEOPSTRUCTW stFileOperatorStruct = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">						stFileOperatorStruct.wFunc = FO_COPY;</span><br><span class="line">						stFileOperatorStruct.fFlags = FOF_SILENT | FOF_NOERRORUI | FOF_NOCONFIRMATION | FOF_NOCONFIRMMKDIR;</span><br><span class="line">						WCHAR source_path[MAX_PATH] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">						WCHAR dest_path[MAX_PATH] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">						wcscpy_s(source_path, srcPath.c_str());</span><br><span class="line">						wcscpy_s(dest_path, dstPath.c_str());</span><br><span class="line"></span><br><span class="line">						source_path[srcPath.length()] = <span class="string">'\0'</span>;</span><br><span class="line">						source_path[srcPath.length() + <span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">						dest_path[dstPath.length()] = <span class="string">'\0'</span>;</span><br><span class="line">						dest_path[dstPath.length() + <span class="number">1</span>] = <span class="string">'\0'</span>;</span><br><span class="line"></span><br><span class="line">						stFileOperatorStruct.pFrom = source_path;</span><br><span class="line">						stFileOperatorStruct.pTo = dest_path;</span><br><span class="line">						rec_result = SHFileOperationW(&amp;stFileOperatorStruct);</span><br><span class="line">						<span class="keyword">if</span> (ERROR_SUCCESS != rec_result) &#123;</span><br><span class="line">							<span class="comment">//TinyUtils::KillAllProcess(dest_path);</span></span><br><span class="line">							<span class="comment">//TinyUtils::SetFileAuthority(dest_path);</span></span><br><span class="line">							Sleep(<span class="number">10</span>);</span><br><span class="line">							rec_result = SHFileOperationW(&amp;stFileOperatorStruct);</span><br><span class="line">							<span class="keyword">if</span> (ERROR_SUCCESS != rec_result) &#123;</span><br><span class="line">								result = rec_result;</span><br><span class="line">							&#125;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			FindClose(hFind);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul>
-<li>利用SHFileOperationW() 操作文件和文件夹  可以复制 移动 删除</li>
-<li>注意使用SHFileOperationW()的路径必须以两个’\0’结尾否则返回124</li>
-<li>可能移动的文件被占用 利用递归复制可实现移动</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/FileCleaner/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/FileCleaner/" class="post-title-link" itemprop="url">实习记录/FileCleaner</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-17 23:34:18 / 修改时间：23:50:59" itemprop="dateCreated datePublished" datetime="2020-06-17T23:34:18+08:00">2020-06-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-06-17 23:44</p>
-<h2 id="FileCleaner"><a href="#FileCleaner" class="headerlink" title="FileCleaner"></a>FileCleaner</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">给定一个文件夹目录根目录root0，你扫描这个目录下面所有的子文件夹root1，将root1下面的所有子文件夹root2的按照修改时间进行排序，假如文件夹的修改时间与系统时间相差大于M天&amp;&amp;修改时间排序不再前N（最小取值为30）位的文件夹全部删除。</span><br><span class="line">1，加个参数，一个正则表达式，root2 符合此表达式时，才删除。因为我们的目标目录比较重要，要预防误删除，只有符合要求的才删除。</span><br><span class="line">2，加个参数，need_space, 单位G, 当剩余空间大于这个值时，就停止清理。</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> datetime</span><br><span class="line"><span class="keyword">import</span> platform</span><br><span class="line"><span class="keyword">import</span> ctypes</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取参数</span></span><br><span class="line">rootDir = sys.argv[<span class="number">1</span>][<span class="number">6</span>:]</span><br><span class="line">M = int(sys.argv[<span class="number">2</span>][<span class="number">2</span>:])</span><br><span class="line">N = int(sys.argv[<span class="number">3</span>][<span class="number">2</span>:])</span><br><span class="line">dir_format = sys.argv[<span class="number">4</span>][<span class="number">8</span>:]</span><br><span class="line">need_space = sys.argv[<span class="number">5</span>][<span class="number">11</span>:]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_free_space_mb</span><span class="params">(folder)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    获取磁盘剩余空间</span></span><br><span class="line"><span class="string">    :param folder: 磁盘路径 例如 D:\\</span></span><br><span class="line"><span class="string">    :return: 剩余空间 单位 G</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">if</span> platform.system() == <span class="string">'Windows'</span>:</span><br><span class="line">        free_bytes = ctypes.c_ulonglong(<span class="number">0</span>)</span><br><span class="line">        ctypes.windll.kernel32.GetDiskFreeSpaceExW(ctypes.c_wchar_p(folder), <span class="literal">None</span>, <span class="literal">None</span>, ctypes.pointer(free_bytes))</span><br><span class="line">        <span class="keyword">return</span> free_bytes.value / <span class="number">1024</span> / <span class="number">1024</span> // <span class="number">1024</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        st = os.statvfs(folder)</span><br><span class="line">        <span class="keyword">return</span> st.f_bavail * st.f_frsize / <span class="number">1024</span> // <span class="number">1024</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_dir_list</span><span class="params">(root1)</span>:</span></span><br><span class="line">    dir_or_files = os.listdir(root1)</span><br><span class="line">    dir_list = []</span><br><span class="line">    <span class="keyword">for</span> dir_file <span class="keyword">in</span> dir_or_files:</span><br><span class="line">        <span class="comment"># 检测是否符合正则表达式</span></span><br><span class="line">        <span class="keyword">if</span> re.match(dir_format, dir_file):</span><br><span class="line">            root2_path = os.path.join(root1, dir_file)</span><br><span class="line">            <span class="keyword">if</span> os.path.isdir(root2_path):</span><br><span class="line">                ctime = os.path.getmtime(root2_path)</span><br><span class="line">                heapq.heappush(dir_list, (ctime, root2_path))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dir_list</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_time</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 获取当前时间戳</span></span><br><span class="line">    now = datetime.datetime.now()</span><br><span class="line">    d2 = datetime.datetime.strptime(now.strftime(<span class="string">'%Y-%m-%d %H:%M:%S'</span>), <span class="string">'%Y-%m-%d %H:%M:%S'</span>)</span><br><span class="line">    <span class="comment"># 获取M天前时间戳</span></span><br><span class="line">    delta = datetime.timedelta(days=M)</span><br><span class="line">    d1 = d2 - delta</span><br><span class="line">    d1_unix = float(time.mktime(d1.timetuple()))</span><br><span class="line">    <span class="keyword">return</span> d1_unix</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">if</span> os.path.exists(rootDir):</span><br><span class="line">        dir_or_files = os.listdir(rootDir)</span><br><span class="line">        <span class="keyword">for</span> dir_file <span class="keyword">in</span> dir_or_files:</span><br><span class="line">            <span class="comment"># 获取目录或者文件的路径</span></span><br><span class="line">            root1_path = os.path.join(rootDir, dir_file)</span><br><span class="line">            <span class="comment"># 判断该路径为文件还是路径</span></span><br><span class="line">            <span class="keyword">if</span> os.path.isdir(root1_path):</span><br><span class="line">                <span class="comment"># 获取文件夹列表</span></span><br><span class="line">                dir_list = get_dir_list(root1_path)</span><br><span class="line">                <span class="comment"># 获取修改时间分界点</span></span><br><span class="line">                time_to_delete = get_time()</span><br><span class="line">                <span class="comment"># 遍历最早的前N个目录</span></span><br><span class="line">                <span class="comment"># for i in range(min(N, size)):</span></span><br><span class="line">                <span class="keyword">while</span> len(dir_list) &gt; N:</span><br><span class="line">                    dir = heapq.heappop(dir_list)</span><br><span class="line">                    free_space = get_free_space_mb(<span class="string">"D:\\"</span>)</span><br><span class="line">                    <span class="comment"># 检查空间是否充足</span></span><br><span class="line">                    <span class="keyword">if</span> free_space &gt; float(need_space):</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="comment"># 如果目录的修改时间在M天之前</span></span><br><span class="line">                    <span class="keyword">if</span> dir[<span class="number">0</span>] &lt; time_to_delete:</span><br><span class="line">                        <span class="comment"># 删除目录和目录下文件</span></span><br><span class="line">                        <span class="keyword">for</span> root, dirs, files <span class="keyword">in</span> os.walk(dir[<span class="number">1</span>], topdown=<span class="literal">False</span>):</span><br><span class="line">                            <span class="keyword">for</span> name <span class="keyword">in</span> files:</span><br><span class="line">                                os.remove(os.path.join(root, name))</span><br><span class="line">                            <span class="keyword">for</span> name <span class="keyword">in</span> dirs:</span><br><span class="line">                                os.rmdir(os.path.join(root, name))</span><br><span class="line">                        os.rmdir(dir[<span class="number">1</span>])</span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">        print(<span class="string">"删除完成"</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(<span class="string">"文件目录不存在！"</span>)</span><br><span class="line">        exit(<span class="number">-1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h2><ul>
-<li>获取磁盘的剩余空间</li>
-<li>遍历文件夹  os.listdir</li>
-<li>简单的使用正则表达式</li>
-<li>自动递归遍历获取文件夹下信息  os.walk()</li>
-<li>删除文件夹和文件    os.rmdir   和  os.remove  </li>
-<li>获取几天前的时间戳</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/WGdebug/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="彭鸿鑫">
-      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="phx 的博客">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/06/17/%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95/WGdebug/" class="post-title-link" itemprop="url">实习记录/WGdebug</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-              
-
-              <time title="创建时间：2020-06-17 23:33:46 / 修改时间：23:41:58" itemprop="dateCreated datePublished" datetime="2020-06-17T23:33:46+08:00">2020-06-17</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>date: 2020-06-17 23:35</p>
-<h2 id="WGdebug"><a href="#WGdebug" class="headerlink" title="WGdebug"></a>WGdebug</h2><h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">背景：</span><br><span class="line">目前WeGame的浏览器qblink调试需要配置3个文件（wgdebug.txt、qbsetting.ini、devtools_resources.pak），页面同事跟踪外网问题不方便，期望能制作一个工具支持自动识别WeGame安装路径，并支持一键生成与清理调试配置文件。</span><br><span class="line"></span><br><span class="line">PS：</span><br><span class="line">手动生成调试文件步骤如下：</span><br><span class="line">1. 在 C 盘中新建一个名为 wgdebug.txt 的空文件，</span><br><span class="line">2. 下载附件中的 devtools_resources.pak ，放到当前使用的 wegame 安装目录下的 QBBlinkTrial 文件夹中。</span><br><span class="line">3. 将wegame 安装目录下的 QBBlinkTrial 文件夹中原有的 qb_setting.ini备份命名为 qb_setting_back.ini，然后将附件中的  qb_setting.ini 放置进去。</span><br><span class="line"></span><br><span class="line">手动清理步骤如下：</span><br><span class="line">1、删除C盘wgdebug.txt </span><br><span class="line">2、还原QBBlinkTrial 下的qb_setting.ini</span><br><span class="line">3、删除 devtools_resources.pak</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">需求：</span><br><span class="line">1、编写一个MFC界面程序，点击【生成调试文件】，则执行上述手动操作步骤。点击【清理调试文件】，则执行上述清理步骤。WeGame安装目录可认为是当前exe所在目录。</span><br><span class="line">2、编写一个文件打包程序，能够将以上三个文件以及文件的描述（用一个数据结果描述三个文件的名称、大小、md5信息）自动添加到MFC界面程序的末尾，点击【生成调试文件】时MFC程序自动从文件末尾解析出这三个文件的内容。</span><br><span class="line">3、根据注册表自动识别WeGame安装路径，支持用户手动选择WeGame安装路径。</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br><span class="line">563</span><br><span class="line">564</span><br><span class="line">565</span><br><span class="line">566</span><br><span class="line">567</span><br><span class="line">568</span><br><span class="line">569</span><br><span class="line">570</span><br><span class="line">571</span><br><span class="line">572</span><br><span class="line">573</span><br><span class="line">574</span><br><span class="line">575</span><br><span class="line">576</span><br><span class="line">577</span><br><span class="line">578</span><br><span class="line">579</span><br><span class="line">580</span><br><span class="line">581</span><br><span class="line">582</span><br><span class="line">583</span><br><span class="line">584</span><br><span class="line">585</span><br><span class="line">586</span><br><span class="line">587</span><br><span class="line">588</span><br><span class="line">589</span><br><span class="line">590</span><br><span class="line">591</span><br><span class="line">592</span><br><span class="line">593</span><br><span class="line">594</span><br><span class="line">595</span><br><span class="line">596</span><br><span class="line">597</span><br><span class="line">598</span><br><span class="line">599</span><br><span class="line">600</span><br><span class="line">601</span><br><span class="line">602</span><br><span class="line">603</span><br><span class="line">604</span><br><span class="line">605</span><br><span class="line">606</span><br><span class="line">607</span><br><span class="line">608</span><br><span class="line">609</span><br><span class="line">610</span><br><span class="line">611</span><br><span class="line">612</span><br><span class="line">613</span><br><span class="line">614</span><br><span class="line">615</span><br><span class="line">616</span><br><span class="line">617</span><br><span class="line">618</span><br><span class="line">619</span><br><span class="line">620</span><br><span class="line">621</span><br><span class="line">622</span><br><span class="line">623</span><br><span class="line">624</span><br><span class="line">625</span><br><span class="line">626</span><br><span class="line">627</span><br><span class="line">628</span><br><span class="line">629</span><br><span class="line">630</span><br><span class="line">631</span><br><span class="line">632</span><br><span class="line">633</span><br><span class="line">634</span><br><span class="line">635</span><br><span class="line">636</span><br><span class="line">637</span><br><span class="line">638</span><br><span class="line">639</span><br><span class="line">640</span><br><span class="line">641</span><br><span class="line">642</span><br><span class="line">643</span><br><span class="line">644</span><br><span class="line">645</span><br><span class="line">646</span><br><span class="line">647</span><br><span class="line">648</span><br><span class="line">649</span><br><span class="line">650</span><br><span class="line">651</span><br><span class="line">652</span><br><span class="line">653</span><br><span class="line">654</span><br><span class="line">655</span><br><span class="line">656</span><br><span class="line">657</span><br><span class="line">658</span><br><span class="line">659</span><br><span class="line">660</span><br><span class="line">661</span><br><span class="line">662</span><br><span class="line">663</span><br><span class="line">664</span><br><span class="line">665</span><br><span class="line">666</span><br><span class="line">667</span><br><span class="line">668</span><br><span class="line">669</span><br><span class="line">670</span><br><span class="line">671</span><br><span class="line">672</span><br><span class="line">673</span><br><span class="line">674</span><br><span class="line">675</span><br><span class="line">676</span><br><span class="line">677</span><br><span class="line">678</span><br><span class="line">679</span><br><span class="line">680</span><br><span class="line">681</span><br><span class="line">682</span><br><span class="line">683</span><br><span class="line">684</span><br><span class="line">685</span><br><span class="line">686</span><br><span class="line">687</span><br><span class="line">688</span><br><span class="line">689</span><br><span class="line">690</span><br><span class="line">691</span><br><span class="line">692</span><br><span class="line">693</span><br><span class="line">694</span><br><span class="line">695</span><br><span class="line">696</span><br><span class="line">697</span><br><span class="line">698</span><br><span class="line">699</span><br><span class="line">700</span><br><span class="line">701</span><br><span class="line">702</span><br><span class="line">703</span><br><span class="line">704</span><br><span class="line">705</span><br><span class="line">706</span><br><span class="line">707</span><br><span class="line">708</span><br><span class="line">709</span><br><span class="line">710</span><br><span class="line">711</span><br><span class="line">712</span><br><span class="line">713</span><br><span class="line">714</span><br><span class="line">715</span><br><span class="line">716</span><br><span class="line">717</span><br><span class="line">718</span><br><span class="line">719</span><br><span class="line">720</span><br><span class="line">721</span><br><span class="line">722</span><br><span class="line">723</span><br><span class="line">724</span><br><span class="line">725</span><br><span class="line">726</span><br><span class="line">727</span><br><span class="line">728</span><br><span class="line">729</span><br><span class="line">730</span><br><span class="line">731</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// WGdebug.cpp : 定义应用程序的入口点。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"framework.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"WGdebug.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"windows.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"tchar.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;Shlobj.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;io.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"commctrl.h"</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX_LOADSTRING 100</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> UNINSTALL_SOFT _T(<span class="meta-string">"SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Uninstall"</span>)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> DEBUG_LOCATION _T(<span class="meta-string">"C:\\wgdebug.txt"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 全局变量:</span></span><br><span class="line">HINSTANCE hInst;                                <span class="comment">// 当前实例</span></span><br><span class="line">WCHAR szTitle[MAX_LOADSTRING];                  <span class="comment">// 标题栏文本</span></span><br><span class="line">WCHAR szWindowClass[MAX_LOADSTRING];            <span class="comment">// 主窗口类名</span></span><br><span class="line"></span><br><span class="line">HWND hEditor = <span class="literal">NULL</span>;</span><br><span class="line">HWND hWnd = <span class="literal">NULL</span>;</span><br><span class="line">HWND hLabel = <span class="literal">NULL</span>;</span><br><span class="line">HWND h_BUTTON_Loc = <span class="literal">NULL</span>;</span><br><span class="line">HWND hButtonWnd_Gen = <span class="literal">NULL</span>;</span><br><span class="line">HWND hButtonWnd_Del = <span class="literal">NULL</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">CONST UINT IDC_BUTTON_Gen = <span class="number">1</span>;						<span class="comment">//生成测试文件的按钮标号</span></span><br><span class="line">CONST UINT IDC_BUTTON_Del = <span class="number">2</span>;						<span class="comment">//清理测试文件的按钮标号</span></span><br><span class="line">CONST UINT IDC_EDITOR = <span class="number">3</span>;</span><br><span class="line">CONST UINT IDC_BUTTON_Loc = <span class="number">4</span>;</span><br><span class="line">CONST UINT IDC_STATIC_PATH = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">CONST <span class="keyword">int</span> Screen_W = GetSystemMetrics(SM_CXSCREEN);</span><br><span class="line">CONST <span class="keyword">int</span> Screen_H = GetSystemMetrics(SM_CYSCREEN);</span><br><span class="line"></span><br><span class="line">TCHAR location[MAX_PATH] = _T(<span class="string">""</span>);							<span class="comment">//存储wg安装地址</span></span><br><span class="line"><span class="keyword">int</span> szLocation = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 此代码模块中包含的函数的前向声明:</span></span><br><span class="line"><span class="function">ATOM                <span class="title">MyRegisterClass</span><span class="params">(HINSTANCE hInstance)</span></span>;</span><br><span class="line"><span class="function">BOOL                <span class="title">InitInstance</span><span class="params">(HINSTANCE, <span class="keyword">int</span>)</span></span>;</span><br><span class="line"><span class="function">LRESULT CALLBACK    <span class="title">WndProc</span><span class="params">(HWND, UINT, WPARAM, LPARAM)</span></span>;</span><br><span class="line"><span class="function">BOOL <span class="title">CreateDebug</span><span class="params">(<span class="keyword">const</span> HWND&amp; hWnd)</span></span>;</span><br><span class="line"><span class="function">BOOL <span class="title">WriteRes</span><span class="params">(<span class="keyword">const</span> HWND&amp; hWnd, <span class="keyword">int</span> pak_or_ini)</span></span>;</span><br><span class="line"><span class="function">BOOL <span class="title">Backup_setting</span><span class="params">(<span class="keyword">const</span> HWND&amp; hWnd)</span></span>;</span><br><span class="line"><span class="function">INT_PTR CALLBACK    <span class="title">About</span><span class="params">(HWND, UINT, WPARAM, LPARAM)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function">BOOL <span class="title">getLocation</span><span class="params">()</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateUI</span><span class="params">(HWND&amp; hWnd)</span></span>;</span><br><span class="line"><span class="function">BOOL <span class="title">DumpSoftware</span><span class="params">(LPCTSTR szKey, HKEY hParent)</span></span>;</span><br><span class="line"><span class="function">LRESULT <span class="title">GetValue</span><span class="params">(HKEY hKey, LPCTSTR name, LPTSTR value, LPLONG <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setLocation</span><span class="params">(TCHAR lo[], <span class="keyword">int</span> <span class="built_in">size</span>)</span></span>;</span><br><span class="line"><span class="function">BOOL <span class="title">FindFirstFileExists</span><span class="params">(LPCTSTR lpPath, DWORD dwFilter)</span></span>;</span><br><span class="line"><span class="function">BOOL <span class="title">FilePathExists</span><span class="params">(LPCTSTR lpPath)</span></span>;</span><br><span class="line"><span class="function">BOOL <span class="title">FolderExists</span><span class="params">(LPCTSTR lpPath)</span></span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetFont</span><span class="params">()</span></span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> APIENTRY <span class="title">wWinMain</span><span class="params">(_In_ HINSTANCE hInstance,</span></span></span><br><span class="line"><span class="function"><span class="params">	_In_opt_ HINSTANCE hPrevInstance,</span></span></span><br><span class="line"><span class="function"><span class="params">	_In_ LPWSTR    lpCmdLine,</span></span></span><br><span class="line"><span class="function"><span class="params">	_In_ <span class="keyword">int</span>       nCmdShow)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	UNREFERENCED_PARAMETER(hPrevInstance);</span><br><span class="line">	UNREFERENCED_PARAMETER(lpCmdLine);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// <span class="doctag">TODO:</span> 在此处放置代码。</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 初始化全局字符串</span></span><br><span class="line">	LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);</span><br><span class="line">	LoadStringW(hInstance, IDC_WGDEBUG, szWindowClass, MAX_LOADSTRING);</span><br><span class="line">	MyRegisterClass(hInstance);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 执行应用程序初始化:</span></span><br><span class="line">	<span class="keyword">if</span> (!InitInstance(hInstance, nCmdShow))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> FALSE;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WGDEBUG));</span><br><span class="line"></span><br><span class="line">	MSG msg;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 主消息循环:</span></span><br><span class="line">	<span class="keyword">while</span> (GetMessage(&amp;msg, <span class="literal">nullptr</span>, <span class="number">0</span>, <span class="number">0</span>))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (!TranslateAccelerator(msg.hwnd, hAccelTable, &amp;msg))</span><br><span class="line">		&#123;</span><br><span class="line">			TranslateMessage(&amp;msg);</span><br><span class="line">			DispatchMessage(&amp;msg);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">int</span>)msg.wParam;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  函数: MyRegisterClass()</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  目标: 注册窗口类。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="function">ATOM <span class="title">MyRegisterClass</span><span class="params">(HINSTANCE hInstance)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	WNDCLASSEXW wcex;</span><br><span class="line"></span><br><span class="line">	wcex.cbSize = <span class="keyword">sizeof</span>(WNDCLASSEX);</span><br><span class="line"></span><br><span class="line">	wcex.style = CS_HREDRAW | CS_VREDRAW;</span><br><span class="line">	wcex.lpfnWndProc = WndProc;</span><br><span class="line">	wcex.cbClsExtra = <span class="number">0</span>;</span><br><span class="line">	wcex.cbWndExtra = <span class="number">0</span>;</span><br><span class="line">	wcex.hInstance = hInstance;</span><br><span class="line">	wcex.hIcon = LoadIcon(hInstance, MAKEINTRESOURCE(IDI_WGDEBUG));</span><br><span class="line">	wcex.hCursor = LoadCursor(<span class="literal">nullptr</span>, IDC_ARROW);</span><br><span class="line">	wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + <span class="number">1</span>);</span><br><span class="line">	wcex.lpszMenuName = MAKEINTRESOURCEW(IDC_WGDEBUG);</span><br><span class="line">	wcex.lpszClassName = szWindowClass;</span><br><span class="line">	wcex.hIconSm = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> RegisterClassExW(&amp;wcex);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//   函数: InitInstance(HINSTANCE, int)</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//   目标: 保存实例句柄并创建主窗口</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//   注释:</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//        在此函数中，我们在全局变量中保存实例句柄并</span></span><br><span class="line"><span class="comment">//        创建和显示主程序窗口。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="function">BOOL <span class="title">InitInstance</span><span class="params">(HINSTANCE hInstance, <span class="keyword">int</span> nCmdShow)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	hInst = hInstance; <span class="comment">// 将实例句柄存储在全局变量中</span></span><br><span class="line"></span><br><span class="line">	hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,</span><br><span class="line">		CW_USEDEFAULT, <span class="number">0</span>, Screen_W / <span class="number">2.8</span>, Screen_H / <span class="number">3</span>, <span class="literal">nullptr</span>, <span class="literal">nullptr</span>, hInstance, <span class="literal">nullptr</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!hWnd)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> FALSE;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	ShowWindow(hWnd, nCmdShow);</span><br><span class="line">	UpdateWindow(hWnd);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> TRUE;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  函数: WndProc(HWND, UINT, WPARAM, LPARAM)</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  目标: 处理主窗口的消息。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//  WM_COMMAND  - 处理应用程序菜单</span></span><br><span class="line"><span class="comment">//  WM_PAINT    - 绘制主窗口</span></span><br><span class="line"><span class="comment">//  WM_DESTROY  - 发送退出消息并返回</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="function">LRESULT CALLBACK <span class="title">WndProc</span><span class="params">(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">switch</span> (message)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> WM_CREATE:</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//创建界面需要的控件</span></span><br><span class="line">		CreateUI(hWnd);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> WM_COMMAND:</span><br><span class="line">	&#123;</span><br><span class="line">		UINT wmId = LOWORD(wParam);</span><br><span class="line">		UINT nCode = HIWORD(wParam);</span><br><span class="line">		<span class="comment">// 分析菜单选择:</span></span><br><span class="line">		<span class="keyword">switch</span> (wmId)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> IDM_ABOUT:</span><br><span class="line">			DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> IDM_EXIT:</span><br><span class="line">			DestroyWindow(hWnd);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> IDC_BUTTON_Gen:</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (nCode == BN_CLICKED)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//增加debug.txt</span></span><br><span class="line">				<span class="keyword">if</span> (!CreateDebug(hWnd))</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				<span class="comment">//增加devtool</span></span><br><span class="line">				<span class="keyword">if</span> (!WriteRes(hWnd, <span class="number">0</span>))</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				<span class="comment">//备份qb_setting</span></span><br><span class="line">				<span class="keyword">if</span> (!Backup_setting(hWnd))</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				<span class="comment">//增加qb_setting</span></span><br><span class="line">				<span class="keyword">if</span> (!WriteRes(hWnd, <span class="number">1</span>))</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				MessageBox(hWnd, _T(<span class="string">"生成调试工具成功!"</span>), _T(<span class="string">"Tip"</span>), MB_OK);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> IDC_BUTTON_Del:</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (nCode == BN_CLICKED)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span> (FilePathExists(DEBUG_LOCATION))</span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span> (!DeleteFile(DEBUG_LOCATION))</span><br><span class="line">					&#123;</span><br><span class="line">						MessageBox(hWnd, _T(<span class="string">"删除 debug.txt 失败！"</span>), _T(<span class="string">"Tip"</span>), MB_OK | MB_ICONERROR);</span><br><span class="line">						<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				TCHAR* desFile = <span class="keyword">new</span> TCHAR[szLocation + <span class="number">70</span>];</span><br><span class="line">				desFile[<span class="number">0</span>] = _T(<span class="string">'\0'</span>);</span><br><span class="line">				lstrcat(desFile, location);</span><br><span class="line">				lstrcat(desFile, _T(<span class="string">"\\QBBlinkTrial\\devtools_resources.pak"</span>));</span><br><span class="line">				<span class="keyword">if</span> (FilePathExists(desFile) &amp;&amp; !DeleteFile(desFile))</span><br><span class="line">				&#123;</span><br><span class="line">					MessageBox(hWnd, _T(<span class="string">"删除 devtools_resources.pak 失败！"</span>), _T(<span class="string">"Tip"</span>), MB_OK | MB_ICONERROR);</span><br><span class="line"></span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				<span class="comment">//还原备份文件</span></span><br><span class="line"></span><br><span class="line">				TCHAR* souFile = <span class="keyword">new</span> TCHAR[szLocation + <span class="number">70</span>];</span><br><span class="line">				souFile[<span class="number">0</span>] = _T(<span class="string">'\0'</span>);</span><br><span class="line">				lstrcat(souFile, location);</span><br><span class="line">				lstrcat(souFile, _T(<span class="string">"\\QBBlinkTrial\\qb_setting_back.ini"</span>));</span><br><span class="line"></span><br><span class="line">				ZeroMemory(desFile, <span class="keyword">sizeof</span>(desFile));</span><br><span class="line">				desFile[<span class="number">0</span>] = _T(<span class="string">'\0'</span>);</span><br><span class="line">				lstrcat(desFile, location);</span><br><span class="line">				lstrcat(desFile, _T(<span class="string">"\\QBBlinkTrial\\qb_setting.ini"</span>));</span><br><span class="line"></span><br><span class="line">				<span class="keyword">if</span> (FilePathExists(souFile))			<span class="comment">//没找到备份文件 不能删除 否则导致丢失</span></span><br><span class="line">				&#123;</span><br><span class="line">					<span class="keyword">if</span> (!DeleteFile(desFile))</span><br><span class="line">					&#123;</span><br><span class="line">						MessageBox(hWnd, _T(<span class="string">"删除 qb_setting.ini 失败！"</span>), _T(<span class="string">"Tip"</span>), MB_OK | MB_ICONERROR);</span><br><span class="line">						<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">if</span> (!MoveFile(souFile, desFile))</span><br><span class="line">					&#123;</span><br><span class="line">						MessageBox(hWnd, _T(<span class="string">"还原备份 失败！"</span>), _T(<span class="string">"Tip"</span>), MB_OK | MB_ICONERROR);</span><br><span class="line">						<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span></span><br><span class="line">				&#123;</span><br><span class="line">					MessageBox(hWnd, _T(<span class="string">"找不到qb_setting_back.ini！\n未进行备份还原！"</span>), _T(<span class="string">"Tip"</span>), MB_OK | MB_ICONWARNING);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">delete</span>[]souFile;</span><br><span class="line">				<span class="keyword">delete</span>[]desFile;</span><br><span class="line">				MessageBox(hWnd, _T(<span class="string">"删除调试工具完成！"</span>), _T(<span class="string">"Tip"</span>), MB_OK);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> IDC_BUTTON_Loc:</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (nCode == BN_CLICKED)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//TCHAR szBuffer[MAX_PATH] = &#123; 0 &#125;;</span></span><br><span class="line">				TCHAR szBuffer[MAX_PATH];</span><br><span class="line">				BROWSEINFO bi = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">				bi.hwndOwner = hWnd;</span><br><span class="line">				bi.pszDisplayName = szBuffer;<span class="comment">//接收文件夹的缓冲区</span></span><br><span class="line">				bi.lpszTitle = TEXT(<span class="string">"选择一个文件夹"</span>);<span class="comment">//标题</span></span><br><span class="line">				bi.ulFlags = BIF_NEWDIALOGSTYLE;</span><br><span class="line">				LPITEMIDLIST idl = SHBrowseForFolder(&amp;bi);</span><br><span class="line">				<span class="keyword">if</span> (SHGetPathFromIDList(idl, szBuffer)) &#123;</span><br><span class="line">					<span class="comment">//选择了选件夹</span></span><br><span class="line">					ZeroMemory(location, <span class="keyword">sizeof</span>(location));</span><br><span class="line">					_tcscpy(location, szBuffer);</span><br><span class="line">					szLocation = <span class="number">0</span>;</span><br><span class="line">					<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">					&#123;</span><br><span class="line">						<span class="keyword">wchar_t</span> ch = szBuffer[szLocation++];</span><br><span class="line">						<span class="keyword">if</span> (ch == <span class="string">'\0'</span>)</span><br><span class="line">						&#123;</span><br><span class="line">							<span class="keyword">break</span>;</span><br><span class="line">						&#125;</span><br><span class="line">						<span class="keyword">if</span> (szLocation == <span class="number">260</span>)</span><br><span class="line">						&#123;</span><br><span class="line">							MessageBox(hWnd, _T(<span class="string">"文件目录长度过长！"</span>), _T(<span class="string">"Tip"</span>), MB_OK);</span><br><span class="line">							<span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">						&#125;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">int</span> len = szLocation * Screen_W / <span class="number">200</span>;</span><br><span class="line">					<span class="comment">//SetWindowPos(hEditor, HWND_TOPMOST, 260, 50, len, 30, SWP_NOZORDER | SWP_NOMOVE);</span></span><br><span class="line">					MoveWindow(hEditor, Screen_W / <span class="number">7.7</span>, Screen_H / <span class="number">20</span>, len, Screen_H / <span class="number">50</span>, <span class="literal">true</span>);</span><br><span class="line">					<span class="keyword">int</span> error = GetLastError();</span><br><span class="line">					SetWindowText(hEditor, location);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="keyword">return</span> DefWindowProc(hWnd, message, wParam, lParam);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> WM_PAINT:</span><br><span class="line">	&#123;</span><br><span class="line">		PAINTSTRUCT ps;</span><br><span class="line">		HDC hdc = BeginPaint(hWnd, &amp;ps);</span><br><span class="line">		<span class="comment">// <span class="doctag">TODO:</span> 在此处添加使用 hdc 的任何绘图代码...</span></span><br><span class="line">		EndPaint(hWnd, &amp;ps);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> WM_DESTROY:</span><br><span class="line">		PostQuitMessage(<span class="number">0</span>);</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		<span class="keyword">return</span> DefWindowProc(hWnd, message, wParam, lParam);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">BOOL <span class="title">CreateDebug</span><span class="params">(<span class="keyword">const</span> HWND&amp; hWnd)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!FilePathExists(DEBUG_LOCATION))</span><br><span class="line">	&#123;</span><br><span class="line">		HANDLE hFile = CreateFile((LPTSTR)DEBUG_LOCATION,</span><br><span class="line">			GENERIC_ALL, FILE_SHARE_WRITE, <span class="literal">NULL</span>,</span><br><span class="line">			CREATE_NEW, FILE_ATTRIBUTE_NORMAL, <span class="literal">NULL</span>);</span><br><span class="line">		<span class="keyword">if</span> (hFile == INVALID_HANDLE_VALUE)</span><br><span class="line">		&#123;</span><br><span class="line">			DWORD erro = GetLastError();</span><br><span class="line">			TCHAR msg[<span class="number">100</span>];</span><br><span class="line">			_stprintf(msg, _T(<span class="string">"生成调试工具失败！\n创建debug.txt 失败！\n错误码为%d"</span>), erro);</span><br><span class="line">			MessageBox(hWnd, msg, _T(<span class="string">"Tip"</span>), MB_OK | MB_ICONERROR);</span><br><span class="line"></span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		CloseHandle(hFile);</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">BOOL <span class="title">WriteRes</span><span class="params">(<span class="keyword">const</span> HWND&amp; hWnd, <span class="keyword">int</span> pak_or_ini)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//拓展路径</span></span><br><span class="line">	TCHAR* desFile = <span class="keyword">new</span> TCHAR[szLocation + <span class="number">70</span>];</span><br><span class="line">	desFile[<span class="number">0</span>] = _T(<span class="string">'\0'</span>);</span><br><span class="line">	lstrcat(desFile, location);</span><br><span class="line">	HRSRC hRes = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span> (pak_or_ini == <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		lstrcat(desFile, _T(<span class="string">"\\QBBlinkTrial\\devtools_resources.pak"</span>));</span><br><span class="line">		hRes = FindResource(<span class="literal">NULL</span>, MAKEINTRESOURCE(IDR_PAK1), _T(<span class="string">"PAK"</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		lstrcat(desFile, _T(<span class="string">"\\QBBlinkTrial\\qb_setting.ini"</span>));</span><br><span class="line">		hRes = FindResource(<span class="literal">NULL</span>, MAKEINTRESOURCE(IDR_INI1), _T(<span class="string">"INI"</span>));</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (hRes)</span><br><span class="line">	&#123;</span><br><span class="line">		HGLOBAL hGL = LoadResource(<span class="literal">NULL</span>, hRes);</span><br><span class="line">		<span class="keyword">if</span> (hGL)</span><br><span class="line">		&#123;</span><br><span class="line">			LPVOID lpResource = LockResource(hGL);</span><br><span class="line">			<span class="keyword">if</span> (lpResource)</span><br><span class="line">			&#123;</span><br><span class="line">				HANDLE hFile = CreateFile(desFile, GENERIC_WRITE, <span class="number">0</span>, <span class="literal">NULL</span>, CREATE_ALWAYS, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">				<span class="keyword">if</span> (hFile)</span><br><span class="line">				&#123;</span><br><span class="line">					DWORD dwBytesWritten;</span><br><span class="line">					<span class="keyword">if</span> (WriteFile(hFile, lpResource, SizeofResource(<span class="literal">NULL</span>, hRes), &amp;dwBytesWritten, <span class="literal">NULL</span>))</span><br><span class="line">					&#123;</span><br><span class="line">						CloseHandle(hFile);</span><br><span class="line">						FreeResource(hGL);</span><br><span class="line">						<span class="keyword">delete</span>[] desFile;</span><br><span class="line">						<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span> <span class="keyword">if</span> (pak_or_ini == <span class="number">0</span>) &#123;</span><br><span class="line">						MessageBox(hWnd, _T(<span class="string">"写入devtools_resources.pak 失败！"</span>), _T(<span class="string">"Tip"</span>), MB_OK | MB_ICONERROR);</span><br><span class="line">					&#125;</span><br><span class="line">					<span class="keyword">else</span></span><br><span class="line">					&#123;</span><br><span class="line">						MessageBox(hWnd, _T(<span class="string">"写入qb_setting.ini 失败！"</span>), _T(<span class="string">"Tip"</span>), MB_OK | MB_ICONERROR);</span><br><span class="line">					&#125;</span><br><span class="line">					CloseHandle(hFile);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			FreeResource(hGL);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">delete</span>[] desFile;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">BOOL <span class="title">Backup_setting</span><span class="params">(<span class="keyword">const</span> HWND&amp; hWnd)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//备份文件</span></span><br><span class="line">	TCHAR* souFile = <span class="keyword">new</span> TCHAR[szLocation + <span class="number">70</span>];</span><br><span class="line">	souFile[<span class="number">0</span>] = _T(<span class="string">'\0'</span>);</span><br><span class="line">	lstrcat(souFile, location);</span><br><span class="line">	lstrcat(souFile, _T(<span class="string">"\\QBBlinkTrial\\qb_setting.ini"</span>));</span><br><span class="line"></span><br><span class="line">	TCHAR* desFile = <span class="keyword">new</span> TCHAR[szLocation + <span class="number">70</span>];</span><br><span class="line">	desFile[<span class="number">0</span>] = _T(<span class="string">'\0'</span>);</span><br><span class="line">	lstrcat(desFile, location);</span><br><span class="line">	lstrcat(desFile, _T(<span class="string">"\\QBBlinkTrial\\qb_setting_back.ini"</span>));</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!FilePathExists(souFile))</span><br><span class="line">	&#123;</span><br><span class="line">		MessageBox(hWnd, _T(<span class="string">"备份文件失败\nWeGame\\QBBlinkTrial\\qb_setting.ini 不存在！"</span>), _T(<span class="string">"Tip"</span>), MB_OK | MB_ICONERROR);</span><br><span class="line">		<span class="keyword">delete</span>[] souFile;</span><br><span class="line">		<span class="keyword">delete</span>[] desFile;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span> (FilePathExists(desFile))</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">delete</span>[] souFile;</span><br><span class="line">		<span class="keyword">delete</span>[] desFile;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!MoveFile(souFile, desFile))</span><br><span class="line">	&#123;</span><br><span class="line">		MessageBox(hWnd, _T(<span class="string">"备份文件失败"</span>), _T(<span class="string">"Tip"</span>), MB_OK | MB_ICONERROR);</span><br><span class="line">		<span class="keyword">delete</span>[] souFile;</span><br><span class="line">		<span class="keyword">delete</span>[] desFile;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">delete</span>[] souFile;</span><br><span class="line">	<span class="keyword">delete</span>[] desFile;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">CreateUI</span><span class="params">(HWND&amp; hWnd)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	hLabel = CreateWindow(</span><br><span class="line">		WC_STATIC,</span><br><span class="line">		_T(<span class="string">"【WeGame安装目录】"</span>),</span><br><span class="line">		WS_CHILD | WS_VISIBLE,</span><br><span class="line">		Screen_W / <span class="number">20</span>,</span><br><span class="line">		Screen_H / <span class="number">20</span>,</span><br><span class="line">		Screen_W / <span class="number">11</span>,</span><br><span class="line">		Screen_H / <span class="number">50</span>,</span><br><span class="line">		hWnd,</span><br><span class="line">		(HMENU)IDC_STATIC_PATH,</span><br><span class="line">		<span class="literal">NULL</span>,</span><br><span class="line">		<span class="literal">NULL</span></span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//获取wegame目录地址</span></span><br><span class="line">	getLocation();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> len = szLocation * Screen_W / <span class="number">200</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//增加一个框显示WG地址</span></span><br><span class="line">	hEditor = CreateWindow(</span><br><span class="line">		WC_STATIC,</span><br><span class="line">		location,</span><br><span class="line">		WS_CHILD | WS_VISIBLE,</span><br><span class="line">		Screen_W / <span class="number">7.7</span>,</span><br><span class="line">		Screen_H / <span class="number">20</span>,</span><br><span class="line">		len,</span><br><span class="line">		Screen_H / <span class="number">50</span>,</span><br><span class="line">		hWnd,</span><br><span class="line">		(HMENU)IDC_EDITOR,</span><br><span class="line">		<span class="literal">NULL</span>,</span><br><span class="line">		<span class="literal">NULL</span></span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//增加按钮修改WG目录</span></span><br><span class="line">	h_BUTTON_Loc = CreateWindow(</span><br><span class="line">		WC_BUTTON,</span><br><span class="line">		_T(<span class="string">"【选择安装路径】"</span>),</span><br><span class="line">		WS_CHILD | WS_VISIBLE | WS_BORDER,</span><br><span class="line">		Screen_W / <span class="number">20</span>,</span><br><span class="line">		Screen_H / <span class="number">10</span>,</span><br><span class="line">		Screen_W / <span class="number">16</span>,</span><br><span class="line">		Screen_H / <span class="number">32</span>,</span><br><span class="line">		hWnd,</span><br><span class="line">		(HMENU)IDC_BUTTON_Loc,</span><br><span class="line">		<span class="literal">NULL</span>,</span><br><span class="line">		<span class="literal">NULL</span></span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">	hButtonWnd_Gen = CreateWindow(</span><br><span class="line">		WC_BUTTON,													<span class="comment">//按钮</span></span><br><span class="line">		_T(<span class="string">"【生成调试文件】"</span>),										<span class="comment">//按钮上的文字</span></span><br><span class="line">		WS_CHILD | WS_BORDER | WS_VISIBLE | BS_PUSHBUTTON,			<span class="comment">//windows style</span></span><br><span class="line">		<span class="number">3</span> * Screen_W / <span class="number">20</span>,</span><br><span class="line">		Screen_H / <span class="number">10</span>,</span><br><span class="line">		Screen_W / <span class="number">16</span>,</span><br><span class="line">		Screen_H / <span class="number">32</span>,</span><br><span class="line">		hWnd,														<span class="comment">//父窗口句柄</span></span><br><span class="line">		(HMENU)IDC_BUTTON_Gen,										<span class="comment">//按钮的标号</span></span><br><span class="line">		<span class="literal">NULL</span>,</span><br><span class="line">		<span class="literal">NULL</span></span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">	hButtonWnd_Del = CreateWindow(</span><br><span class="line">		WC_BUTTON,													<span class="comment">//按钮</span></span><br><span class="line">		_T(<span class="string">"【清理调试文件】"</span>),										<span class="comment">//按钮上的文字</span></span><br><span class="line">		WS_CHILD | WS_BORDER | WS_VISIBLE | BS_PUSHBUTTON,			<span class="comment">//windows style</span></span><br><span class="line">		<span class="number">5</span> * Screen_W / <span class="number">20</span>,</span><br><span class="line">		Screen_H / <span class="number">10</span>,</span><br><span class="line">		Screen_W / <span class="number">16</span>,</span><br><span class="line">		Screen_H / <span class="number">32</span>,												<span class="comment">//cy</span></span><br><span class="line">		hWnd,														<span class="comment">//父窗口句柄</span></span><br><span class="line">		(HMENU)IDC_BUTTON_Del,										<span class="comment">//按钮的标号</span></span><br><span class="line">		<span class="literal">NULL</span>,</span><br><span class="line">		<span class="literal">NULL</span></span><br><span class="line">	);</span><br><span class="line"></span><br><span class="line">	SetFont();</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// “关于”框的消息处理程序。</span></span><br><span class="line"><span class="function">INT_PTR CALLBACK <span class="title">About</span><span class="params">(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	UNREFERENCED_PARAMETER(lParam);</span><br><span class="line">	<span class="keyword">switch</span> (message)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">case</span> WM_INITDIALOG:</span><br><span class="line">		<span class="keyword">return</span> (INT_PTR)TRUE;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">case</span> WM_COMMAND:</span><br><span class="line">		<span class="keyword">if</span> (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)</span><br><span class="line">		&#123;</span><br><span class="line">			EndDialog(hDlg, LOWORD(wParam));</span><br><span class="line">			<span class="keyword">return</span> (INT_PTR)TRUE;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> (INT_PTR)FALSE;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">BOOL <span class="title">getLocation</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">long</span> index;</span><br><span class="line">	TCHAR <span class="built_in">buffer</span>[MAX_PATH];</span><br><span class="line">	HKEY hKey;</span><br><span class="line">	HRESULT hr = ::RegOpenKeyEx(</span><br><span class="line">		HKEY_LOCAL_MACHINE,</span><br><span class="line">		UNINSTALL_SOFT,</span><br><span class="line">		<span class="number">0</span>,</span><br><span class="line">		KEY_READ,						<span class="comment">/*KEY_ALL_ACCESS*/</span></span><br><span class="line">		&amp;hKey</span><br><span class="line">	);</span><br><span class="line">	<span class="keyword">if</span> (hr != ERROR_SUCCESS)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (index = <span class="number">0</span>; ; index++)</span><br><span class="line">	&#123;</span><br><span class="line">		hr = RegEnumKey(hKey, index, &amp;<span class="built_in">buffer</span>[<span class="number">0</span>], <span class="keyword">sizeof</span>(<span class="built_in">buffer</span>));</span><br><span class="line">		<span class="keyword">switch</span> (hr)</span><br><span class="line">		&#123;</span><br><span class="line">		<span class="keyword">case</span> ERROR_SUCCESS:</span><br><span class="line">			<span class="keyword">if</span> (DumpSoftware(<span class="built_in">buffer</span>, hKey))</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> ERROR_NO_MORE_ITEMS:</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span> (_tcscmp(location, _T(<span class="string">""</span>)) == <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				RegCloseKey(hKey);</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			RegCloseKey(hKey);</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	RegCloseKey(hKey);</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">BOOL <span class="title">DumpSoftware</span><span class="params">(LPCTSTR szKey, HKEY hParent)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	LRESULT lr;</span><br><span class="line">	HKEY hKey;</span><br><span class="line">	LONG <span class="built_in">size</span>;</span><br><span class="line">	TCHAR <span class="built_in">buffer</span>[MAX_PATH];</span><br><span class="line">	lr = RegOpenKey(hParent, szKey, &amp;hKey);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//不能打开注册表</span></span><br><span class="line">	<span class="keyword">if</span> (lr != ERROR_SUCCESS)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="built_in">size</span> = <span class="keyword">sizeof</span>(<span class="built_in">buffer</span>);</span><br><span class="line">	lr = GetValue(hKey, _T(<span class="string">"DisplayName"</span>), &amp;<span class="built_in">buffer</span>[<span class="number">0</span>], &amp;<span class="built_in">size</span>);</span><br><span class="line">	<span class="keyword">if</span> (lr == ERROR_SUCCESS)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span> (<span class="built_in">size</span> &gt; <span class="number">0</span> &amp;&amp; _tcscmp(<span class="built_in">buffer</span>, _T(<span class="string">"WeGame"</span>)) == <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//MessageBox(hWnd, buffer, _T("find wegame"), MB_OK);</span></span><br><span class="line">			<span class="built_in">size</span> = <span class="keyword">sizeof</span>(<span class="built_in">buffer</span>);</span><br><span class="line">			lr = GetValue(hKey, _T(<span class="string">"InstallLocation"</span>), &amp;<span class="built_in">buffer</span>[<span class="number">0</span>], &amp;<span class="built_in">size</span>);</span><br><span class="line">			<span class="keyword">if</span> (ERROR_SUCCESS == lr &amp;&amp; <span class="built_in">size</span> &gt; <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				MessageBox(hWnd, <span class="built_in">buffer</span>, _T(<span class="string">"InstallLocation"</span>), MB_OK);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="built_in">size</span> = <span class="keyword">sizeof</span>(<span class="built_in">buffer</span>);</span><br><span class="line">			lr = GetValue(hKey, _T(<span class="string">"InstallSource"</span>), &amp;<span class="built_in">buffer</span>[<span class="number">0</span>], &amp;<span class="built_in">size</span>);</span><br><span class="line">			<span class="keyword">if</span> (ERROR_SUCCESS == lr &amp;&amp; <span class="built_in">size</span> &gt; <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				MessageBox(hWnd, <span class="built_in">buffer</span>, _T(<span class="string">"InstallSource"</span>), MB_OK);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">size</span> = <span class="keyword">sizeof</span>(<span class="built_in">buffer</span>);</span><br><span class="line">			lr = GetValue(hKey, _T(<span class="string">"UninstallPath"</span>), &amp;<span class="built_in">buffer</span>[<span class="number">0</span>], &amp;<span class="built_in">size</span>);</span><br><span class="line">			<span class="keyword">if</span> (ERROR_SUCCESS == lr &amp;&amp; <span class="built_in">size</span> &gt; <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				MessageBox(hWnd, <span class="built_in">buffer</span>, _T(<span class="string">"UninstallPath"</span>), MB_OK);</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">			<span class="built_in">size</span> = <span class="keyword">sizeof</span>(<span class="built_in">buffer</span>);</span><br><span class="line">			lr = GetValue(hKey, _T(<span class="string">"UninstallString"</span>), &amp;<span class="built_in">buffer</span>[<span class="number">0</span>], &amp;<span class="built_in">size</span>);</span><br><span class="line">			<span class="keyword">if</span> (ERROR_SUCCESS == lr &amp;&amp; <span class="built_in">size</span> &gt; <span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//MessageBox(hWnd, buffer, _T("UninstallString"), MB_OK);</span></span><br><span class="line">				setLocation(<span class="built_in">buffer</span>, <span class="built_in">size</span> / <span class="keyword">sizeof</span>(<span class="keyword">wchar_t</span>));</span><br><span class="line">				<span class="comment">//_tcscpy(location, buffer);</span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	RegCloseKey(hKey);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">LRESULT <span class="title">GetValue</span><span class="params">(HKEY hKey, LPCTSTR name, LPTSTR value, LPLONG <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> ::RegQueryValueEx(hKey, name, <span class="literal">NULL</span>, <span class="literal">NULL</span>, (LPBYTE)value, (LPDWORD)<span class="built_in">size</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">setLocation</span><span class="params">(TCHAR lo[], <span class="keyword">int</span> <span class="built_in">size</span>)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="built_in">size</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">wchar_t</span> ch = lo[i];</span><br><span class="line">		<span class="keyword">if</span> (ch == <span class="string">'\\'</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			len = i;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	szLocation = len;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">	&#123;</span><br><span class="line">		location[i] = lo[i];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">BOOL <span class="title">FindFirstFileExists</span><span class="params">(LPCTSTR lpPath, DWORD dwFilter)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	WIN32_FIND_DATA fd;</span><br><span class="line">	HANDLE hFind = FindFirstFile(lpPath, &amp;fd);</span><br><span class="line">	BOOL bFilter = (FALSE == dwFilter) ? TRUE : fd.dwFileAttributes &amp; dwFilter;</span><br><span class="line">	BOOL RetValue = ((hFind != INVALID_HANDLE_VALUE) &amp;&amp; bFilter) ? TRUE : FALSE;</span><br><span class="line">	FindClose(hFind);</span><br><span class="line">	<span class="keyword">return</span> RetValue;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查一个bai路径是否存在（绝对路径、相对路径，文件或du文件夹均可）zhi</span></span><br><span class="line"><span class="function">BOOL <span class="title">FilePathExists</span><span class="params">(LPCTSTR lpPath)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> FindFirstFileExists(lpPath, FALSE);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 检查一个文件夹是dao否存在（绝对路径、相对路径均可）</span></span><br><span class="line"><span class="function">BOOL <span class="title">FolderExists</span><span class="params">(LPCTSTR lpPath)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> FindFirstFileExists(lpPath, FILE_ATTRIBUTE_DIRECTORY);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">SetFont</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 设置字体参数bai</span></span><br><span class="line">	LOGFONT LogFont;</span><br><span class="line">	<span class="built_in">memset</span>(&amp;LogFont, <span class="number">0</span>, <span class="keyword">sizeof</span>(LOGFONT));</span><br><span class="line">	lstrcpy(LogFont.lfFaceName, _T(<span class="string">"Constantia"</span>));</span><br><span class="line">	LogFont.lfWeight = FW_BLACK;<span class="comment">//FW_NORMAL;</span></span><br><span class="line">	LogFont.lfHeight = Screen_W / <span class="number">130</span>; <span class="comment">// 字体大小</span></span><br><span class="line">	LogFont.lfCharSet = <span class="number">134</span>;</span><br><span class="line">	LogFont.lfOutPrecision = <span class="number">3</span>;</span><br><span class="line">	LogFont.lfClipPrecision = <span class="number">2</span>;</span><br><span class="line">	LogFont.lfOrientation = <span class="number">45</span>;</span><br><span class="line">	LogFont.lfQuality = DEFAULT_QUALITY;</span><br><span class="line">	LogFont.lfPitchAndFamily = <span class="number">2</span>;</span><br><span class="line">	<span class="comment">// 创建字du体</span></span><br><span class="line">	HFONT hFont = CreateFontIndirect(&amp;LogFont);</span><br><span class="line">	<span class="comment">// 取得控件句柄</span></span><br><span class="line">	SendMessage(hEditor, WM_SETFONT, (WPARAM)hFont, TRUE);</span><br><span class="line">	SendMessage(hLabel, WM_SETFONT, (WPARAM)hFont, TRUE);</span><br><span class="line">	SendMessage(h_BUTTON_Loc, WM_SETFONT, (WPARAM)hFont, TRUE);</span><br><span class="line">	SendMessage(hButtonWnd_Del, WM_SETFONT, (WPARAM)hFont, TRUE);</span><br><span class="line">	SendMessage(hButtonWnd_Gen, WM_SETFONT, (WPARAM)hFont, TRUE);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h3 id="收获"><a href="#收获" class="headerlink" title="收获"></a>收获</h3><ul>
-<li>创建各种窗口组件</li>
-<li>熟悉win32 API 复制 移动(备份) 删除</li>
-<li>窗口信号处理</li>
-<li>利用文件夹选择窗口选择文件夹</li>
-<li>遍历注册表获取安装地址 卸载地址等软件信息</li>
-<li>检查文件或者文件夹是否存在</li>
-<li>设置字体</li>
-<li>适应各种DPI 利用像素点数量的比例设置窗口的尺寸</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/04/JAVA/Static/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -995,12 +708,830 @@
   
   
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/NLP/LEC_1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="彭鸿鑫">
+      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="phx 的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/02/NLP/LEC_1/" class="post-title-link" itemprop="url">NLP/LEC_1</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-02 22:45:11 / 修改时间：22:57:05" itemprop="dateCreated datePublished" datetime="2020-03-02T22:45:11+08:00">2020-03-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>date: 2020-03-02 22:46:44</p>
+<h1 id="Natural-Language-Processing"><a href="#Natural-Language-Processing" class="headerlink" title="Natural Language Processing"></a>Natural Language Processing</h1><h2 id="Speech-and-Language"><a href="#Speech-and-Language" class="headerlink" title="Speech and Language"></a>Speech and Language</h2><ul>
+<li><h3 id="Speech-is-human-vocal-communication-using-language"><a href="#Speech-is-human-vocal-communication-using-language" class="headerlink" title="Speech is human vocal communication using language."></a>Speech is human vocal communication using language.</h3></li>
+<li><h3 id="A-language-is-a-structured-system-of-communication"><a href="#A-language-is-a-structured-system-of-communication" class="headerlink" title="A language is a structured system of communication"></a>A language is a structured system of communication</h3></li>
+</ul>
+<h2 id="Major-speech-related-tasks"><a href="#Major-speech-related-tasks" class="headerlink" title="Major speech-related tasks"></a>Major speech-related tasks</h2><ul>
+<li><h3 id="Speech-Recognition"><a href="#Speech-Recognition" class="headerlink" title="Speech Recognition"></a>Speech Recognition</h3></li>
+<li><h3 id="Speaker-Verification"><a href="#Speaker-Verification" class="headerlink" title="Speaker Verification"></a>Speaker Verification</h3></li>
+<li><h3 id="Language-Identification"><a href="#Language-Identification" class="headerlink" title="Language Identification"></a>Language Identification</h3></li>
+<li><h3 id="Emotion-Recognition"><a href="#Emotion-Recognition" class="headerlink" title="Emotion Recognition"></a>Emotion Recognition</h3></li>
+</ul>
+<h2 id="Automatic-Speech-Recognition-ASR"><a href="#Automatic-Speech-Recognition-ASR" class="headerlink" title="Automatic Speech Recognition (ASR)"></a>Automatic Speech Recognition (ASR)</h2><h3 id="Why-is-it-difficult"><a href="#Why-is-it-difficult" class="headerlink" title="Why is it difficult"></a>Why is it difficult</h3><ul>
+<li><h4 id="Infinite-number-of-classes"><a href="#Infinite-number-of-classes" class="headerlink" title="Infinite number of classes"></a>Infinite number of classes</h4></li>
+<li><h4 id="Variable-input-and-output-length"><a href="#Variable-input-and-output-length" class="headerlink" title="Variable input and output length"></a>Variable input and output length</h4></li>
+<li><h4 id="Out-of-vocabulary-OOV"><a href="#Out-of-vocabulary-OOV" class="headerlink" title="Out of vocabulary (OOV)"></a>Out of vocabulary (OOV)</h4></li>
+<li><h4 id="Sequence-to-sequence-recognition"><a href="#Sequence-to-sequence-recognition" class="headerlink" title="Sequence-to-sequence recognition"></a>Sequence-to-sequence recognition</h4></li>
+</ul>
+<h2 id="Relationship-between-ASR-and-NLP"><a href="#Relationship-between-ASR-and-NLP" class="headerlink" title="Relationship between ASR and NLP"></a>Relationship between ASR and NLP</h2><p><img src="/images/NLP/image-20200302221951830-1583160557051-1583160561337.png" alt="image-20200302221951830"></p>
+<h2 id="NLP-tasks"><a href="#NLP-tasks" class="headerlink" title="NLP tasks"></a>NLP tasks</h2><h3 id="text-related-no-audio"><a href="#text-related-no-audio" class="headerlink" title="text-related (no audio)"></a>text-related (no audio)</h3><h3 id="Why-is-it-difficult-1"><a href="#Why-is-it-difficult-1" class="headerlink" title="Why is it difficult ?"></a>Why is it difficult ?</h3><ul>
+<li><h4 id="Confusion"><a href="#Confusion" class="headerlink" title="Confusion"></a>Confusion</h4></li>
+<li><h4 id="Context"><a href="#Context" class="headerlink" title="Context"></a>Context</h4></li>
+<li><h4 id="Machine-translation-MT-is-regarded-as-one-of-the-most-representative-task"><a href="#Machine-translation-MT-is-regarded-as-one-of-the-most-representative-task" class="headerlink" title="Machine translation (MT) is regarded as one of the most representative task"></a>Machine translation (MT) is regarded as one of the most representative task</h4></li>
+</ul>
+<h2 id="Common-in-classification-tasks"><a href="#Common-in-classification-tasks" class="headerlink" title="Common in classification tasks"></a>Common in classification tasks</h2><ul>
+<li><h4 id="Data"><a href="#Data" class="headerlink" title="Data"></a>Data</h4></li>
+<li><h4 id="Feature-extraction-digitalize-the-input"><a href="#Feature-extraction-digitalize-the-input" class="headerlink" title="Feature extraction (digitalize the input)"></a>Feature extraction (digitalize the input)</h4></li>
+<li><h4 id="Variation-and-noise"><a href="#Variation-and-noise" class="headerlink" title="Variation and noise"></a>Variation and noise</h4></li>
+<li><h4 id="Model-selection"><a href="#Model-selection" class="headerlink" title="Model selection"></a>Model selection</h4></li>
+</ul>
+<h2 id="Supervised-learning"><a href="#Supervised-learning" class="headerlink" title="Supervised learning"></a>Supervised learning</h2><h4 id="The-training-data-are-labeled-with-their-class"><a href="#The-training-data-are-labeled-with-their-class" class="headerlink" title="The training data are labeled with their class."></a>The training data are labeled with their class.</h4><h2 id="Unsupervised-learning"><a href="#Unsupervised-learning" class="headerlink" title="Unsupervised learning"></a>Unsupervised learning</h2><h4 id="The-training-data-are-unlabeled"><a href="#The-training-data-are-unlabeled" class="headerlink" title="The training data are unlabeled."></a>The training data are unlabeled.</h4><h2 id="Overview-of-an-ASR-System"><a href="#Overview-of-an-ASR-System" class="headerlink" title="Overview of an ASR System"></a>Overview of an ASR System</h2><p><img src="/images/NLP/image-20200302222936191-1583160576958.png" alt="image-20200302222936191"></p>
+<h2 id="Components-in-an-ASR-System"><a href="#Components-in-an-ASR-System" class="headerlink" title="Components in an ASR System"></a>Components in an ASR System</h2><ul>
+<li><h4 id="Dictionary"><a href="#Dictionary" class="headerlink" title="Dictionary"></a>Dictionary</h4></li>
+<li><h4 id="Acoustic-model"><a href="#Acoustic-model" class="headerlink" title="Acoustic model"></a>Acoustic model</h4></li>
+<li><h4 id="Language-model"><a href="#Language-model" class="headerlink" title="Language model"></a>Language model</h4></li>
+</ul>
+<h2 id="Hidden-Markov-Model-HMM"><a href="#Hidden-Markov-Model-HMM" class="headerlink" title="Hidden Markov Model (HMM)"></a>Hidden Markov Model (HMM)</h2><p><img src="/images/NLP/image-20200302223214123-1583160934937.png" alt="image-20200302223214123"></p>
+<h2 id="Common-Choices-of-Acoustic-Model"><a href="#Common-Choices-of-Acoustic-Model" class="headerlink" title="Common Choices of Acoustic Model"></a>Common Choices of Acoustic Model</h2><ul>
+<li><h3 id="Recurrent-neural-network"><a href="#Recurrent-neural-network" class="headerlink" title="Recurrent neural network"></a>Recurrent neural network</h3><ul>
+<li><h4 id="Long-short-term-memory-LSTM"><a href="#Long-short-term-memory-LSTM" class="headerlink" title="Long short term memory (LSTM)"></a>Long short term memory (LSTM)</h4></li>
+</ul>
+</li>
+<li><h3 id="Non-recurrent-neural-network"><a href="#Non-recurrent-neural-network" class="headerlink" title="Non-recurrent neural network"></a>Non-recurrent neural network</h3><ul>
+<li><h4 id="Convolutional-neural-network-CNN"><a href="#Convolutional-neural-network-CNN" class="headerlink" title="Convolutional neural network (CNN)"></a>Convolutional neural network (CNN)</h4></li>
+<li><h4 id="Time-neural-network-TDNN"><a href="#Time-neural-network-TDNN" class="headerlink" title="Time neural network (TDNN)"></a>Time neural network (TDNN)</h4></li>
+</ul>
+</li>
+</ul>
+<h2 id="Machine-Translation"><a href="#Machine-Translation" class="headerlink" title="Machine Translation"></a>Machine Translation</h2><h3 id="Why-is-it-difficult-2"><a href="#Why-is-it-difficult-2" class="headerlink" title="Why is it difficult"></a>Why is it difficult</h3><ul>
+<li><h4 id="Typology"><a href="#Typology" class="headerlink" title="Typology"></a>Typology</h4><ul>
+<li><h4 id="It-means-systematic-cross-linguistic-similarities-and-differences"><a href="#It-means-systematic-cross-linguistic-similarities-and-differences" class="headerlink" title="It means systematic cross-linguistic similarities and differences"></a>It means systematic cross-linguistic similarities and differences</h4></li>
+<li><h4 id="Morphological-difference"><a href="#Morphological-difference" class="headerlink" title="Morphological difference"></a>Morphological difference</h4><ul>
+<li>Number of morphemes per word</li>
+<li>Whether the morphemes have clean boundaries</li>
+</ul>
+</li>
+<li><h4 id="Structural-difference"><a href="#Structural-difference" class="headerlink" title="Structural difference"></a>Structural difference</h4><ul>
+<li>SVO (Subject-Verb-Object) languages</li>
+<li>SOV (Subject-Object-Verb) languages</li>
+<li>VSO (Verb-Subject-Object) languages</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><h4 id="Lexical-divergences"><a href="#Lexical-divergences" class="headerlink" title="Lexical divergences"></a>Lexical divergences</h4><ul>
+<li><h4 id="lexical-gap"><a href="#lexical-gap" class="headerlink" title="lexical gap"></a>lexical gap</h4></li>
+</ul>
+</li>
+</ul>
+<h4 id="Rule-based-MT-approaches"><a href="#Rule-based-MT-approaches" class="headerlink" title="Rule-based MT approaches"></a>Rule-based MT approaches</h4><ul>
+<li><h5 id="Direct-approach"><a href="#Direct-approach" class="headerlink" title="Direct approach"></a>Direct approach</h5></li>
+</ul>
+<ul>
+<li><h5 id="Transfer-approach"><a href="#Transfer-approach" class="headerlink" title="Transfer approach"></a>Transfer approach</h5></li>
+</ul>
+<ul>
+<li><h5 id="Interlingua-approach"><a href="#Interlingua-approach" class="headerlink" title="Interlingua approach"></a>Interlingua approach</h5></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/02/JAVA/Sort_Analysis/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="彭鸿鑫">
+      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="phx 的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/03/02/JAVA/Sort_Analysis/" class="post-title-link" itemprop="url">JAVA/Sort_Analysis</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-03-02 13:35:29 / 修改时间：22:54:21" itemprop="dateCreated datePublished" datetime="2020-03-02T13:35:29+08:00">2020-03-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>date: 2020-03-01 13:37:44</p>
+<h2 id="Analysis-of-Sorting-Methods"><a href="#Analysis-of-Sorting-Methods" class="headerlink" title="Analysis of Sorting Methods"></a>Analysis of Sorting Methods</h2><h3 id="Insertion-Sort"><a href="#Insertion-Sort" class="headerlink" title="Insertion Sort"></a>Insertion Sort</h3><p>​    <strong>It is very fast in ascending sequence, the time complexity is O(n). But in Descending sequence, the time complexity is O($n^2$).</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">insertionSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// TODO :add your code here</span></span><br><span class="line">       <span class="comment">// reference: http://math.hws.edu/eck/cs124/javanotes8/c7/s4.html 7.4.3</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) &#123;</span><br><span class="line">           <span class="keyword">int</span> temp = list[i];</span><br><span class="line">           <span class="keyword">int</span> j = i;</span><br><span class="line">           <span class="keyword">while</span> (j &gt; <span class="number">0</span> &amp;&amp; list[j - <span class="number">1</span>] &gt; temp) &#123;</span><br><span class="line">               list[j] = list[--j];</span><br><span class="line">           &#125;</span><br><span class="line">           list[j] = temp;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Bubble-Sort"><a href="#Bubble-Sort" class="headerlink" title="Bubble Sort"></a>Bubble Sort</h3><p>​    <strong>If we tick that the last sorting not change any two data, then the list is sorted. In this case, the time complexity of ascending sequence is O(n).</strong></p>
+<p>​    <strong>else, the time complexity is O($n^2$).</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">bubbleSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n - i - <span class="number">1</span>; j++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (list[j] &gt; list[j + <span class="number">1</span>]) &#123;</span><br><span class="line">                   <span class="comment">// swap</span></span><br><span class="line">                   <span class="keyword">int</span> tmp = list[j + <span class="number">1</span>];</span><br><span class="line">                   list[j + <span class="number">1</span>] = list[j];</span><br><span class="line">                   list[j] = tmp;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Selection-Sort"><a href="#Selection-Sort" class="headerlink" title="Selection Sort"></a>Selection Sort</h3><p>​    <strong>The time complexity is O($n^2$).</strong> </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">selectionSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">       <span class="comment">// TODO :add your code here</span></span><br><span class="line">       <span class="comment">// reference: http://math.hws.edu/eck/cs124/javanotes8/c7/s4.html 7.4.4</span></span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">           <span class="keyword">int</span> min = list[i];</span><br><span class="line">           <span class="keyword">int</span> minpoint = i;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; n; j++) &#123;</span><br><span class="line">               <span class="keyword">if</span> (min &gt; list[j]) &#123;</span><br><span class="line">                   min = list[j];</span><br><span class="line">                   minpoint = j;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           list[minpoint] = list[i];</span><br><span class="line">           list[i] = min;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Quick-Sort"><a href="#Quick-Sort" class="headerlink" title="Quick Sort"></a>Quick Sort</h3><p>​    <strong>The best and average time complexity is O($nlogn$).</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">quickSort</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO :add your code here</span></span><br><span class="line">        <span class="comment">// Adam's ppt</span></span><br><span class="line">        <span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            <span class="keyword">int</span> temp = list[mid];</span><br><span class="line">            list[mid] = list[l];</span><br><span class="line">            <span class="keyword">int</span> i = l;</span><br><span class="line">            <span class="keyword">int</span> j = r;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">                <span class="keyword">while</span> (i &lt; j &amp;&amp; list[j] &gt;= temp) &#123;</span><br><span class="line">                    j--;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">                    list[i++] = list[j];</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">while</span> (i &lt; j &amp;&amp; list[i] &lt; temp)</span><br><span class="line">                    i++;</span><br><span class="line">                <span class="keyword">if</span> (i &lt; j) &#123;</span><br><span class="line">                    list[j--] = list[i];</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            list[i] = temp;</span><br><span class="line">            quickSort(l, i - <span class="number">1</span>, list);</span><br><span class="line">            quickSort(i + <span class="number">1</span>, r, list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Merge-Sort"><a href="#Merge-Sort" class="headerlink" title="Merge Sort"></a>Merge Sort</h3><p>​    <strong>The time complexity is O($nlogn$)</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">mergeSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO :add your code here</span></span><br><span class="line">        <span class="comment">// https://introcs.cs.princeton.edu/java/42sort/ Mergesort</span></span><br><span class="line">        <span class="keyword">int</span>[] result = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        div(<span class="number">0</span>, n - <span class="number">1</span>, result, list);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">div</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span>[] res, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l &lt; r) &#123;</span><br><span class="line">            <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">            div(l, mid, res, list);</span><br><span class="line">            div(mid + <span class="number">1</span>, r, res, list);</span><br><span class="line">            merge(l, mid, r, res, list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">merge</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> mid, <span class="keyword">int</span> r, <span class="keyword">int</span>[] res, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> i = l;</span><br><span class="line">        <span class="keyword">int</span> j = mid + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> k = l;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid &amp;&amp; j &lt;= r) &#123;</span><br><span class="line">            <span class="keyword">if</span> (list[i] &lt; list[j])</span><br><span class="line">                res[k++] = list[i++];</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                res[k++] = list[j++];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (i &lt;= mid)</span><br><span class="line">            res[k++] = list[i++];</span><br><span class="line">        <span class="keyword">while</span> (j &lt;= r)</span><br><span class="line">            res[k++] = list[j++];</span><br><span class="line">        <span class="keyword">while</span> (l &lt;= r) &#123;</span><br><span class="line">            list[l] = res[l];</span><br><span class="line">            l++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Heap-Sort"><a href="#Heap-Sort" class="headerlink" title="Heap Sort"></a>Heap Sort</h3><p>​    <strong>The time complexity is O($nlogn$)</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">heapSort</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// TODO :add your code here</span></span><br><span class="line">        <span class="comment">// optional</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = (n - <span class="number">1</span>) / <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">            make_min_heap(i, n, list);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &gt; <span class="number">0</span>; i--) &#123;</span><br><span class="line">            swap(<span class="number">0</span>, i, list);</span><br><span class="line">            make_min_heap(<span class="number">0</span>, i, list);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">make_min_heap</span><span class="params">(<span class="keyword">int</span> root, <span class="keyword">int</span> n, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">2</span> * root + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; n) &#123;</span><br><span class="line">            <span class="keyword">if</span> (j + <span class="number">1</span> &lt; n &amp;&amp; list[j + <span class="number">1</span>] &lt; list[j]) &#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (list[root] &lt; list[j]) &#123;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            swap(root, j, list);</span><br><span class="line">            root = j;</span><br><span class="line">            j = <span class="number">2</span> * j + <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">int</span>[] list)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = list[i];</span><br><span class="line">        list[i] = list[j];</span><br><span class="line">        list[j] = temp;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Running-time-of-each-sorting-method"><a href="#Running-time-of-each-sorting-method" class="headerlink" title="Running time of each sorting method"></a>Running time of each sorting method</h2><ul>
+<li><h3 id="Ascending-data"><a href="#Ascending-data" class="headerlink" title="Ascending data"></a>Ascending data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>8</td>
+<td>23</td>
+<td>2338</td>
+<td>172931</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>4</td>
+<td>17</td>
+<td>1218</td>
+<td>130031</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>39</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>8</td>
+<td>90</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="Descending-data"><a href="#Descending-data" class="headerlink" title="Descending data"></a>Descending data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>56</td>
+<td>2778</td>
+<td>317536</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>14</td>
+<td>1498</td>
+<td>157337</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+<td>1119</td>
+<td>124375</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>39</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>8</td>
+<td>84</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="Random-data"><a href="#Random-data" class="headerlink" title="Random data"></a>Random data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>1378</td>
+<td>143118</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>15</td>
+<td>1474</td>
+<td>155660</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>1117</td>
+<td>123129</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>3</td>
+<td>37</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>14</td>
+<td>87</td>
+</tr>
+</tbody></table>
+<ul>
+<li><h3 id="Out-of-order-data"><a href="#Out-of-order-data" class="headerlink" title="Out of order data"></a>Out of order data</h3></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th>n = 10</th>
+<th>n = 100</th>
+<th>n = 1000</th>
+<th>n = 10000</th>
+<th>n = 100000</th>
+<th>n = 1000000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>InsertionSortTest</td>
+<td>insertionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>3</td>
+<td>294</td>
+<td>32708</td>
+</tr>
+<tr>
+<td>BubbleSortTest</td>
+<td>bubbleSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>14</td>
+<td>1470</td>
+<td>155921</td>
+</tr>
+<tr>
+<td>SelectionSortTest</td>
+<td>selectionSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>11</td>
+<td>1118</td>
+<td>123464</td>
+</tr>
+<tr>
+<td>QuickSortTest</td>
+<td>quickSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>11</td>
+</tr>
+<tr>
+<td>MergeSortTest</td>
+<td>mergeSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>2</td>
+<td>38</td>
+</tr>
+<tr>
+<td>HeapSortTest</td>
+<td>heapSortTime</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>8</td>
+<td>84</td>
+</tr>
+</tbody></table>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/21/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="彭鸿鑫">
+      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="phx 的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/21/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/" class="post-title-link" itemprop="url">博客搭建记录</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-21 02:40:01 / 修改时间：03:14:13" itemprop="dateCreated datePublished" datetime="2020-02-21T02:40:01+08:00">2020-02-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <center><h2>博客搭建记录</h2></center>
+[参考视频](https://www.bilibili.com/video/av44544186)
+
+<ul>
+<li><p><a href="nodejs.org">安装Nodejs</a></p>
+</li>
+<li><p>利用淘宝镜像安装cnpm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用cnpm安装hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建博客文件夹</p>
+</li>
+<li><p>在博客文件夹根目录初始化hexo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>开启博客</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更改主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone github.com&#x2F;.......git themes&#x2F;name</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改配置文件  </p>
+<ul>
+<li>language: ch-Hans</li>
+<li>更改 themes: next</li>
+<li>添加tag        hexo n page tags</li>
+</ul>
+</li>
+<li><p>将博客部署到github</p>
+<ul>
+<li><p>创建库 库名必须为 name.github.io</p>
+</li>
+<li><p>在hexo根目录下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install --save hexo-deployer-git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入配置文件更改</p>
+<ul>
+<li>deployer: git</li>
+<li>repo: gitclone地址</li>
+<li>branch: mster</li>
+</ul>
+</li>
+<li><p>部署到网页</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/21/JAVA/IO%20%E6%B5%81%E5%92%8C%20Charset/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="彭鸿鑫">
+      <meta itemprop="description" content="记录学习编程的经历，欢迎大家指点">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="phx 的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/02/21/JAVA/IO%20%E6%B5%81%E5%92%8C%20Charset/" class="post-title-link" itemprop="url">JAVA/IO 流和 Charset</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-02-21 00:57:33 / 修改时间：13:34:04" itemprop="dateCreated datePublished" datetime="2020-02-21T00:57:33+08:00">2020-02-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>date: 2020-02-20 13:37:44</p>
+<center><h1>IO 流和 Charset</h1></center>
+## IO Steam
+
+<p><img src="/images/Java%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20200220211204031.png" alt="image-20200220211204031"></p>
+<center><h4>Sample.txt</h4></center>
+刹车时代
+
+
+
+
+
+<center><h4>String,StringBuffer,StringBuilder</h4></center>
+
+<p><a href="https://blog.csdn.net/qq_37856300/article/details/84340288" target="_blank" rel="noopener">参考博客</a>    </p>
+<p>String += 新创建一个对象储存结果并删除原本对象</p>
+<p>​    StringBuffer和StringBuilder .append（） 直接改变本身的值速度快，</p>
+<p>​    若是String str=a+b 则非常快速 这是因为String和我们其它类型的变量不同，其它的非基本类型对象的值、数据都存储在java的堆中，而String类型的变量的值是存储jvm在方法区中的字符串常量池中的。当我们执行：String str = “a”+“b”;这句话的时候，String会自动把这个对象的值看成”ab”，然后在方法区中如果找到了值同样为”ab”的，就会直接让str句柄指向它，也就是说，我们的这句代码现在相当于：</p>
+<center><h4>FileInputStream 以 Byte 形式读取文件</h4></center>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ByteReader</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">try</span> (FileInputStream fis = <span class="keyword">new</span> FileInputStream(</span><br><span class="line">                <span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\sample.txt"</span>)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">65535</span>];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> byteNum = fis.read(buffer);</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; byteNum; i++) &#123;</span><br><span class="line">                System.out.printf(<span class="string">"%02x "</span>, buffer[i]);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">////////////////////</span></span><br><span class="line">c9 b2 b3 b5 ca b1 b4 fa</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<center><h4>InputStreamReader 将读取的 Byte 转化为Character</h4></center>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StreamReader</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> (InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(</span><br><span class="line">                <span class="keyword">new</span> FileInputStream(<span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\sample.txt"</span>),</span><br><span class="line">                <span class="string">"gb18030"</span>)) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">char</span>[] cbuf = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">65535</span>];</span><br><span class="line">            <span class="keyword">int</span> file_len = isr.read(cbuf);</span><br><span class="line"></span><br><span class="line">            System.out.println(file_len);</span><br><span class="line">            System.out.println(cbuf);</span><br><span class="line"></span><br><span class="line">        &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////////</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">刹车时代</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<center><h4>BufferedReader 提供通用的缓存方式文本读取</h4></center>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BufferReader</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> (FileInputStream fis = <span class="keyword">new</span> FileInputStream(<span class="keyword">new</span> File(</span><br><span class="line">				<span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\sample.txt"</span>));</span><br><span class="line">			 InputStreamReader isr = <span class="keyword">new</span> InputStreamReader(fis, <span class="string">"gb18030"</span>);</span><br><span class="line">			 BufferedReader bReader = <span class="keyword">new</span> BufferedReader(isr);)&#123;</span><br><span class="line"></span><br><span class="line">			<span class="keyword">char</span>[] cbuf = <span class="keyword">new</span> <span class="keyword">char</span>[<span class="number">65535</span>];</span><br><span class="line">			<span class="keyword">int</span> file_len = bReader.read(cbuf);</span><br><span class="line"></span><br><span class="line">			System.out.println(file_len);</span><br><span class="line">			System.out.println(cbuf);</span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line">刹车时代</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<center><h4>FileOutStream</h4></center>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ByteWriter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> (FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(</span><br><span class="line">				<span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\output.txt"</span>))&#123;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">byte</span>[] buffer = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">65535</span>];</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; buffer.length; i++)&#123;</span><br><span class="line">				buffer[i] = (<span class="keyword">byte</span>) i;</span><br><span class="line">			&#125; </span><br><span class="line"></span><br><span class="line">			fos.write(buffer);										</span><br><span class="line">			fos.flush();<span class="comment">//fos.close();</span></span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/////////////</span></span><br><span class="line">以<span class="keyword">byte</span>形式输出文件</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<center><h4>OutputStreamWriter</h4></center>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StreamWriter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"><span class="comment">//		try (OutputStreamWriter osw = new OutputStreamWriter(new FileOutputStream("output1_gb18030.txt"), "gb18030")) &#123;</span></span><br><span class="line">			<span class="keyword">try</span> (OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(<span class="keyword">new</span> FileOutputStream(<span class="string">"C:\\Users\\Peng\\Desktop\\Study\\Java2\\Lab1_SampleCode\\output1_utf8.txt"</span>), <span class="string">"utf8"</span>)) &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">			osw.write(<span class="string">"你好！"</span>);</span><br><span class="line">			osw.flush();<span class="comment">//osw.close();</span></span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">///////////////</span></span><br><span class="line">你好！</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<center><h4>BufferedWriter</h4></center>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BufferWriter</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">try</span> (FileOutputStream fos = <span class="keyword">new</span> FileOutputStream(<span class="keyword">new</span> File(<span class="string">"Lab1_SampleCode/output2_gb18030.txt"</span>));</span><br><span class="line">				OutputStreamWriter osw = <span class="keyword">new</span> OutputStreamWriter(fos, <span class="string">"gb18030"</span>);</span><br><span class="line">				BufferedWriter bWriter = <span class="keyword">new</span> BufferedWriter(osw);)&#123;</span><br><span class="line">			bWriter.write(<span class="string">"你好！\n"</span>);</span><br><span class="line"><span class="comment">//			bWriter.write(100);</span></span><br><span class="line">			bWriter.write(<span class="string">"100"</span>);</span><br><span class="line">			bWriter.write(<span class="string">" 分 \n"</span>);</span><br><span class="line">			bWriter.write(<span class="string">"送给你！\n"</span>);</span><br><span class="line">			bWriter.flush();<span class="comment">//bWriter.close();</span></span><br><span class="line">			</span><br><span class="line">		&#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The pathname does not exist."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"Failed or interrupted when doing the I/O operations"</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<center><h4>Char vs. binary value</h4></center>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharSample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// UTF-16:赵-8d75 耀-8000, GB:赵-D5D4 耀-D2AB</span></span><br><span class="line">		<span class="keyword">char</span> c = <span class="string">'赵'</span>;</span><br><span class="line">		<span class="keyword">int</span> value = c;</span><br><span class="line">		System.out.printf(<span class="string">"%s\n"</span>, c);</span><br><span class="line">		System.out.printf(<span class="string">"%X\n"</span>, value);</span><br><span class="line"></span><br><span class="line">		String str = <span class="string">"赵耀"</span>; <span class="comment">// UTF-16</span></span><br><span class="line">		<span class="keyword">try</span> &#123;</span><br><span class="line">			<span class="keyword">byte</span>[] bytes1 = str.getBytes(<span class="string">"GBK"</span>); <span class="comment">// or GBK</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes1) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%2X "</span>, b);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">			<span class="keyword">byte</span>[] bytes2 = str.getBytes(<span class="string">"UTF-16"</span>);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes2) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%02X "</span>, b);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line"></span><br><span class="line">			<span class="keyword">byte</span>[] bytes3 = str.getBytes(<span class="string">"UTF-16BE"</span>);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes3) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%02X "</span>, b);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line"></span><br><span class="line">			<span class="keyword">byte</span>[] bytes4 = str.getBytes(<span class="string">"UTF-16LE"</span>);</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">byte</span> b : bytes4) &#123;</span><br><span class="line">				System.out.printf(<span class="string">"%02X "</span>, b);</span><br><span class="line">			&#125;</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125; <span class="keyword">catch</span> (UnsupportedEncodingException e) &#123;</span><br><span class="line">			System.out.println(<span class="string">"The Character Encoding is not supported."</span>);</span><br><span class="line">			e.printStackTrace();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//////////////////////</span></span><br><span class="line">赵</span><br><span class="line"><span class="number">8</span>D75</span><br><span class="line">D5 D4 D2 AB </span><br><span class="line">FE FF <span class="number">8</span>D <span class="number">75</span> <span class="number">80</span> <span class="number">00</span> </span><br><span class="line"><span class="number">8</span>D <span class="number">75</span> <span class="number">80</span> <span class="number">00</span> </span><br><span class="line"><span class="number">75</span> <span class="number">8</span>D <span class="number">00</span> <span class="number">80</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<center><h2>Charset</h2></center>
+[参考链接](https://blog.csdn.net/tanmx219/article/details/86356270)
+
+<ul>
+<li>首先将0x20一下的字节状态成为“控制码”</li>
+<li>然后将字母、数字、符号、空格加入，编到127</li>
+<li>在ASCII码127后增加其他国家字符 128-255 为扩展字符集</li>
+<li>中国将两个大于127的字符连在一起表示中文</li>
+<li>高字节（0xA1-0xF7） 低字节（0xA1-0xFE）</li>
+<li>并且将数字、标点、字母全部重新编码 —-全角符号</li>
+<li>这种汉字方案叫做“GB2312”</li>
+<li>更改低字节 演变为GDK</li>
+<li>GDK再演变为GB18030</li>
+<li>统称DBCS(Double Byte Character set)</li>
+<li>一个汉字等于两个英文字符</li>
+<li>ISO 创建 UCS “UNICODE”</li>
+<li>使得一个汉字一个字符</li>
+<li>字符：符号 字节：8位</li>
+<li>不同PC机不同架构</li>
+<li>高位在位：”FEFF” 低位在位：”FFFE”</li>
+</ul>
+<h4 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8 "></a><span id="jump">UTF-8 </span></h4><p>​    编码规则：</p>
+<p>​                1）对于单字节的符号，字节的第一位设为0，后面7位为这个符号的unicode码。因此对于英语字母，UTF-8编码和ASCII码是相同的。</p>
+<p>​                2）对于n字节的符号（n&gt;1），第一个字节的前n位都设为1，第n+1位设为0，后面字节的前两位一律设为10。剩下的没有提及的二进制位，全部为这个符号的unicode码。</p>
+<center><h4>surrogate paris 增补字符</h4></center>
+[参考链接](https://blog.csdn.net/tanmx219/article/details/86356270)
+
+<p>Surrogate Pairs 主要是针对增补字符，此时一个16位的编码（2个Byte的UTF-16）已经无法表示，所以就扩展成需要两个16位的编码单元。也就是说，在范围U+10000到U+10FFFF间的编码则使用一对16位编码单元表示，称作代理对(surrogate pair)。</p>
+<p>在BMP内的字符，仍然按照UTF-16的编码规则，使用两个字符来表示。 （注：BMP内的字符编码，不包含从U+D800到U+DFFF的预留码位。这些预留码位就恰好用于扩展字符编码）</p>
+<p>增补字符的编码值已经超过了BMP的编码范围，需要使用一对UTF-16字符来表示一个字符。把Unicode编码记作U。编码规则如下：</p>
+<ul>
+<li><p>如果U&lt;0x10000，U的UTF-16编码就是U对应的16位无符号整数。</p>
+</li>
+<li><p>如果U≥0x10000，</p>
+<p>先计算U’=U-0x10000，</p>
+<p>然后将U’写成二进制形式：yyyy yyyy yyxx xxxx xxxx，（注意这里共计20位）</p>
+<p>U的UTF-16编码（二进制）就是：110110yyyyyyyyyy 110111xxxxxxxxxx。</p>
+</li>
+</ul>
+<p>这两个字符就称为surrogate pair（代理对）。第一个代理字符为16位编码，范围为U+D800到U+DBFF，第二个代理字符也是一个16位编码，范围为U+DC00 to U+DFFF。</p>
+<p><img src="/images/Java%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/image-20200220222344910.png" alt="image-20200220222344910"></p>
+<p>​        <a href="#jump">理由为UTF-8编码规则</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SurrogatePairsTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		String s=String.valueOf(Character.toChars(<span class="number">0x10437</span>));  		</span><br><span class="line">		System.out.println(s); </span><br><span class="line">		System.out.println(s.charAt(<span class="number">0</span>)); </span><br><span class="line">		</span><br><span class="line">		<span class="keyword">char</span>[]chars=s.toCharArray(); </span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">char</span> c:chars)&#123;  </span><br><span class="line">		    System.out.format(<span class="string">"%x"</span>,(<span class="keyword">short</span>)c);  </span><br><span class="line">		&#125;  </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">////////////</span></span><br><span class="line">𐐷</span><br><span class="line">?</span><br><span class="line">d801dc37</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
 
   
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
 
 
 
@@ -1064,14 +1595,14 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">3</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
